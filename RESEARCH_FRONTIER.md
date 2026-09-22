@@ -102,3 +102,29 @@ Until then, the project status is:
 - residue/character bridge for `Re(s)>1`: `PROVED/STANDARD`;
 - new critical-strip theorem: `OPEN`;
 - Riemann Hypothesis: `OPEN`.
+
+### OP-F05 — Growing-modulus uniformity
+
+The fixed-channel theory is now closed for every fixed base prime `r`: exact shells, PNT-AP shell asymptotics, and mean valuation
+
+\[
+\frac1{\pi(x)}\sum_{p\le x}v_r(p+1)
+\to
+\frac{r}{(r-1)^2}.
+\]
+
+Also
+
+\[
+\sum_{r\le R}\frac{r\log r}{(r-1)^2}
+=
+\log R+O(1).
+\]
+
+Therefore the next genuinely nonlocal gate is to control many channels simultaneously when the channel/modulus cutoff grows with `x`. A useful theorem must quantify the error uniformly across prime-power moduli rather than taking `r,j` fixed first.
+
+Relevant classical tools include Siegel-Walfisz, Brun-Titchmarsh, Bombieri-Vinogradov, large-sieve and dispersion estimates. Any claimed improvement beyond their standard ranges must be proved independently.
+
+### OP-F06 — Dynamic obstruction intersection
+
+The prime mask at `(a,k)` is now exactly the intersection of all active modular obstruction masks for primes up to `sqrt(a*2^k-1)`. The unresolved distribution problem is to estimate the survivor set when this obstruction family grows dynamically with `k`, including correlations between periods `ord_r(2)`.
