@@ -25,6 +25,10 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-D018 | The memory components `M_K`, `M_A`, `M_D` are nonnegative, `0<delta_p<1/p`, and for odd primes `k_p log 2 - delta_p >= log(3/2)`. | PROVED | Eventwise inequalities with nonnegative triangular kernel. |
 | OP-D019 | For every odd prime `p`, `v2(p+1)=k` iff `p == 2^k-1 (mod 2^(k+1))`; hence the odd primes partition into exact dyadic shells. | PROVED | Exact congruence identity. |
 | OP-N001 | At cutoff `X=10^6`, the prime-power memory shell contributions are approximately 49.2%, 25.3%, 12.6%, 6.26%, 3.16% for `k=1..5`; the defect component is about 0.50% of total memory. | NUMERICAL | Finite receipt only; no limiting law claimed. |
+| OP-D020 | `log(p+1)=sum_{r^j | p+1} log r`, so for `Re(s)>1` the non-defect prime-side term is an exact sum over shifted residue classes `p == -1 mod r^j` across all prime-power moduli. | PROVED | Classical von Mangoldt divisor identity sampled at shifted primes. |
+| OP-D021 | For fixed base prime `r` and fixed `j>=1`, `v_r(p+1)=j` is exactly a union of `r-1` reduced residue classes modulo `r^(j+1)`. | PROVED | Exact residue-shell description. |
+| OP-S005 | For fixed `r,j`, PNT in arithmetic progressions gives `#{p<=x:v_r(p+1)=j} ~ Li(x)/r^j`. | STANDARD | Fixed-modulus consequence only; no growing-modulus uniformity claimed. |
+| OP-N002 | At `X=10^6`, the largest shifted-memory channel is `r=2` at about 15.95% of direct memory, while odd channels dominate in aggregate; the defect is about 0.50%. | NUMERICAL | Finite receipt only. |
 | OP-S001 | Consecutive prime values under \(T(p)=2p+1\) are Cunningham chains of the first kind; a prime \(p\) with \(2p+1\) prime is a Sophie Germain prime. | STANDARD | Terminology from classical number theory. |
 | OP-S002 | For fixed odd `a`, the family `a*2^k - 1` is the classical Riesel-type family; full finite modular covers are classical covering sets. | STANDARD | See `PRIOR_ART.md`; not claimed as novel. |
 | OP-S003 | The known Riesel example `a=509203` is covered by `{3,5,7,13,17,241}`. | STANDARD | Reproduced by regression test from OEIS A206430. |
@@ -33,4 +37,4 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 
 ## Firewall
 
-The identities OP-D001--OP-D019 do **not** characterize primality. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
+The identities OP-D001--OP-D021 do **not** characterize primality. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
