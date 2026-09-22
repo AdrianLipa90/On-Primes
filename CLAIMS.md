@@ -11,10 +11,12 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-D005 | \(\log(x_{a,k}+1)=\log a+k\log2\). | PROVED | Exact logarithmic lattice identity. |
 | OP-D006 | For prime \(p\), \(\log p=\log(p+1)-\log(1+1/p)\), with positive defect \(\delta_p=\log(1+1/p)\). | PROVED | Exact identity; \(\delta_p>0\). |
 | OP-D007 | Let \(r\) be an odd prime with \(r\nmid a\). If \(a2^{k_0}\equiv1\pmod r\), then \(r\mid(a2^k-1)\) iff \(k\equiv k_0\pmod{\operatorname{ord}_r(2)}\). | PROVED | Modular obstruction classes are exact arithmetic progressions in fibre index. |
+| OP-D008 | For a finite set `R` of odd prime divisors, the union of all fibre obstruction classes is periodic modulo `L = lcm(ord_r(2): r in R)`. | PROVED | Finite union of congruence classes; no independence assumption. |
+| OP-D009 | The finite-sieve survivor set has exact density `|S_R(a)| / L`. | PROVED | Exact count of survivor residues in one complete period. |
 | OP-S001 | Consecutive prime values under \(T(p)=2p+1\) are Cunningham chains of the first kind; a prime \(p\) with \(2p+1\) prime is a Sophie Germain prime. | STANDARD | Terminology from classical number theory. |
 | OP-O001 | Prime masks \(M_a(k)=1_{\mathbb P}(a2^k-1)\) may reveal useful modular or spectral structure beyond the reparametrisation itself. | OPEN | Research programme, not a theorem. |
 | OP-O002 | The dyadic-fibre decomposition may yield a useful decomposition or bound for the prime side of \(-\zeta'/\zeta\) or a Weil/Suzuki criterion. | OPEN | No RH implication is claimed. |
 
 ## Firewall
 
-The identities OP-D001--OP-D007 do **not** characterize primality. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
+The identities OP-D001--OP-D009 do **not** characterize primality. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
