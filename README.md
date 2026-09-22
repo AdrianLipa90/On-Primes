@@ -81,3 +81,21 @@ python -m unittest discover -s tests -v
 ```
 
 Current development branch: `feat/dyadic-prime-fibres-v0.1`.
+
+## Shifted von Mangoldt tower
+
+The current branch also records the exact identity
+
+\[
+\log(p+1)=\sum_{r^j\mid p+1}\log r,
+\]
+
+so the previous split into a dyadic term and an odd fibre-label term is unified as one hierarchy of base-prime channels `r`. Each channel is supported on shifted residue classes
+
+\[
+p\equiv-1\pmod{r^j}.
+\]
+
+For fixed `r,j`, the exact valuation shell `v_r(p+1)=j` is a union of `r-1` reduced classes modulo `r^(j+1)`. The classical prime number theorem in arithmetic progressions then gives the fixed-shell asymptotic `Li(x)/r^j`.
+
+See the shifted Mangoldt and valuation-shell proofs in `proofs/`.
