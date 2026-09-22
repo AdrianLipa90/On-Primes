@@ -45,3 +45,9 @@ Thus the finite sieve has two logically separate outputs:
 ## Interpretation
 
 The finite sieve does not characterize primes. It produces an exact periodic **necessary condition** for primality within a fibre. Increasing \(R\) can only remove survivor classes; it cannot create false compositeness certificates when the proper-divisor check is retained.
+
+## Corollary 2.1 — full-cover compositeness certificate
+
+If the obstruction union covers every residue modulo \(L_R\), then every exponent has a divisor in \(R\). If, in the exponent range being claimed, no fibre value equals its covering prime, each such divisor is proper. Therefore every fibre value in that range is composite.
+
+This is the classical covering-set mechanism in the present fibre notation.
