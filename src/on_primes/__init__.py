@@ -1,5 +1,6 @@
 """On Primes reference implementation."""
 
+from .covering import covering_certificate, is_residue_covering_set
 from .dyadic import (
     cunningham_run,
     dyadic_address,
@@ -30,12 +31,14 @@ from .modular import (
 
 __all__ = [
     "certified_composite_by_sieve",
+    "covering_certificate",
     "cunningham_run",
     "dyadic_address",
     "fibre_value",
     "finite_sieve_allows",
     "half_boundary_prime_preimages",
     "is_obstructed_by",
+    "is_residue_covering_set",
     "is_prime",
     "log_fibre_coordinate",
     "log_prime_defect",
