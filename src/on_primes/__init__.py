@@ -35,6 +35,7 @@ from .residue_tower import (
     residue_tower_partial,
     valuation_as_residue_count,
 )
+from .shells import in_exact_shell, prime_shell_counts, shell_residue
 from .sieve import (
     certified_composite_by_sieve,
     finite_sieve_allows,
@@ -65,6 +66,9 @@ from .modular import (
 )
 
 __all__ = [
+    "shell_residue",
+    "prime_shell_counts",
+    "in_exact_shell",
     "reconstructed_prime_power_memory",
     "prime_power_memory",
     "prime_power_events_up_to_log_time",
