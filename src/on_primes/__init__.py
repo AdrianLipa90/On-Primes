@@ -36,6 +36,24 @@ from .residue_tower import (
     valuation_as_residue_count,
 )
 from .shells import in_exact_shell, prime_shell_counts, shell_residue
+from .shifted_mangoldt import (
+    base_channel_partial,
+    factorize,
+    reconstructed_log_derivative_from_shifted_tower,
+    shifted_log_sum,
+    shifted_tower_partial,
+    shifted_von_mangoldt_channels,
+)
+from .shifted_memory import (
+    shifted_memory_channels,
+    shifted_memory_defect,
+    shifted_memory_total,
+)
+from .valuation_shells import (
+    exact_shifted_shell_residues,
+    in_exact_shifted_shell,
+    vp,
+)
 from .sieve import (
     certified_composite_by_sieve,
     finite_sieve_allows,
@@ -66,6 +84,18 @@ from .modular import (
 )
 
 __all__ = [
+    "vp",
+    "in_exact_shifted_shell",
+    "exact_shifted_shell_residues",
+    "shifted_memory_total",
+    "shifted_memory_defect",
+    "shifted_memory_channels",
+    "shifted_von_mangoldt_channels",
+    "shifted_tower_partial",
+    "shifted_log_sum",
+    "reconstructed_log_derivative_from_shifted_tower",
+    "factorize",
+    "base_channel_partial",
     "shell_residue",
     "prime_shell_counts",
     "in_exact_shell",
