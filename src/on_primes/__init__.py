@@ -13,6 +13,14 @@ from .dyadic import (
     sophie_step,
     v2,
 )
+from .sieve import (
+    certified_composite_by_sieve,
+    finite_sieve_allows,
+    obstructed_residues,
+    sieve_period,
+    survivor_density,
+    survivor_residues,
+)
 from .modular import (
     is_obstructed_by,
     multiplicative_order_2,
@@ -21,9 +29,11 @@ from .modular import (
 )
 
 __all__ = [
+    "certified_composite_by_sieve",
     "cunningham_run",
     "dyadic_address",
     "fibre_value",
+    "finite_sieve_allows",
     "half_boundary_prime_preimages",
     "is_obstructed_by",
     "is_prime",
@@ -32,8 +42,12 @@ __all__ = [
     "multiplicative_order_2",
     "obstruction_class",
     "obstruction_profile",
+    "obstructed_residues",
     "odd_part",
     "prime_mask",
+    "sieve_period",
     "sophie_step",
+    "survivor_density",
+    "survivor_residues",
     "v2",
 ]
