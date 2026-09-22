@@ -30,6 +30,8 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-S005 | For fixed `r,j`, PNT in arithmetic progressions gives `#{p<=x:v_r(p+1)=j} ~ Li(x)/r^j`. | STANDARD | Fixed-modulus consequence only; no growing-modulus uniformity claimed. |
 | OP-N002 | At `X=10^6`, the largest shifted-memory channel is `r=2` at about 15.95% of direct memory, while odd channels dominate in aggregate; the defect is about 0.50%. | NUMERICAL | Finite receipt only. |
 | OP-D022 | For `x_{a,k}=a*2^k-1>1`, primality is exactly equivalent to avoiding every active modular obstruction class from primes `r<=sqrt(x_{a,k})`; hence the prime mask is a finite product/intersection of periodic obstruction masks. | PROVED | Exact reformulation of trial-divisor primality in fibre coordinates; not claimed as a faster primality algorithm. |
+| OP-D023 | For every fixed prime `r`, `sum_{p<=x} v_r(p+1) ~ [r/(r-1)^2] Li(x)`, using PNT in arithmetic progressions plus Brun-Titchmarsh tail control. | PROVED | Fixed-channel theorem; no growing-r uniformity claimed. |
+| OP-D024 | The aggregate fixed-channel strength `sum_{r<=R} r log r/(r-1)^2 = log R + O(1)`. | PROVED | Follows from the classical prime sum `sum_{r<=R} log r/r = log R + O(1)`. |
 | OP-S001 | Consecutive prime values under \(T(p)=2p+1\) are Cunningham chains of the first kind; a prime \(p\) with \(2p+1\) prime is a Sophie Germain prime. | STANDARD | Terminology from classical number theory. |
 | OP-S002 | For fixed odd `a`, the family `a*2^k - 1` is the classical Riesel-type family; full finite modular covers are classical covering sets. | STANDARD | See `PRIOR_ART.md`; not claimed as novel. |
 | OP-S003 | The known Riesel example `a=509203` is covered by `{3,5,7,13,17,241}`. | STANDARD | Reproduced by regression test from OEIS A206430. |
@@ -38,4 +40,4 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 
 ## Firewall
 
-The identities OP-D001--OP-D022 do **not** characterize primality. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
+The identities OP-D001--OP-D024 do **not** characterize primality. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
