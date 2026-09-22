@@ -51,6 +51,8 @@ The derivations rely on absolute convergence in \(\Re(s)>1\). The analytic conti
 
 does not imply that the separated pieces \(K(s)\), \(A(s)\), and \(D(s)\) individually possess the same continuation or that termwise continuation preserves their interpretation.
 
+The classical prime-zeta function already demonstrates the obstruction: its Möbius-log representation inherits singularities from zeta zeros/poles after analytic continuation. Therefore cancellation between separated pieces must be proved rather than assumed.
+
 Any critical-strip use must proceed by one of the following rigorously controlled routes:
 
 1. derive analytic continuation for the combined fibre/character expression;
