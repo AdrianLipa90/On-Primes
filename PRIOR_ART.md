@@ -64,3 +64,26 @@ Standard references describe analytic continuation into `0 < Re(s) <= 1`, with s
 
 Reference:
 - Wolfram MathWorld, *Prime Zeta Function*: https://mathworld.wolfram.com/PrimeZetaFunction.html
+
+## Shifted-prime divisor problems
+
+The general study of divisors of shifted primes is classical. The Titchmarsh divisor problem studies sums such as
+
+\[
+\sum_{p\le x}\tau(p-l)
+\]
+
+for fixed nonzero `l`; the case `l=-1` includes divisors of `p+1`. Modern treatments connect such questions to the dispersion method, large sieve, Bombieri-Vinogradov type results, and distribution of primes in arithmetic progressions.
+
+The On-Primes identity
+
+\[
+\log(p+1)=\sum_{d\mid p+1}\Lambda(d)
+\]
+
+is much simpler than the divisor-counting problem because the von Mangoldt divisor sum collapses exactly to `log(p+1)`. No novelty is claimed for that classical arithmetic identity or for the general theory of shifted-prime divisors.
+
+References:
+- Encyclopedia of Mathematics, *Titchmarsh problem*: https://encyclopediaofmath.org/wiki/Titchmarsh_problem
+- Encyclopedia of Mathematics, *Brun-Titchmarsh theorem*: https://encyclopediaofmath.org/wiki/Brun-Titchmarsh_theorem
+- Encyclopedia of Mathematics, *Bombieri prime number theorem*: https://encyclopediaofmath.org/wiki/Bombieri_prime_number_theorem
