@@ -1,0 +1,19 @@
+# Claim Ledger
+
+Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
+
+| ID | Statement | Status | Notes |
+|---|---|---|---|
+| OP-D001 | Every integer \(n\ge1\) has a unique representation \(n+1=a2^k\) with odd \(a\ge1\) and \(k=v_2(n+1)\ge0\). | PROVED | Immediate from the 2-adic factorisation of \(n+1\). |
+| OP-D002 | For \(x_{a,k}=a2^k-1\), \(T(x)=2x+1\) satisfies \(T(x_{a,k})=x_{a,k+1}\). | PROVED | Algebraic identity. |
+| OP-D003 | The only prime on the integer boundary \(k=0\) is \(2\), corresponding to \(a=3\). | PROVED | \(a-1\) is even for odd \(a\); the only even prime is 2. |
+| OP-D004 | If \(x\in\tfrac12+\mathbb Z_{\ge0}\), then \(T(x)\) is prime iff \(x=\tfrac12\). | PROVED | \(T(n+1/2)=2n+2\) is even. |
+| OP-D005 | \(\log(x_{a,k}+1)=\log a+k\log2\). | PROVED | Exact logarithmic lattice identity. |
+| OP-D006 | For prime \(p\), \(\log p=\log(p+1)-\log(1+1/p)\), with positive defect \(\delta_p=\log(1+1/p)\). | PROVED | Exact identity; \(\delta_p>0\). |
+| OP-S001 | Consecutive prime values under \(T(p)=2p+1\) are Cunningham chains of the first kind; a prime \(p\) with \(2p+1\) prime is a Sophie Germain prime. | STANDARD | Terminology from classical number theory. |
+| OP-O001 | Prime masks \(M_a(k)=1_{\mathbb P}(a2^k-1)\) may reveal useful modular or spectral structure beyond the reparametrisation itself. | OPEN | Research programme, not a theorem. |
+| OP-O002 | The dyadic-fibre decomposition may yield a useful decomposition or bound for the prime side of \(-\zeta'/\zeta\) or a Weil/Suzuki criterion. | OPEN | No RH implication is claimed. |
+
+## Firewall
+
+The identities OP-D001--OP-D006 do **not** characterize primality. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
