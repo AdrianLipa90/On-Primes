@@ -70,7 +70,7 @@ without assuming any unproved statement about prime distribution or the Riemann 
 - No claim that \(1/2\) is a prime number is made.
 - No claim of a proof of the Riemann Hypothesis is made.
 
-See [CLAIMS.md](CLAIMS.md) and [PRIOR_ART.md](PRIOR_ART.md).
+See [CLAIMS.md](CLAIMS.md), [PRIOR_ART.md](PRIOR_ART.md), and [RESEARCH_FRONTIER.md](RESEARCH_FRONTIER.md).
 
 ## Development
 
