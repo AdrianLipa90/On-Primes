@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-from cmath import log as clog
 from math import log
 
 from .dyadic import dyadic_address, is_prime
