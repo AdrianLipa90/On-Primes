@@ -45,3 +45,22 @@ The project-specific layer is the simultaneous use of:
 - OEIS A258154, covering-set modulus data: https://oeis.org/A258154
 
 These references are used for terminology and known examples; the elementary proofs in this repository are self-contained.
+
+## Prime-zeta analytic continuation
+
+The ordinary prime zeta function
+
+\[
+P(s)=\sum_p p^{-s}
+\]
+
+converges absolutely for `Re(s)>1` and has the classical Möbius-inversion representation
+
+\[
+P(s)=\sum_{k\ge1}\frac{\mu(k)}{k}\log\zeta(ks).
+\]
+
+Standard references describe analytic continuation into `0 < Re(s) <= 1`, with singularities inherited from zeta zeros/poles and a natural-boundary obstruction at `Re(s)=0`. This is directly relevant to the On-Primes character-prime bridge: separated prime sums should be expected to develop logarithmic singular structure even when the full `-zeta'/zeta` combination is meromorphic.
+
+Reference:
+- Wolfram MathWorld, *Prime Zeta Function*: https://mathworld.wolfram.com/PrimeZetaFunction.html
