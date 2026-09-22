@@ -14,6 +14,9 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-D008 | For a finite set `R` of odd prime divisors, the union of all fibre obstruction classes is periodic modulo `L = lcm(ord_r(2): r in R)`. | PROVED | Finite union of congruence classes; no independence assumption. |
 | OP-D009 | The finite-sieve survivor set has exact density `|S_R(a)| / L`. | PROVED | Exact count of survivor residues in one complete period. |
 | OP-S001 | Consecutive prime values under \(T(p)=2p+1\) are Cunningham chains of the first kind; a prime \(p\) with \(2p+1\) prime is a Sophie Germain prime. | STANDARD | Terminology from classical number theory. |
+| OP-S002 | For fixed odd `a`, the family `a*2^k - 1` is the classical Riesel-type family; full finite modular covers are classical covering sets. | STANDARD | See `PRIOR_ART.md`; not claimed as novel. |
+| OP-S003 | The known Riesel example `a=509203` is covered by `{3,5,7,13,17,241}`. | STANDARD | Reproduced by regression test from OEIS A206430. |
+| OP-S001-DUP | Consecutive prime values under \(T(p)=2p+1\) are Cunningham chains of the first kind; a prime \(p\) with \(2p+1\) prime is a Sophie Germain prime. | STANDARD | Terminology from classical number theory. |
 | OP-O001 | Prime masks \(M_a(k)=1_{\mathbb P}(a2^k-1)\) may reveal useful modular or spectral structure beyond the reparametrisation itself. | OPEN | Research programme, not a theorem. |
 | OP-O002 | The dyadic-fibre decomposition may yield a useful decomposition or bound for the prime side of \(-\zeta'/\zeta\) or a Weil/Suzuki criterion. | OPEN | No RH implication is claimed. |
 
