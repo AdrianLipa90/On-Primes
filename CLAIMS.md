@@ -18,6 +18,8 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-D012 | The unique `k=0` contribution to the prime-side fibre decomposition is `log(2)/(2^s-1)`. | PROVED | Follows from the unique even prime on the dyadic boundary. |
 | OP-D013 | `log p = log a_p + v2(p+1) log 2 - log(1+1/p)` for the unique address `p+1=a_p 2^{v2(p+1)}`. | PROVED | Exact three-term prime-log decomposition. |
 | OP-D014 | `v2(p+1)=sum_{j>=1} 1_{p == -1 mod 2^j}` and therefore the dyadic moment is a nested residue-class tower for `Re(s)>1`. | PROVED | Exact valuation identity plus absolute convergence. |
+| OP-D015 | For each `j>=1` and `Re(s)>1`, the tower level over primes `p == -1 mod 2^j` equals the Dirichlet-character orthogonality average of the character-prime sums modulo `2^j`. | PROVED | Exact character decomposition; finite character group and absolutely convergent prime sums. |
+| OP-D016 | For `Re(s)>1`, `Pi_chi(s)=sum_{m>=1} P_chi(ms)` and `P_chi(s)=sum_{r>=1} mu(r)/r * log L(rs,chi^r)` in the Euler-product half-plane. | STANDARD | Generalized prime-zeta / Dirichlet-L Möbius inversion identity; branch inherited from the Euler product. |
 | OP-S001 | Consecutive prime values under \(T(p)=2p+1\) are Cunningham chains of the first kind; a prime \(p\) with \(2p+1\) prime is a Sophie Germain prime. | STANDARD | Terminology from classical number theory. |
 | OP-S002 | For fixed odd `a`, the family `a*2^k - 1` is the classical Riesel-type family; full finite modular covers are classical covering sets. | STANDARD | See `PRIOR_ART.md`; not claimed as novel. |
 | OP-S003 | The known Riesel example `a=509203` is covered by `{3,5,7,13,17,241}`. | STANDARD | Reproduced by regression test from OEIS A206430. |
@@ -26,4 +28,4 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 
 ## Firewall
 
-The identities OP-D001--OP-D014 do **not** characterize primality. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
+The identities OP-D001--OP-D016 do **not** characterize primality. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
