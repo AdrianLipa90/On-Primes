@@ -1,5 +1,13 @@
 """On Primes reference implementation."""
 
+from .analytic import (
+    boundary_plus_interior_partial,
+    classical_log_derivative_partial,
+    fibre_log_derivative_partial,
+    fibre_prime_power_sum,
+    primes_up_to,
+    truncated_von_mangoldt_prime_power_sum,
+)
 from .covering import covering_certificate, is_residue_covering_set
 from .dyadic import (
     cunningham_run,
@@ -14,6 +22,11 @@ from .dyadic import (
     sophie_step,
     v2,
 )
+from .residue_tower import (
+    direct_valuation_moment_partial,
+    residue_tower_partial,
+    valuation_as_residue_count,
+)
 from .sieve import (
     certified_composite_by_sieve,
     finite_sieve_allows,
@@ -21,6 +34,13 @@ from .sieve import (
     sieve_period,
     survivor_density,
     survivor_residues,
+)
+from .moments import (
+    defect_partial,
+    dyadic_moment_partial,
+    fibre_label_partial,
+    prime_log_components,
+    reconstructed_log_derivative_partial,
 )
 from .modular import (
     is_obstructed_by,
@@ -30,6 +50,20 @@ from .modular import (
 )
 
 __all__ = [
+    "valuation_as_residue_count",
+    "truncated_von_mangoldt_prime_power_sum",
+    "residue_tower_partial",
+    "reconstructed_log_derivative_partial",
+    "primes_up_to",
+    "prime_log_components",
+    "fibre_prime_power_sum",
+    "fibre_log_derivative_partial",
+    "fibre_label_partial",
+    "dyadic_moment_partial",
+    "direct_valuation_moment_partial",
+    "defect_partial",
+    "classical_log_derivative_partial",
+    "boundary_plus_interior_partial",
     "certified_composite_by_sieve",
     "covering_certificate",
     "cunningham_run",
