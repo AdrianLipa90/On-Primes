@@ -50,6 +50,13 @@ from .moments import (
     prime_log_components,
     reconstructed_log_derivative_partial,
 )
+from .memory import (
+    PrimePowerEvent,
+    dyadic_memory_components,
+    prime_power_events_up_to_log_time,
+    prime_power_memory,
+    reconstructed_prime_power_memory,
+)
 from .modular import (
     is_obstructed_by,
     multiplicative_order_2,
@@ -58,6 +65,11 @@ from .modular import (
 )
 
 __all__ = [
+    "reconstructed_prime_power_memory",
+    "prime_power_memory",
+    "prime_power_events_up_to_log_time",
+    "dyadic_memory_components",
+    "PrimePowerEvent",
     "residue_indicator_via_characters",
     "residue_class_via_characters_partial",
     "residue_class_prime_sum_partial",
