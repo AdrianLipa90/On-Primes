@@ -16,6 +16,11 @@ from .characters import (
     residue_class_via_characters_partial,
     residue_indicator_via_characters,
 )
+from .complete_mask import (
+    obstruction_mask_factors,
+    obstruction_witness,
+    prime_by_complete_obstruction_mask,
+)
 from .covering import covering_certificate, is_residue_covering_set
 from .dyadic import (
     cunningham_run,
@@ -84,6 +89,9 @@ from .modular import (
 )
 
 __all__ = [
+    "prime_by_complete_obstruction_mask",
+    "obstruction_witness",
+    "obstruction_mask_factors",
     "vp",
     "in_exact_shifted_shell",
     "exact_shifted_shell_residues",
