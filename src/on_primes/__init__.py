@@ -8,6 +8,14 @@ from .analytic import (
     primes_up_to,
     truncated_von_mangoldt_prime_power_sum,
 )
+from .characters import (
+    character_ids_pow2,
+    character_prime_sum_partial,
+    character_value_pow2,
+    residue_class_prime_sum_partial,
+    residue_class_via_characters_partial,
+    residue_indicator_via_characters,
+)
 from .covering import covering_certificate, is_residue_covering_set
 from .dyadic import (
     cunningham_run,
@@ -50,6 +58,12 @@ from .modular import (
 )
 
 __all__ = [
+    "residue_indicator_via_characters",
+    "residue_class_via_characters_partial",
+    "residue_class_prime_sum_partial",
+    "character_value_pow2",
+    "character_prime_sum_partial",
+    "character_ids_pow2",
     "valuation_as_residue_count",
     "truncated_von_mangoldt_prime_power_sum",
     "residue_tower_partial",
