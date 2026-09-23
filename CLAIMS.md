@@ -32,6 +32,11 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-D022 | For `x_{a,k}=a*2^k-1>1`, primality is exactly equivalent to avoiding every active modular obstruction class from primes `r<=sqrt(x_{a,k})`; hence the prime mask is a finite product/intersection of periodic obstruction masks. | PROVED | Exact reformulation of trial-divisor primality in fibre coordinates; not claimed as a faster primality algorithm. |
 | OP-D023 | For every fixed prime `r`, `sum_{p<=x} v_r(p+1) ~ [r/(r-1)^2] Li(x)`, using PNT in arithmetic progressions plus Brun-Titchmarsh tail control. | PROVED | Fixed-channel theorem; no growing-r uniformity claimed. |
 | OP-D024 | The aggregate fixed-channel strength `sum_{r<=R} r log r/(r-1)^2 = log R + O(1)`. | PROVED | Follows from the classical prime sum `sum_{r<=R} log r/r = log R + O(1)`. |
+| OP-D025 | For \(H_n=3n^2+3n+1\), \(H_n\equiv1\pmod6\) for every \(n\ge0\). | PROVED | Immediate from evenness of \(n(n+1)\). |
+| OP-D026 | If a prime \(q\mid H_n\), then \(q\equiv1\pmod6\). | PROVED | From \((6n+3)^2=12H_n-3\) and the quadratic-reciprocity criterion for \(-3\). |
+| OP-D027 | For prime \(q>3\), the congruence \(H_n\equiv0\pmod q\) has exactly two roots mod \(q\) when \(q\equiv1\pmod6\), and no roots when \(q\equiv5\pmod6\). | PROVED | The discriminant is \(-3\), nonzero mod \(q\). |
+| OP-D028 | \(H_n=N((n+1)-n\omega)\) in the Eisenstein integers, where \(N(a+b\omega)=a^2-ab+b^2\). | PROVED | Exact algebraic identity. |
+| OP-O003 | Intersecting centered-hexagonal two-root obstruction masks with the existing dyadic fibre masks may expose useful cross-sieve correlations. | OPEN | No independence, density gain, or prime-distribution theorem is claimed. |
 | OP-S001 | Consecutive prime values under \(T(p)=2p+1\) are Cunningham chains of the first kind; a prime \(p\) with \(2p+1\) prime is a Sophie Germain prime. | STANDARD | Terminology from classical number theory. |
 | OP-S002 | For fixed odd `a`, the family `a*2^k - 1` is the classical Riesel-type family; full finite modular covers are classical covering sets. | STANDARD | See `PRIOR_ART.md`; not claimed as novel. |
 | OP-S003 | The known Riesel example `a=509203` is covered by `{3,5,7,13,17,241}`. | STANDARD | Reproduced by regression test from OEIS A206430. |
@@ -40,4 +45,4 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 
 ## Firewall
 
-The identities OP-D001--OP-D024 do **not** characterize primality. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
+The identities OP-D001--OP-D028 do **not** characterize primality. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
