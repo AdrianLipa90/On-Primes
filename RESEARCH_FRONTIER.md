@@ -128,3 +128,22 @@ Relevant classical tools include Siegel-Walfisz, Brun-Titchmarsh, Bombieri-Vinog
 ### OP-F06 — Dynamic obstruction intersection
 
 The prime mask at `(a,k)` is now exactly the intersection of all active modular obstruction masks for primes up to `sqrt(a*2^k-1)`. The unresolved distribution problem is to estimate the survivor set when this obstruction family grows dynamically with `k`, including correlations between periods `ord_r(2)`.
+
+### OP-F07 — Hexagonal/dyadic cross-sieve
+
+The centered-hexagonal sequence
+
+\[
+H_n=3n^2+3n+1
+\]
+
+has an exact single-channel prime-divisor restriction: every prime divisor satisfies \(q\equiv1\pmod6\). For each prime \(q>3\), its modular obstruction mask in shell index \(n\) has exactly two residue classes when \(q\equiv1\pmod6\) and none when \(q\equiv5\pmod6\).
+
+The sequence is simultaneously an Eisenstein norm:
+
+\[
+H_n=N((n+1)-n\omega).
+\]
+
+The next open gate is to determine whether intersections between these two-root shell masks and the existing dyadic fibre masks produce any nontrivial correlation, cancellation, or sieve bound beyond a change of coordinates. No independence assumption is permitted.
+

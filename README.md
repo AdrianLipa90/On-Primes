@@ -99,3 +99,24 @@ p\equiv-1\pmod{r^j}.
 For fixed `r,j`, the exact valuation shell `v_r(p+1)=j` is a union of `r-1` reduced classes modulo `r^(j+1)`. The classical prime number theorem in arithmetic progressions then gives the fixed-shell asymptotic `Li(x)/r^j`.
 
 See the shifted Mangoldt and valuation-shell proofs in `proofs/`.
+
+## Centered-hexagonal channel
+
+A second exact coordinate lane uses
+
+\[
+H_n=1+3n(n+1).
+\]
+
+Every \(H_n\) is \(1\pmod6\), and more strongly every prime divisor of every \(H_n\) is itself \(1\pmod6\). For prime \(q>3\), divisibility \(q\mid H_n\) occurs in exactly two residue classes of \(n\pmod q\) when \(q\equiv1\pmod6\), and never when \(q\equiv5\pmod6\).
+
+The same values are Eisenstein norms,
+
+\[
+H_n=N((n+1)-n\omega),
+\]
+
+which makes the hexagonal lattice connection exact rather than metaphorical. This does not characterize primes; it supplies another rigorously defined modular obstruction family for future cross-sieve tests with the dyadic fibres.
+
+See `proofs/CENTERED_HEXAGONAL_PRIME_CHANNEL_V0_1.md`.
+
