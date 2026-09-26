@@ -156,6 +156,12 @@ from .phase_law import (
     twin_real_moment_multiplier,
     twin_finite_real_moment_common_clock,
     twin_finite_real_moment_subset_mean,
+    twin_complex_moment_multiplier,
+    twin_finite_complex_moment_common_clock,
+    twin_finite_complex_moment_subset_mean,
+    twin_finite_phase_hull,
+    twin_phase_refinement_moduli,
+    twin_phase_refinement_branching,
 )
 from .modular import (
     is_obstructed_by,
@@ -305,4 +311,10 @@ __all__ = [
     "twin_real_moment_multiplier",
     "twin_finite_real_moment_common_clock",
     "twin_finite_real_moment_subset_mean",
+    "twin_complex_moment_multiplier",
+    "twin_finite_complex_moment_common_clock",
+    "twin_finite_complex_moment_subset_mean",
+    "twin_finite_phase_hull",
+    "twin_phase_refinement_moduli",
+    "twin_phase_refinement_branching",
 ]
