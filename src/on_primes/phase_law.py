@@ -799,3 +799,51 @@ def twin_finite_instantaneous_factorization(primes: Sequence[int], h: int, r: in
         elif (x * x - 4) % p == 0:
             result *= twin_special_correction_ratio(p)
     return result
+
+
+def twin_special_hit_density(p: int, h: int) -> Fraction:
+    """Density of dyadic times with 2**r h == +/-2 mod p over one local orbit."""
+    p = int(p)
+    if not _is_prime_small(p) or p < 5:
+        raise ValueError("p must be a prime >= 5")
+    if int(h) % p == 0:
+        return Fraction(0, 1)
+    kind = twin_local_mean_class(p, int(h))
+    d = doubling_order_mod_prime(p)
+    if kind == "special-even":
+        return Fraction(2, d)
+    if kind == "special-odd":
+        return Fraction(1, d)
+    return Fraction(0, 1)
+
+
+def twin_local_log_orbit_mean(p: int, h: int) -> float:
+    """Exact-period arithmetic mean of log B_p(2**r h), returned as float."""
+    p = int(p)
+    values = twin_local_orbit_values(p, int(h))
+    return sum(math.log(float(v)) for v in values) / len(values)
+
+
+def twin_local_log_orbit_formula(p: int, h: int) -> float:
+    """Closed form for the local log-orbit mean."""
+    p = int(p)
+    beta = twin_background_factor(p)
+    if int(h) % p == 0:
+        return math.log(float(beta * twin_zero_correction_ratio(p)))
+    density = twin_special_hit_density(p, int(h))
+    return math.log(float(beta)) + float(density) * math.log(float(twin_special_correction_ratio(p)))
+
+
+def twin_finite_log_geometric_mean(primes: Sequence[int], h: int, include_carriers: bool = False) -> float:
+    """Finite-support dyadic-time mean of log local factors."""
+    support = tuple(int(p) for p in primes)
+    if len(set(support)) != len(support):
+        raise ValueError("primes must be distinct")
+    total = 0.0
+    if include_carriers:
+        if int(h) % 6 != 0:
+            raise ValueError("carrier factors p=2,3 are fixed only for h divisible by 6")
+        total += math.log(27.0 / 2.0)
+    for p in support:
+        total += twin_local_log_orbit_formula(p, int(h))
+    return total
