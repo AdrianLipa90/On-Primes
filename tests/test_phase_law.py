@@ -39,6 +39,9 @@ from on_primes.phase_law import (
     twin_product_of_local_means,
     twin_dyadic_resonance_correction,
     local_periods_pairwise_coprime,
+    twin_finite_dyadic_orbit_invariant,
+    twin_local_mean_class,
+    twin_local_mean_closed_form,
 )
 
 
@@ -235,6 +238,29 @@ class ArithmeticRelationalPhaseLawTests(unittest.TestCase):
             twin_global_orbit_mean((7, 13, 19), 6) / twin_product_of_local_means((7, 13, 19), 6),
             __import__("fractions").Fraction(18657, 18700),
         )
+
+
+    def test_local_mean_closed_form_matches_orbit_average(self):
+        for p in (5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43):
+            for h in (6, 12, 18, 30, 42):
+                self.assertEqual(
+                    twin_local_mean_closed_form(p, h),
+                    twin_local_orbit_mean(p, h),
+                )
+                self.assertIn(
+                    twin_local_mean_class(p, h),
+                    {"zero-fixed", "special-even", "special-odd", "ordinary"},
+                )
+
+    def test_finite_global_orbit_invariant_is_dyadic(self):
+        support = (5, 7, 11, 13, 17, 19, 23, 29, 31)
+        for h in (6, 18, 30, 42, 66):
+            reference = twin_finite_dyadic_orbit_invariant(support, h)
+            for k in range(8):
+                self.assertEqual(
+                    twin_finite_dyadic_orbit_invariant(support, (2**k) * h),
+                    reference,
+                )
 
 
 if __name__ == "__main__":
