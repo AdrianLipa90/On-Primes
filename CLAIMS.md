@@ -147,6 +147,17 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-D092 | The full shifted correlation splits exactly as \(C_h(X)=X M_{h,R}+E_{h,R}(X)+T_{h,R}(X)\), where all terms with \(d>R\) or \(e>R\) are isolated in the high-divisor tail \(T_{h,R}\). | PROVED | Definition plus OP-D086/OP-D089. |
 | OP-O013 | For a sub-square-root cutoff \(R(X)\), the high-divisor tail \(T_{h,R}(X)\) is \(o(X)\) uniformly in the moving shift/window regime required by the scaled form-factor problem. | OPEN | This is now the concentrated arithmetic obstruction. |
 
+
+| OP-D093 | For every finite sequence, Fejér-weighted shift autocorrelation equals the corresponding nonnegative Fourier-power integral against the Fejér kernel. | STANDARD / EXACT FINITE IDENTITY | Finite Wiener--Khintchine/Fejér algebra; no prime conjecture. |
+| OP-D094 | For \(L=H+1\), \(r=L\bmod g\), the normalized Fejér average of the CRT gate is exactly \(Q_H(g)=1/g+r(g-r)/(gL^2)\). | PROVED | Exact finite sum over multiples of \(g\); validator PASS. |
+| OP-D095 | The Fejér-averaged low-divisor density coefficient factorizes exactly as \(\overline M_{H,R}=(\sum_{d\le R}\mu(d)\log d/d)^2+\mathcal B_{H,R}\). | PROVED | OP-D094 plus \(\gcd(d,e)\operatorname{lcm}(d,e)=de\). |
+| OP-D096 | The finite-\(H\) correction satisfies \(|\mathcal B_{H,R}|\le \log^2R[5R+(1+\log R)^2]/[4(H+1)^2]\), and the Fejér-averaged low block obeys \(\overline C_{H,R}(X)=X\overline M_{H,R}+\overline E\) with \(|\overline E|\le(R\log R)^2\). | PROVED | Harmonic-sum bound + previous uniform low-block residue-count estimate. |
+| OP-D097 | If \(R\to\infty\), \((R\log R)^2=o(X)\), and \(R\log^2R=o(H^2)\), then \(\overline C_{H,R}(X)/X\to1\). | PROVED_FROM_STANDARD | OP-D095--OP-D096 plus the classical PNT-related limit \(\sum\mu(n)\log n/n=-1\). |
+| OP-S016 | The conditionally convergent identity \(\sum_{n\ge1}\mu(n)\log n/n=-1\) is classical and intimately tied to the prime number theorem. | STANDARD | Classical Möbius/PNT result; not a repository novelty claim. |
+| OP-S017 | Shift-averaged prime correlations, primes in short intervals, and zeta pair correlation have classical links; Goldston--Montgomery establish a strong pair-correlation/short-interval equivalence under RH in their stated regime. | STANDARD | Prior-art boundary for the averaged route. |
+| OP-N005 | The Fejér-average validator passes the exact gate formula, density factorization and low-block error bound with sub-machine-scale algebraic residuals on the test grid. | NUMERICAL / VALIDATOR | No zeta zeros or Hardy--Littlewood occurrence asymptotic used. |
+| OP-O014 | The Fejér-averaged high-divisor tail \(\overline T_{H,R}(X)\) is \(o(X)\) in the moving \(q(T)\)-scaled form-factor regime. | OPEN | This weaker averaged statement is sufficient for the spectral programme and does not require fixed-\(h\) twin-prime asymptotics. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
