@@ -1068,3 +1068,70 @@ def twin_finite_fractional_subset_mean(primes: Sequence[int], h: int, s: float) 
             weight *= b[p]
         total += weight / L
     return total
+
+
+def twin_real_moment_multiplier(p: int, s: float) -> float:
+    """b_{p,s}=((p-3)/(p-4))**s-1 for any finite real s."""
+    p = int(p)
+    s = float(s)
+    if not math.isfinite(s):
+        raise ValueError("s must be finite")
+    return float(twin_special_correction_ratio(p)) ** s - 1.0
+
+
+def twin_finite_real_moment_common_clock(primes: Sequence[int], h: int, s: float) -> float:
+    """Direct finite-support common-clock mean of dynamic factor**s."""
+    support = tuple(int(p) for p in primes)
+    if len(set(support)) != len(support):
+        raise ValueError("primes must be distinct")
+    s = float(s)
+    if not math.isfinite(s):
+        raise ValueError("s must be finite")
+    periods = [quadruplet_observable_period(p, int(h)) for p in support]
+    L = math.lcm(*periods) if periods else 1
+    phases = {p: twin_quadratic_hit_phase(p, int(h)) for p in support}
+    multipliers = {p: twin_real_moment_multiplier(p, s) for p in support}
+    total = 0.0
+    for r in range(L):
+        value = 1.0
+        for p, e in zip(support, periods):
+            phase = phases[p]
+            if phase is not None and r % e == phase:
+                value *= 1.0 + multipliers[p]
+        total += value
+    return total / L
+
+
+def twin_finite_real_moment_subset_mean(primes: Sequence[int], h: int, s: float) -> float:
+    """Finite CRT subset expansion for a real moment exponent s."""
+    support = tuple(int(p) for p in primes)
+    if len(set(support)) != len(support):
+        raise ValueError("primes must be distinct")
+    s = float(s)
+    if not math.isfinite(s):
+        raise ValueError("s must be finite")
+    phases = {p: twin_quadratic_hit_phase(p, int(h)) for p in support}
+    periods = {p: quadruplet_observable_period(p, int(h)) for p in support}
+    b = {p: twin_real_moment_multiplier(p, s) for p in support}
+    total = 1.0
+    n = len(support)
+    for mask in range(1, 1 << n):
+        chosen = [support[i] for i in range(n) if (mask >> i) & 1]
+        if any(phases[p] is None for p in chosen):
+            continue
+        compatible = True
+        for i, p in enumerate(chosen):
+            for q in chosen[i + 1 :]:
+                if (phases[p] - phases[q]) % math.gcd(periods[p], periods[q]) != 0:
+                    compatible = False
+                    break
+            if not compatible:
+                break
+        if not compatible:
+            continue
+        L = math.lcm(*(periods[p] for p in chosen))
+        weight = 1.0
+        for p in chosen:
+            weight *= b[p]
+        total += weight / L
+    return total
