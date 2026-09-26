@@ -244,3 +244,36 @@ Construct the corresponding finite transfer/permutation operator and determine:
 4. whether the product over prime channels yields a useful convergent or renormalized global observable.
 
 This is the next genuinely operator-theoretic ARPL gate.
+
+
+### OP-F13 — Global profinite transfer assembly
+
+The finite channel operator is now closed, and the canonical global state space is
+
+\[
+\widehat{\mathbb Z}\cong\prod_p\mathbb Z_p,
+\]
+
+with dual \(\mathbb Q/\mathbb Z\).
+
+The next global gate is to construct a projectively consistent observable/transfer formalism on this compact state space that combines:
+
+1. the one-way \(2\)-adic filtration;
+2. the invertible odd-\(p\) channel dynamics;
+3. Ramanujan exact-order frequency shells;
+4. singular-series local observables;
+5. ordered-gap dynamics.
+
+A nontrivial result must do more than restate Pontryagin duality or the Chinese remainder theorem. It must produce a new invariant, operator identity, convergence theorem, or recoverability statement not already implied by standard profinite harmonic analysis.
+
+### OP-F14 — Half-kernel versus half-boundary
+
+The dual dyadic operator has the exact kernel
+
+\[
+\ker(r\mapsto2r\text{ on }\mathbb Q/\mathbb Z)=\{0,1/2\}.
+\]
+
+On-Primes independently has a half-integer boundary lemma in the original affine variable. These are mathematically distinct occurrences of \(1/2\).
+
+Open task: determine whether there is a rigorous conjugacy, functorial relation, or no-go theorem between these two appearances. Numerical coincidence alone is not evidence of identity.
