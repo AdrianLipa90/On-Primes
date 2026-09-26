@@ -16,13 +16,23 @@ def tau_q(T, q):
     return math.log(q)/math.log(T/(2*math.pi))
 
 
-def frozen_form_factor(gammas, T, tau):
-    nu=frozen_density(T)
-    phases=[
-        cmath.exp(2j*math.pi*tau*nu*(g-T))
+def pair_power_log_frequency(gammas, q):
+    n=len(gammas)
+    return sum(
+        cmath.exp(1j*(g-h)*math.log(q))
         for g in gammas
-    ]
-    return abs(sum(phases))**2/len(gammas)
+        for h in gammas
+    )/n
+
+
+def frozen_pair_form_factor(gammas, T, tau):
+    nu=frozen_density(T)
+    n=len(gammas)
+    return sum(
+        cmath.exp(2j*math.pi*tau*nu*(g-h))
+        for g in gammas
+        for h in gammas
+    )/n
 
 
 def main():
@@ -33,12 +43,17 @@ def main():
         [14.0,21.0,25.0,30.5,33.0,38.0],
     ]
     for gammas in samples:
-        for T in [100.0,1_000.0,1_000_000.0]:
-            assert T > 2*math.pi
-            for q in [2.0,4.0,8.0,9.0,25.0,37.0,123.5]:
-                lhs=frozen_form_factor(gammas,T,tau_q(T,q))
-                rhs=len(gammas)*abs(phase_mean(gammas,q))**2
-                assert abs(lhs-rhs) < 2e-11
+        n=len(gammas)
+        for q in [2.0,4.0,8.0,9.0,25.0,37.0,123.5]:
+            phase_power=n*abs(phase_mean(gammas,q))**2
+            pair_power=pair_power_log_frequency(gammas,q)
+            assert abs(pair_power.imag) < 2e-12
+            assert abs(phase_power-pair_power.real) < 2e-12
+
+            for T in [100.0,1_000.0,1_000_000.0]:
+                assert T > 2*math.pi
+                form=frozen_pair_form_factor(gammas,T,tau_q(T,q))
+                assert abs(form-pair_power) < 3e-12
 
     # Prime-power frequency map.
     T=1_000_000.0
@@ -52,7 +67,8 @@ def main():
         vals=[tau_q(T,q) for T in [1e4,1e8,1e16,1e32]]
         assert all(vals[i+1] < vals[i] for i in range(len(vals)-1))
 
-    # To hold tau approximately fixed, q must scale as (T/2pi)^tau.
+    # To hold tau exactly fixed in the frozen coordinate,
+    # q must scale as (T/2pi)^tau.
     for T in [1e4,1e8,1e16]:
         for tau in [0.2,0.5,0.8]:
             q=(T/(2*math.pi))**tau
@@ -61,6 +77,7 @@ def main():
     print("ON_PRIMES_PHASE_BANK_FORM_FACTOR_DUALITY_V0_1: PASS")
     print("ZETA_ZERO_LIST_REQUIRED=false")
     print("FINITE_IDENTITY=K_T(tau_q)=N*|R_q|^2")
+    print("GLOBAL_PHASE_CANCELLED_ANALYTICALLY=true")
     print("TAU_Q=log(q)/log(T/(2pi))")
     print("FIXED_Q_TO_RAMP_INFERENCE=false")
     print("STATUS=EXACT_FINITE_IDENTITY")
