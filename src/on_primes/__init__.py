@@ -146,6 +146,10 @@ from .phase_law import (
     twin_finite_log_variance,
     twin_finite_log_fourier_coefficients,
     twin_finite_log_parseval_power,
+    quadruplet_observable_period,
+    twin_quadratic_hit_phase,
+    twin_quadratic_hit_density,
+    twin_quadratic_joint_hit_density,
 )
 from .modular import (
     is_obstructed_by,
@@ -285,4 +289,8 @@ __all__ = [
     "twin_finite_log_variance",
     "twin_finite_log_fourier_coefficients",
     "twin_finite_log_parseval_power",
+    "quadruplet_observable_period",
+    "twin_quadratic_hit_phase",
+    "twin_quadratic_hit_density",
+    "twin_quadratic_joint_hit_density",
 ]
