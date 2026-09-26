@@ -921,3 +921,57 @@ This is an averaged theorem. It does not prove any fixed-\(h\) Hardy--Littlewood
 The remaining spectral frontier is the shorter-window / exact smooth \(q(T)\)-window regime.
 
 See \`proofs/FEJER_AVERAGED_HIGH_TAIL_LONG_WINDOW_V0_1.md\`.
+
+
+## Mellin pullback: exact explicit-formula window → additive shift kernel
+
+The remaining window-coordinate mismatch is closed. For any smooth arithmetic window \(v(x)\), define
+
+\[
+G_v(t)=e^{t/2}v(e^t).
+\]
+
+Then the standard prime-side factor satisfies exactly
+
+\[
+\boxed{
+\Lambda(n)n^{-1/2}G_v(\log n)=\Lambda(n)v(n).
+}
+\]
+
+For translated/scaled windows
+
+\[
+v_{Q,L}(x)=V((x-Q)/L),
+\]
+
+translation-averaged pair power induces the exact additive-shift autocorrelation
+
+\[
+\boxed{
+K_V(s)=\int V(u)\overline{V(u+s)}\,du,
+}
+\]
+
+through
+
+\[
+\int
+\left|
+\sum_n a_n v_{Q,L}(n)
+\right|^2dQ
+=
+L\sum_h K_V(h/L)\sum_n a_n\overline{a_{n+h}}.
+\]
+
+Moreover
+
+\[
+\widehat K_V=|\widehat V|^2\ge0.
+\]
+
+The rectangular limit gives \(K_V(s)=(1-|s|)_+\), exactly the Fejér shift kernel, while smooth explicit-formula windows approximate that kernel uniformly in autocorrelation norm.
+
+Thus the remaining short-window frontier is analytic, not representational.
+
+See \`proofs/MELLIN_ADDITIVE_WINDOW_AUTOCORRELATION_BRIDGE_V0_1.md\`.
