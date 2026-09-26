@@ -1,6 +1,6 @@
 # Claim Ledger
 
-Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
+Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`, `RESOLVED`.
 
 | ID | Statement | Status | Notes |
 |---|---|---|---|
@@ -82,7 +82,7 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-D054 | For every \(p\ge5\), \(h\ne0\), and \(k\ge0\), the local orbit mean is dyadically invariant: \(\mu_p(2^kh)=\mu_p(h)\). | PROVED | Multiplication by \(2^k\) rotates the same nonzero doubling orbit; zero-fixed states remain fixed. |
 | OP-D055 | For every fixed nonzero integer \(h\), the product \(\mathcal I(h)=\prod_{p\ge5}\mu_p(h)\) converges absolutely in the Euler-product sense to a finite positive nonzero value. | PROVED | \(|\mu_p-1|=O(p^{-2})+O(1/(p\operatorname{ord}_p(2)))\), \(\operatorname{ord}_p(2)\ge\log_2(p+1)\), and \(\sum_p1/(p\log p)<\infty\). |
 | OP-D056 | The convergent global orbit baseline is exactly dyadically invariant: \(\mathcal I(2^kh)=\mathcal I(h)\). For positive \(h\), it depends only on the odd part of \(h\). | PROVED | Termwise local invariance plus absolute convergence. |
-| OP-O006 | The fully coupled increasing-support common-clock mean may admit a global limit expressible as the convergent orbit baseline plus a controlled resonance correction. | OPEN | Finite resonance corrections are exact; infinite-channel convergence is not yet proved. |
+| OP-O006 | The fully coupled increasing-support common-clock mean may admit a global limit expressible as the convergent orbit baseline plus a controlled resonance correction. | RESOLVED | Existence of the raw arithmetic common-clock mean is proved in OP-D093 via the quadratic phase clock plus the Erdős--Murty order theorem. |
 
 | OP-D057 | The deterministic common-clock moments admit the exact partition-lattice connected expansion \(K(J;h)=\sum_{\pi\in\Pi(J)}(|\pi|-1)!(-1)^{|\pi|-1}\prod_{A\in\pi}M(A;h)\), with inverse moment reconstruction over partitions. | PROVED | Standard moment--cumulant Möbius inversion applied to finite ARPL periodic observables. |
 | OP-D058 | If the period-overlap graph \(p\sim q\iff\gcd(d_p(h),d_q(h))>1\) has components \(C_i\), then the common-clock moment factorizes exactly: \(M(P;h)=\prod_iM(C_i;h)\). | PROVED | Component period LCMs are pairwise coprime; CRT gives independent sampling of component clocks. |
@@ -125,7 +125,15 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-D087 | The full singular-series orbit has finite Cesaro moment \(\mathcal M_s^{\mathfrak S}(h)\) for every \(0<s<1\). | PROVED | Static factor times OP-D086. |
 | OP-D088 | Every subcritical moment is dyadically invariant: \(\mathcal M_s^{\mathfrak S}(2^kh)=\mathcal M_s^{\mathfrak S}(h)\). | PROVED | Phase-class rotation preserves joint densities. |
 | OP-D089 | For every \(0<s<1\), raw singular-series spikes satisfy the upper-density bound \(\overline{\mathrm{dens}}\{\mathfrak S(H_{2^rh})\ge X\}\le\mathcal M_s^{\mathfrak S}(h)X^{-s}\). | PROVED | Markov inequality. |
-| OP-O008 | The arithmetic Cesaro mean at the endpoint \(s=1\) exists. | OPEN | The present unconditional all-orders majorant is integrable for every \(s<1\) and becomes logarithmically critical at \(s=1\); this does not prove divergence. |
+| OP-O008 | The arithmetic Cesaro mean at the endpoint \(s=1\) exists. | RESOLVED | Proved in OP-D093. The earlier elementary majorant stopped at \(s<1\); the endpoint is closed using the standard quantitative Erdős--Murty theorem on multiplicative orders. |
+
+| OP-S010 | For fixed \(a>1\), Erdős--Murty prove that there exist \(\alpha,\delta>0\) such that \(\operatorname{ord}_p(a)\ge \sqrt p\,\exp((\log p)^\delta)\) for all but \(O(x/(\log x)^{1+\alpha})\) primes \(p\le x\). | STANDARD | Theorem 3 of Erdős--Murty, *On the Order of a (mod p)*, CRM Proc. Lecture Notes 19 (1999), 87--97. Applied here with \(a=2\). |
+| OP-D090 | The exceptional prime set in OP-S010 has finite reciprocal mass: \(\sum_{p\ {\rm exceptional}}1/p<\infty\). | PROVED | Partial summation from the \(O(x/(\log x)^{1+\alpha})\) counting bound. |
+| OP-D091 | For every fixed real \(s\), the all-orders compatible-subset series \(\sum_{J\ne\varnothing}\delta_J(h)\prod_{p\in J}|((p-3)/(p-4))^s-1|\) converges absolutely. | PROVED | Split primes into Erdős--Murty good/bad sets; bad reciprocal mass is summable, while a maximal good prime contributes \(1/\operatorname{ord}_q(4)\ll q^{-1/2}e^{-(\log q)^\delta}\). |
+| OP-D092 | For every fixed real \(s\), the Cesaro mean \(\mathcal M_s^R(h)=\lim_T T^{-1}\sum_{r<T}R(4^rh^2-4)^s\) exists, is finite, and equals the absolutely convergent CRT subset expansion. | PROVED | OP-D091 plus finite-horizon endpoint control using the divisor-weight growth bound. |
+| OP-D093 | The endpoint \(s=1\) arithmetic mean exists: \(\mathcal A(h)=\lim_T T^{-1}\sum_{r<T}\mathfrak S(H_{2^rh})\), with an absolutely convergent all-orders CRT formula. | PROVED | OP-D092 at \(s=1\), multiplied by the static factor \((27/2)C_*Z(h)\). |
+| OP-D094 | For every real \(s\), the full singular-series Cesaro moment \(\mathcal M_s^{\mathfrak S}(h)\) exists and is finite. | PROVED | Static factor to the power \(s\) times OP-D092. |
+| OP-D095 | All real singular-series moments, including the arithmetic mean, are dyadically invariant under \(h\mapsto2^kh\). | PROVED | Base-4 phase classes rotate while periods, CRT compatibility, joint densities and \(Z(h)\) are preserved. |
 
 ## Firewall
 
