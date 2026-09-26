@@ -84,6 +84,11 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-D056 | The convergent global orbit baseline is exactly dyadically invariant: \(\mathcal I(2^kh)=\mathcal I(h)\). For positive \(h\), it depends only on the odd part of \(h\). | PROVED | Termwise local invariance plus absolute convergence. |
 | OP-O006 | The fully coupled increasing-support common-clock mean may admit a global limit expressible as the convergent orbit baseline plus a controlled resonance correction. | OPEN | Finite resonance corrections are exact; infinite-channel convergence is not yet proved. |
 
+| OP-D057 | The deterministic common-clock moments admit the exact partition-lattice connected expansion \(K(J;h)=\sum_{\pi\in\Pi(J)}(|\pi|-1)!(-1)^{|\pi|-1}\prod_{A\in\pi}M(A;h)\), with inverse moment reconstruction over partitions. | PROVED | Standard moment--cumulant Möbius inversion applied to finite ARPL periodic observables. |
+| OP-D058 | If the period-overlap graph \(p\sim q\iff\gcd(d_p(h),d_q(h))>1\) has components \(C_i\), then the common-clock moment factorizes exactly: \(M(P;h)=\prod_iM(C_i;h)\). | PROVED | Component period LCMs are pairwise coprime; CRT gives independent sampling of component clocks. |
+| OP-D059 | Every connected cumulant \(K(J;h)\) spanning more than one period-overlap component vanishes. | PROVED | Exact component moment factorization plus cumulant Möbius inversion. |
+| OP-N003 | At \(h=6\), the exact connected three-channel term \(K(\{7,13,19\};6)=-5168743489/457019805007872\), while \(K(\{5,7,11\};6)=0\). | NUMERICAL | Exact-rational finite computation; illustrates genuine three-channel coupling of the defined observables. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
