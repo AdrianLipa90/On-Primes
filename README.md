@@ -283,3 +283,62 @@ exactly. Shared period factors can support nonzero coupling, subject to the loca
 For fixed \(h\), subsets of prime channels with nonzero \(\mathcal C_J(h)\) define the ARPL dyadic resonance hypergraph.
 
 See proofs/ARPL_DYADIC_CROSS_CHANNEL_RESONANCE_V0_1.md and receipts/ARPL_DYADIC_RESONANCE_REVERSE_TEST_V0_1.md.
+
+
+### Global dyadic orbit invariant
+
+For \(p\ge5\), let
+
+\[
+\mu_p(h)
+\]
+
+be the average of the local two-twin-pair factor \(B_p(2^rh)\) over one complete local doubling orbit. Then
+
+\[
+\mu_p(2^kh)=\mu_p(h)
+\]
+
+exactly.
+
+For every fixed nonzero \(h\), the infinite product
+
+\[
+\boxed{
+\mathcal I(h)=\prod_{p\ge5}\mu_p(h)
+}
+\]
+
+converges to a finite positive nonzero value. The proof uses
+
+\[
+1-\beta_p=O(p^{-2}),
+\qquad
+\alpha_p=O(p^{-1}),
+\qquad
+\operatorname{ord}_p(2)\ge\log_2(p+1),
+\]
+
+which gives
+
+\[
+|\mu_p(h)-1|
+=
+O(p^{-2})+O((p\log p)^{-1})
+\]
+
+outside the finite set of prime divisors of \(h\).
+
+Therefore
+
+\[
+\boxed{
+\mathcal I(2^kh)=\mathcal I(h)
+}
+\]
+
+for every \(k\ge0\). On positive integers, \(\mathcal I\) depends only on the odd part of \(h\).
+
+This is the first controlled infinite-channel ARPL observable. It is the independently averaged baseline; the fully coupled infinite common-clock resonance limit remains open.
+
+See proofs/ARPL_GLOBAL_DYADIC_ORBIT_INVARIANT_V0_1.md.
