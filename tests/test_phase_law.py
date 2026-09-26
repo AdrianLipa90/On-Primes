@@ -670,5 +670,29 @@ class ArithmeticRelationalPhaseLawTests(unittest.TestCase):
             previous = optimal_bound
 
 
+    def test_phase_survival_hazards(self):
+        support = (5, 7, 11, 13, 19, 23, 29, 37, 47, 53, 59, 61, 67, 71, 79)
+        F = __import__("fractions").Fraction
+        expected_hazards = (
+            F(1,2), F(1,3), F(1,5), F(1,2), F(0,1),
+            F(1,11), F(0,1), F(0,1), F(1,23), F(0,1),
+            F(1,29), F(1,4), F(1,10), F(0,1), F(0,1),
+        )
+        expected_compatibility = (
+            F(1,1), F(1,1), F(1,1), F(1,2), F(0,1),
+            F(1,1), F(0,1), F(0,1), F(1,1), F(0,1),
+            F(1,1), F(1,4), F(1,10), F(0,1), F(0,1),
+        )
+        hazards = twin_phase_avoidance_hazards(support, 6)
+        compat = twin_phase_compatibility_fractions(support, 6)
+        self.assertEqual(hazards, expected_hazards)
+        self.assertEqual(compat, expected_compatibility)
+
+        mass = F(1,1)
+        for eta in hazards:
+            mass *= 1 - eta
+        self.assertEqual(mass, twin_finite_lower_edge_mass(support, 6))
+
+
 if __name__ == "__main__":
     unittest.main()
