@@ -1221,3 +1221,28 @@ def twin_finite_phase_hull(
     periods = tuple(quadruplet_observable_period(p, int(h)) for p in support)
     L = math.lcm(*periods) if periods else 1
     return tuple(tuple(r % e for e in periods) for r in range(L))
+
+
+def twin_phase_refinement_moduli(primes: Sequence[int], h: int) -> tuple[int, ...]:
+    """Cumulative L_N=lcm(e_{p_1},...,e_{p_N}) for the base-4 phase clocks."""
+    support = tuple(int(p) for p in primes)
+    if len(set(support)) != len(support):
+        raise ValueError("primes must be distinct")
+    levels: list[int] = []
+    L = 1
+    for p in support:
+        e = quadruplet_observable_period(p, int(h))
+        L = math.lcm(L, e)
+        levels.append(L)
+    return tuple(levels)
+
+
+def twin_phase_refinement_branching(primes: Sequence[int], h: int) -> tuple[int, ...]:
+    """Exact branching b_N=L_N/L_{N-1} when channels are added in supplied order."""
+    levels = twin_phase_refinement_moduli(primes, int(h))
+    out: list[int] = []
+    previous = 1
+    for L in levels:
+        out.append(L // previous)
+        previous = L
+    return tuple(out)
