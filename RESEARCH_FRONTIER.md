@@ -845,3 +845,80 @@ Priority questions:
 6. audit the exact specialization against classical limiting-distribution results for Besicovitch/limit-periodic arithmetic functions.
 
 No atomlessness or absolute-continuity claim is made yet.
+
+
+### OP-F29 status update — cumulant geometry CLOSED, distribution type still OPEN
+
+The entire limiting law now has:
+
+- a positive amplitude law \(\mu_h\);
+- an entire Mellin/Laplace transform \(\mathcal M_h(z)\);
+- an analytic cumulant-generating germ \(K_h(z)=\log\mathcal M_h(z)\);
+- all polynomial log moments and all cumulants;
+- optimized Chernoff envelopes;
+- dyadic invariance of the entire cumulant tower.
+
+Therefore the cumulant-geometry subproblem is closed.
+
+Still open:
+
+1. atoms versus non-atomic pushforward law;
+2. absolute continuity versus singular-continuous behavior;
+3. sharp support description;
+4. asymptotic growth of \(K_h(s)\) as \(|s|\to\infty\).
+
+### OP-F30 — phase-refinement graph geometry
+
+The base-4 clock has now been identified exactly as
+
+\[
+K_h
+\cong
+\varprojlim_N\mathbb Z/L_N\mathbb Z,
+\qquad
+L_N=\operatorname{lcm}(e_1,\dots,e_N).
+\]
+
+The finite refinement factor is
+
+\[
+b_N=L_{N+1}/L_N.
+\]
+
+The dual frequency module is
+
+\[
+\widehat K_h
+=
+\bigcup_N(1/L_N)\mathbb Z/\mathbb Z.
+\]
+
+The next geometric questions are deliberately separated:
+
+1. determine whether \(L_N\to\infty\) for the relevant admissible \(h\), or characterize stabilization;
+2. if an ultrametric is introduced, state it explicitly and derive any Hausdorff/spectral dimension rather than assuming “fractal” terminology;
+3. characterize which new channels refine clock resolution (\(b_N>1\)) versus only add observables on an existing clock (\(b_N=1\));
+4. compare this exact refinement graph with the project's external fractal-orbital algebra through a typed adapter only.
+
+### OP-F31 — atomicity criterion for the pushforward phase law
+
+Even if \(K_h\) is infinite, Haar measure on the source hull being non-atomic does not by itself imply that
+
+\[
+\nu_h=(\mathcal Y_h)_*m_{K_h}
+\]
+
+is non-atomic.
+
+A valid atomlessness theorem must control positive-measure level sets of the weighted cylinder field
+
+\[
+\mathcal Y_h(x)
+=
+\log A(h)
++
+\sum_p
+w_p\mathbf1_{\{x_p=\rho_p(h)\}}.
+\]
+
+No atomlessness or absolute-continuity claim is currently promoted.
