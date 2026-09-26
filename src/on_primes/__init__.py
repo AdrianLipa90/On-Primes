@@ -150,6 +150,9 @@ from .phase_law import (
     twin_quadratic_hit_phase,
     twin_quadratic_hit_density,
     twin_quadratic_joint_hit_density,
+    twin_fractional_special_multiplier,
+    twin_finite_fractional_common_clock_mean,
+    twin_finite_fractional_subset_mean,
 )
 from .modular import (
     is_obstructed_by,
@@ -293,4 +296,7 @@ __all__ = [
     "twin_quadratic_hit_phase",
     "twin_quadratic_hit_density",
     "twin_quadratic_joint_hit_density",
+    "twin_fractional_special_multiplier",
+    "twin_finite_fractional_common_clock_mean",
+    "twin_finite_fractional_subset_mean",
 ]
