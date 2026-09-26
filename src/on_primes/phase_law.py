@@ -464,7 +464,7 @@ def twin_local_orbit_variance(p: int, h: int) -> Fraction:
     """Exact variance of B_p(2^r h) over one local dyadic period."""
     values = twin_local_orbit_values(p, h)
     mean = sum(values, Fraction(0, 1)) / len(values)
-    return sum((value - mean) ** 2 for value in values, Fraction(0, 1)) / len(values)
+    return sum(((value - mean) ** 2 for value in values), Fraction(0, 1)) / len(values)
 
 
 def twin_global_dyadic_period(primes: Sequence[int], h: int) -> int:
