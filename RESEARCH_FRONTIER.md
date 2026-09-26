@@ -835,3 +835,18 @@ Potential routes include:
 3. Vaughan or Heath--Brown decompositions;
 4. zero-density methods;
 5. RH-conditional validation kept strictly separate from any RH proof input.
+
+
+### Conditional validation envelope — not a proof route
+
+Assuming RH, the standard short-interval mean-square bound extends the Fejér-averaged high-tail decay to any regime satisfying
+
+\[
+H/(1+\log(X/H))^2\to\infty
+\]
+
+together with the declared sublinear boundary condition. This is a useful validation envelope only.
+
+It is forbidden as an input to an argument intended to establish RH.
+
+The noncircular target remains OP-O017 / OP-F30: obtain comparable short-window control unconditionally, or from an independently constructed zeta operator/state theorem.
