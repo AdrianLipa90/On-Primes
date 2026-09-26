@@ -238,3 +238,35 @@ with kernel exactly
 Ramanujan sums are exact-order denominator-shell character sums in this dual phase space. See proofs/ARPL_PROFINITE_PHASE_SPACE_V0_1.md.
 
 The finite odd-prime channel dynamics \(u\mapsto2u\bmod p\) has cycle length \(d_p=\operatorname{ord}_p(2)\). The corresponding transfer operator has \(d_p\)-th roots of unity as eigenmodes. For the two-twin-pair local factor, the equal defects at \(u=\pm2\) produce an exact odd-mode cancellation whenever \(d_p\) is even. See proofs/ARPL_DYADIC_TRANSFER_SPECTRUM_V0_1.md.
+
+
+## Montgomery–Dyson forced phase spectroscopy
+
+The ARPL phase layer now has a cross-repository no-target-leakage spectral theorem. The shared consecutive-mode projector + filled-CAR sector forces
+
+\[
+g_2(s)
+=
+1-
+\left(
+\frac{\sin\pi s}{\pi s}
+\right)^2,
+\]
+
+or, with \(\Delta\Phi=2\pi s\),
+
+\[
+g_2(\Delta\Phi)
+=
+1-
+\left[
+\frac{\sin(\Delta\Phi/2)}
+{\Delta\Phi/2}
+\right]^2.
+\]
+
+This law is therefore typed **DERIVED_IN_FRAMEWORK / FORCED_PREDICTION** for the declared projector/CAR sector rather than merely CANDIDATE. GUE, Montgomery's target and zeta-zero samples are excluded from the derivation inputs.
+
+On-Primes keeps three coordinates distinct: ARPL modular gap phases, prime-power log frequencies \(m\log p\), and unfolded zero phases. The remaining zeta-specific gate is SOH-MD001: derive the actual zeta spectral occupancy/projector binding without importing GUE/Montgomery statistics.
+
+See \`proofs/MONTGOMERY_DYSON_FORCED_PHASE_SPECTROSCOPY_V0_1.md\`.
