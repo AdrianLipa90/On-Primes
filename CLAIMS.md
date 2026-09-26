@@ -158,6 +158,15 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-N005 | The Fejér-average validator passes the exact gate formula, density factorization and low-block error bound with sub-machine-scale algebraic residuals on the test grid. | NUMERICAL / VALIDATOR | No zeta zeros or Hardy--Littlewood occurrence asymptotic used. |
 | OP-O014 | The Fejér-averaged high-divisor tail \(\overline T_{H,R}(X)\) is \(o(X)\) in the moving \(q(T)\)-scaled form-factor regime. | OPEN | This weaker averaged statement is sufficient for the spectral programme and does not require fixed-\(h\) twin-prime asymptotics. |
 
+
+| OP-D098 | For localized correlations on \((X,2X]\), the sliding length-\(L\) prime-square energy differs from \(L^2\) times the fixed-start Fejér correlation average by at most \(O(L^3\log^2(3X))\). | PROVED | Finite expansion plus boundary-product count; validator PASS. |
+| OP-D099 | In the standard unconditional Saffari--Vaughan range \(L\ge X^{1/6+\varepsilon}\), with \(L\log^2X=o(X)\), the full localized Fejér correlation satisfies \(\mathcal C_{X,H}/X\to1\). | PROVED_FROM_STANDARD | Saffari--Vaughan Selberg-integral mean square + OP-D098. |
+| OP-D100 | Choosing \(R=X^{1/3}\), the localized low-divisor Fejér block satisfies \(\mathcal C_{X,H,\le R}/X\to1\) throughout the same long-window range. | PROVED_FROM_STANDARD | OP-D097 with \(R=X^{1/3}\) and \(H+1\ge X^{1/6+\varepsilon}\). |
+| OP-D101 | Therefore the Fejér-averaged high-divisor tail satisfies \(\mathcal T_{X,H,X^{1/3}}/X\to0\) unconditionally for \(X^{1/6+\varepsilon}\le H+1\le X^{1-\delta}\). | PROVED_FROM_STANDARD / RANGE-CLOSED | Difference of OP-D099 and OP-D100; no fixed-shift Hardy--Littlewood asymptotic. |
+| OP-S018 | Saffari--Vaughan's classical short-interval mean-square theory gives an unconditional \(J(X,L)=o(XL^2)\) regime beginning at \(L\ge X^{1/6+\varepsilon}\) (in the standard formulation/range). | STANDARD | External analytic-number-theory input; not reproved here. |
+| OP-N006 | The long-window crosswalk validator passes the finite Fejér/sliding-window boundary estimate; maximum observed boundary-to-bound ratio is \(0.018216716598738407\). | NUMERICAL / VALIDATOR | External Saffari--Vaughan asymptotic is not numerically reproved. |
+| OP-O015 | The averaged high-divisor tail can be controlled below the classical unconditional \(X^{1/6+\varepsilon}\) threshold, or for the exact smooth/logarithmic window induced by the \(q(T)\)-scaled explicit formula. | OPEN | Current long-window closure does not cover shorter windows or every form-factor test function. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
