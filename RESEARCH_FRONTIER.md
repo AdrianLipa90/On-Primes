@@ -551,3 +551,50 @@ Projector geometry, the sine kernel, the ramp/plateau, and the prime-power frequ
 If RH is itself the target, Montgomery's RH-conditional subcritical ramp may be used only as external validation, not as a premise. The conjectured plateau for \(|\alpha|>1\) likewise cannot be imported as a proof step.
 
 A successful closure must be zero-list-free at the derivation layer and must identify the normalization/window/projector or an equivalent pair-process object from arithmetic data.
+
+
+### OP-F22 — scaled prime-power form-factor closure
+
+The representation/frequency bridge is now exact:
+
+\[
+q^{i\gamma_j}
+\longleftrightarrow
+e^{2\pi i\tau_q u_{T,j}},
+\qquad
+\tau_q(T)=\frac{\log q}{\log(T/2\pi)},
+\]
+
+with
+
+\[
+K_{\Gamma,T}(\tau_q)=N|R_q|^2.
+\]
+
+The shared projector/CAR sector independently forces
+
+\[
+g_2(s)=1-\left(\frac{\sin\pi s}{\pi s}\right)^2,
+\qquad
+S(\tau)=\min(|\tau|,1).
+\]
+
+The remaining hard gate is asymptotic and zeta-specific, not representational.
+
+Construct a continuation-safe, properly smoothed/windowed family \(q(T)\) satisfying
+
+\[
+\log q(T)\sim\tau\log(T/2\pi)
+\]
+
+for fixed \(0<\tau<1\), and derive the connected pair-power limit from the prime/Weil side without inserting the sine kernel, GUE, or Montgomery target.
+
+Required bookkeeping:
+1. separate fixed-\(q\) Landau from \(q(T)\)-scaled form-factor asymptotics;
+2. separate diagonal/self terms from connected pair terms;
+3. specify local zero window and unfolding;
+4. state every RH-dependent step explicitly;
+5. treat the classical subcritical Montgomery ramp as validation only whenever RH itself is the proof target;
+6. keep the conjectured plateau \(|\tau|>1\) separate from the proved/conditional subcritical range.
+
+A closure here would reduce the remaining zeta-specific gap to the operator/occupancy statement rather than the phase-coordinate or form-factor geometry.
