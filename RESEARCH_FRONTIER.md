@@ -329,3 +329,61 @@ A zeta bridge becomes admissible only after a global ARPL observable is shown to
 - conjectural prime-tuple occurrence asymptotics;
 - analytic continuation;
 - zero-spectrum statistics.
+
+
+### OP-F17 — Coupled global resonance limit
+
+The independent global orbit baseline is now closed:
+
+\[
+\mathcal I(h)
+=
+\prod_{p\ge5}\mu_p(h)
+\]
+
+exists, is finite and positive for every fixed \(h\ne0\), and satisfies
+
+\[
+\mathcal I(2^kh)=\mathcal I(h).
+\]
+
+The remaining global problem is no longer existence of a phase-space observable. It is whether the **shared-clock** finite-support means
+
+\[
+M_P(h)
+=
+\left\langle
+\prod_{p\in P}B_p(2^rh)
+\right\rangle_r
+\]
+
+converge under an explicit support-growth rule and, if so, how their limit differs from \(\mathcal I(h)\).
+
+Equivalently, determine whether the exact finite corrections
+
+\[
+\mathcal C_P(h)
+=
+M_P(h)-\prod_{p\in P}\mu_p(h)
+\]
+
+admit a controlled infinite-support limit.
+
+Required outputs:
+
+1. a support-growth convention;
+2. a summable bound or cancellation theorem for connected resonance contributions;
+3. proof of convergence, or a no-go/divergence theorem;
+4. comparison against null phase clocks preserving all local orbit means.
+
+### OP-F18 — Connected resonance expansion
+
+Develop a connected/cumulant expansion for the deterministic common-clock observables. The goal is to separate reducible products of lower-order resonances from genuinely multi-channel terms.
+
+A successful formulation should produce weights \(K(J;h)\) on finite prime subsets \(J\) such that:
+
+- \(K(J;h)=0\) whenever the common-clock dynamics factorizes across a nontrivial partition of \(J\);
+- the moment \(M_P(h)\) can be reconstructed from connected weights by the usual partition expansion;
+- convergence of a suitable sum of connected weights would imply convergence of the fully coupled global observable.
+
+This is the current hard gate.
