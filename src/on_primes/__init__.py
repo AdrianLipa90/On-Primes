@@ -136,6 +136,10 @@ from .phase_law import (
     twin_special_correction_ratio,
     twin_finite_instantaneous_product,
     twin_finite_instantaneous_factorization,
+    twin_special_hit_density,
+    twin_local_log_orbit_mean,
+    twin_local_log_orbit_formula,
+    twin_finite_log_geometric_mean,
 )
 from .modular import (
     is_obstructed_by,
@@ -265,4 +269,8 @@ __all__ = [
     "twin_special_correction_ratio",
     "twin_finite_instantaneous_product",
     "twin_finite_instantaneous_factorization",
+    "twin_special_hit_density",
+    "twin_local_log_orbit_mean",
+    "twin_local_log_orbit_formula",
+    "twin_finite_log_geometric_mean",
 ]
