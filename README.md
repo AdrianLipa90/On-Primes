@@ -1317,3 +1317,186 @@ H_N=\log L_N\to\infty
 is therefore growing **phase resolution**, not positive entropy production per time step.
 
 See proofs/ARPL_ODOMETER_DYNAMICS_V0_1.md.
+
+
+### Phase-covering Gram law and survival geometry
+
+For active phase-hit cylinders
+
+\[
+C_p=\{x:x_p=\rho_p(h)\},
+\]
+
+the exact finite Gram kernel is
+
+\[
+G_{pq}=m(C_p\cap C_q),
+\]
+
+with
+
+\[
+G_{pq}
+=
+\frac1{\operatorname{lcm}(e_p,e_q)}
+\]
+
+when the two target phases are generalized-CRT compatible and \(0\) otherwise.
+
+Writing
+
+\[
+d_p=m(C_p)=\frac1{e_p},
+\]
+
+every real weight vector \(w\) gives the rigorous covering bound
+
+\[
+\boxed{
+m\!\left(\bigcup_{p\in P}C_p\right)
+\ge
+\frac{(w^\top d)^2}{w^\top Gw}.
+}
+\]
+
+The optimal finite linear-span bound is
+
+\[
+\boxed{
+B_P=d^\top G^+d
+=
+\|\Pi_P1\|_2^2.
+}
+\]
+
+If \(B_{P_N}\to1\) along an exhaustion of the active channels, the lower-edge atom is zero.
+
+For \(h=6\), the first 15 active channels give the exact bound
+
+\[
+B_{15}
+=
+\frac{1268391857255}{1516708968451}
+\approx0.836278999.
+\]
+
+The exact lower-edge survival process has an even sharper refinement form. If
+
+\[
+a_N
+=
+m\!\left(\bigcap_{j\le N}C_{p_j}^c\right),
+\]
+
+define the conditional next-hit hazard
+
+\[
+\eta_N
+=
+1-\frac{a_{N+1}}{a_N}.
+\]
+
+Then
+
+\[
+\boxed{
+a_*(h)
+=
+\prod_{N\ge0}(1-\eta_N).
+}
+\]
+
+With
+
+\[
+b_N=\frac{L_{N+1}}{L_N},
+\]
+
+the hazard decomposes exactly as
+
+\[
+\boxed{
+\eta_N=\frac{c_N}{b_N},
+}
+\]
+
+where \(c_N\) is the fraction of surviving parent cells compatible with the new target phase modulo the old/new clock gcd.
+
+Thus the lower-edge atom problem is now exactly:
+
+\[
+\boxed{
+\text{branch }b_N
+\quad+\quad
+\text{conditional phase compatibility }c_N
+\quad\longrightarrow\quad
+\text{survival product}.
+}
+\]
+
+### Canonical phase ultrametric
+
+Removing repeated clock sizes, write
+
+\[
+1=M_0<M_1<M_2<\cdots
+\]
+
+for the strict refinement scales. The canonical arithmetic ultrametric declares two phase states close when they agree modulo a large \(M_k\).
+
+A level-\(k\) cylinder has exactly
+
+\[
+\text{diameter}=\frac1{M_k},
+\qquad
+\text{Haar mass}=\frac1{M_k}.
+\]
+
+Therefore the ARPL phase hull is \(1\)-Ahlfors regular and
+
+\[
+\boxed{
+\dim_H(K_h)=
+\dim_{\rm box}(K_h)=
+D_{\rm info}(K_h)=1
+}
+\]
+
+in this explicitly defined canonical metric.
+
+The odometer translation is an isometry.
+
+This provides a rigorous inverse-limit phase-fractal geometry while keeping the entropy distinction intact:
+
+\[
+\text{phase resolution}\to\infty,
+\qquad
+h_{\rm top}=h_{\rm Haar}=0.
+\]
+
+For the lower-edge avoidance tree, if
+
+\[
+S_N=a_NL_N
+\]
+
+is the number of surviving phase cells, then
+
+\[
+S_{N+1}=b_NS_N-C_N,
+\]
+
+and the finite survival exponent is
+
+\[
+D_N^{\rm surv}
+=
+\frac{\log S_N}{\log L_N}
+=
+1-\frac{-\log a_N}{\log L_N}.
+\]
+
+See proofs/ARPL_PHASE_COVERING_GRAM_CRITERION_V0_1.md,
+proofs/ARPL_PHASE_SURVIVAL_HAZARD_LAW_V0_1.md,
+proofs/ARPL_CANONICAL_PHASE_ULTRAMETRIC_DIMENSION_V0_1.md,
+and proofs/ARPL_PHASE_SURVIVAL_TREE_DIMENSION_V0_1.md.
