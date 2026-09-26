@@ -1293,3 +1293,113 @@ def twin_finite_lower_edge_mass(primes: Sequence[int], h: int) -> Fraction:
         else:
             total += density
     return total
+
+
+def _fraction_linear_solve_consistent(
+    matrix: Sequence[Sequence[Fraction]], rhs: Sequence[Fraction]
+) -> tuple[Fraction, ...]:
+    """Solve a consistent square rational linear system, setting free variables to zero."""
+    A = [list(map(Fraction, row)) + [Fraction(b)] for row, b in zip(matrix, rhs)]
+    n = len(A)
+    if any(len(row) != n + 1 for row in A):
+        raise ValueError("matrix must be square")
+    pivot_cols: list[int] = []
+    row = 0
+    for col in range(n):
+        pivot = next((r for r in range(row, n) if A[r][col] != 0), None)
+        if pivot is None:
+            continue
+        A[row], A[pivot] = A[pivot], A[row]
+        scale = A[row][col]
+        A[row] = [x / scale for x in A[row]]
+        for r in range(n):
+            if r == row:
+                continue
+            factor = A[r][col]
+            if factor != 0:
+                A[r] = [x - factor * y for x, y in zip(A[r], A[row])]
+        pivot_cols.append(col)
+        row += 1
+        if row == n:
+            break
+    for r in range(row, n):
+        if all(A[r][c] == 0 for c in range(n)) and A[r][n] != 0:
+            raise ValueError("linear system is inconsistent")
+    x = [Fraction(0, 1) for _ in range(n)]
+    for r, col in enumerate(pivot_cols):
+        x[col] = A[r][n]
+    return tuple(x)
+
+
+def twin_phase_covering_gram(
+    primes: Sequence[int], h: int
+) -> tuple[tuple[Fraction, ...], ...]:
+    """Gram matrix G_pq = Haar(C_p intersect C_q) for active hit cylinders."""
+    support = tuple(int(p) for p in primes)
+    if len(set(support)) != len(support):
+        raise ValueError("primes must be distinct")
+    phases = {}
+    periods = {}
+    for p in support:
+        if not _is_prime_small(p) or p < 5:
+            raise ValueError("support must contain distinct primes >= 5")
+        rho = twin_quadratic_hit_phase(p, int(h))
+        if rho is None:
+            raise ValueError("every supplied prime must be an active channel")
+        phases[p] = rho
+        periods[p] = quadruplet_observable_period(p, int(h))
+    rows: list[tuple[Fraction, ...]] = []
+    for p in support:
+        row: list[Fraction] = []
+        for q in support:
+            ep, eq = periods[p], periods[q]
+            if (phases[p] - phases[q]) % math.gcd(ep, eq) != 0:
+                row.append(Fraction(0, 1))
+            else:
+                row.append(Fraction(1, math.lcm(ep, eq)))
+        rows.append(tuple(row))
+    return tuple(rows)
+
+
+def twin_phase_covering_density_vector(
+    primes: Sequence[int], h: int
+) -> tuple[Fraction, ...]:
+    """Cylinder densities d_p = Haar(C_p)=1/e_p."""
+    support = tuple(int(p) for p in primes)
+    out: list[Fraction] = []
+    for p in support:
+        rho = twin_quadratic_hit_phase(p, int(h))
+        if rho is None:
+            raise ValueError("every supplied prime must be an active channel")
+        out.append(Fraction(1, quadruplet_observable_period(p, int(h))))
+    return tuple(out)
+
+
+def twin_phase_covering_equal_weight_bound(primes: Sequence[int], h: int) -> Fraction:
+    """Cauchy--Schwarz coverage lower bound using equal cylinder weights."""
+    G = twin_phase_covering_gram(primes, int(h))
+    d = twin_phase_covering_density_vector(primes, int(h))
+    if not d:
+        return Fraction(0, 1)
+    numerator = sum(d, Fraction(0, 1)) ** 2
+    denominator = sum((x for row in G for x in row), Fraction(0, 1))
+    return Fraction(0, 1) if denominator == 0 else numerator / denominator
+
+
+def twin_phase_covering_optimal_l2_bound(primes: Sequence[int], h: int) -> Fraction:
+    """Optimal finite-span L2 lower bound for the union of hit cylinders.
+
+    If f_p=1_{C_p}, G is their Gram matrix and d_p=<f_p,1>.  Solving
+    G w=d gives the orthogonal projection of the constant function onto
+    span{f_p}; d^T w is its squared norm and a rigorous lower bound for
+    Haar(union C_p).
+    """
+    G = twin_phase_covering_gram(primes, int(h))
+    d = twin_phase_covering_density_vector(primes, int(h))
+    if not d:
+        return Fraction(0, 1)
+    w = _fraction_linear_solve_consistent(G, d)
+    value = sum((a * b for a, b in zip(d, w)), Fraction(0, 1))
+    if value < 0 or value > 1:
+        raise ArithmeticError("projection bound escaped [0,1]")
+    return value
