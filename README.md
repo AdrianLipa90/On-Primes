@@ -753,3 +753,80 @@ exists and is finite.
 The compatible-subset expansion converges absolutely at every \(s<1\). The current unconditional majorant becomes logarithmically critical at \(s=1\), so the raw arithmetic mean remains open.
 
 See proofs/ARPL_QUADRATIC_PHASE_CLOCK_V0_1.md and proofs/ARPL_SUBCRITICAL_FRACTIONAL_MOMENTS_V0_1.md.
+
+
+### Arithmetic mean endpoint closed
+
+The earlier elementary all-orders argument closed every \(0<s<1\) but stopped at the critical endpoint \(s=1\). A standard quantitative theorem of Erdős--Murty supplies the missing order growth.
+
+For fixed \(a=2\), outside an exceptional set of primes with counting function
+
+\[
+O\!\left(\frac{x}{(\log x)^{1+\alpha}}\right),
+\]
+
+one has
+
+\[
+\operatorname{ord}_p(2)
+\ge
+\sqrt p\,e^{(\log p)^\delta}
+\]
+
+for some \(\alpha,\delta>0\). The exceptional set has finite reciprocal-prime mass.
+
+Combining this with the quadratic clock
+
+\[
+e_p=\operatorname{ord}_p(4)
+\]
+
+makes the full compatible-subset expansion absolutely convergent for every fixed real moment exponent \(s\).
+
+In particular, the raw arithmetic Cesaro mean now exists:
+
+\[
+\boxed{
+\mathcal A(h)
+=
+\lim_{T\to\infty}
+\frac1T\sum_{r<T}
+\mathfrak S(H_{2^rh})
+<\infty.
+}
+\]
+
+Its exact all-orders representation is
+
+\[
+\boxed{
+\mathcal A(h)
+=
+\frac{27}{2}C_*Z(h)
+\left[
+1+
+\sum_{\varnothing\ne J}
+\frac{\mathbf1_{\rm CRT\ compatible}(J;h)}
+{\operatorname{lcm}_{p\in J}\operatorname{ord}_p(4)}
+\prod_{p\in J}\frac1{p-4}
+\right].
+}
+\]
+
+The displayed series is absolutely convergent.
+
+More generally,
+
+\[
+\boxed{
+\lim_{T\to\infty}
+\frac1T\sum_{r<T}
+\mathfrak S(H_{2^rh})^s
+}
+\]
+
+exists and is finite for every real \(s\).
+
+This closes the raw-amplitude mean problem for the standard singular-series weight. It does not prove the Hardy--Littlewood occurrence asymptotic or twin-prime infinitude.
+
+See proofs/ARPL_ALL_REAL_MOMENTS_ARITHMETIC_MEAN_V0_1.md.
