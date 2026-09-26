@@ -520,3 +520,65 @@ Required next steps:
 4. identify relevant prior art for divisor statistics of exponential sequences \(a\,4^r-4\).
 
 No mean-value theorem is claimed yet.
+
+
+### OP-F21 status update — logarithmic mean CLOSED
+
+The exact divisor-weight reduction
+
+\[
+\mathfrak S(H_{2^rh})
+=
+\frac{27}{2}C_*Z(h)R(4^rh^2-4)
+\]
+
+now yields a proved infinite-time logarithmic mean:
+
+\[
+\mathcal L(h)
+=
+\lim_{T\to\infty}
+\frac1T\sum_{r<T}
+\log\mathfrak S(H_{2^rh}).
+\]
+
+Equivalently, the dyadic geometric mean \(\mathcal G(h)=e^{\mathcal L(h)}\) exists, is finite and positive, and is invariant under \(h\mapsto2^kh\).
+
+The proof uses exact local hit densities and the summable tail
+
+\[
+\sum_p
+O\!\left(\frac1{p\,\operatorname{ord}_p(2)}\right).
+\]
+
+Jensen supplies the positive lower bound
+
+\[
+\liminf_T
+\frac1T\sum_{r<T}\mathfrak S(H_{2^rh})
+\ge
+\mathcal G(h).
+\]
+
+### OP-F22 — arithmetic mean of the divisor-weight orbit
+
+The remaining full common-clock problem is now equivalent to the existence of
+
+\[
+\lim_{T\to\infty}
+\frac1T\sum_{r<T}
+R(4^rh^2-4).
+\]
+
+This is the current primary hard gate.
+
+Potential rigorous routes:
+
+1. prove uniform integrability of the finite-prime truncations;
+2. obtain sufficiently strong bounds for simultaneous divisibility events
+   \(p_1\cdots p_k\mid 4^rh^2-4\);
+3. use the fixed-order connected-layer convergence together with a tree/cluster bound uniform in \(k\);
+4. identify a known mean-value theorem for multiplicative divisor weights sampled on exponential sequences;
+5. prove divergence/no-go if rare large divisor-weight spikes prevent Cesaro convergence.
+
+No arithmetic-mean existence claim is made.
