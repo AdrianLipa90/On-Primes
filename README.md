@@ -724,3 +724,42 @@ e^{2\pi i h/\gcd(d,e)}=1.
 This closes the **representation** bridge from the real finite \(\Lambda\Lambda\) correlation to modular phase channels. It does not close the asymptotic occurrence problem: the remaining difficulty is cancellation in the signed Möbius-weighted double sum as the divisor ranges grow.
 
 See \`proofs/SHIFTED_VON_MANGOLDT_CRT_PHASE_V0_1.md\`.
+
+
+## Controlled low-divisor phase block
+
+The Möbius--CRT decomposition can be split at a divisor scale \(R\). The low block satisfies
+
+\[
+\boxed{
+C_{h,\le R}(X)
+=
+X M_{h,R}
++
+E_{h,R}(X),
+\qquad
+|E_{h,R}(X)|\le(R\log R)^2.
+}
+\]
+
+Its coefficient is an exact finite ARPL Fourier observable because
+
+\[
+\mathbf1_{\gcd(d,e)\mid h}
+=
+\frac1{\gcd(d,e)}
+\sum_{a=0}^{\gcd(d,e)-1}
+e^{2\pi iah/\gcd(d,e)}.
+\]
+
+Hence whenever \(R\log R=o(\sqrt X)\), the entire low-divisor modular phase block is controlled with \(o(X)\) error without invoking Möbius cancellation. The full unresolved correlation is now isolated in
+
+\[
+T_{h,R}(X)
+=
+C_h(X)-C_{h,\le R}(X),
+\]
+
+the high-divisor tail \(d>R\) or \(e>R\).
+
+See \`proofs/MOBIUS_CRT_LOW_DIVISOR_PHASE_BLOCK_V0_1.md\`.
