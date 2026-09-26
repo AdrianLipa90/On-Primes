@@ -58,6 +58,12 @@ from on_primes.phase_law import (
     twin_local_log_orbit_mean,
     twin_local_log_orbit_formula,
     twin_finite_log_geometric_mean,
+    twin_special_hit_positions,
+    twin_joint_special_hit_density,
+    twin_log_pair_covariance,
+    twin_finite_log_variance,
+    twin_finite_log_fourier_coefficients,
+    twin_finite_log_parseval_power,
 )
 
 
@@ -406,6 +412,55 @@ class ArithmeticRelationalPhaseLawTests(unittest.TestCase):
                     reference,
                     places=12,
                 )
+
+
+    def test_joint_special_hit_density_by_direct_clock(self):
+        for p, q in ((5, 7), (7, 13), (13, 19), (11, 31)):
+            dp = twin_local_dyadic_period(p, 6)
+            dq = twin_local_dyadic_period(q, 6)
+            L = __import__("math").lcm(dp, dq)
+            hp = set(twin_special_hit_positions(p, 6))
+            hq = set(twin_special_hit_positions(q, 6))
+            count = sum((r % dp in hp) and (r % dq in hq) for r in range(L))
+            self.assertEqual(
+                twin_joint_special_hit_density(p, q, 6),
+                __import__("fractions").Fraction(count, L),
+            )
+
+    def test_log_variance_matches_direct_common_clock(self):
+        support = (5, 7, 11, 13, 17, 19)
+        periods = [twin_local_dyadic_period(p, 6) for p in support]
+        L = __import__("math").lcm(*periods)
+        weights = {
+            p: __import__("math").log(float(twin_special_correction_ratio(p)))
+            for p in support
+        }
+        hit_sets = {p: set(twin_special_hit_positions(p, 6)) for p in support}
+        values = [
+            sum(weights[p] for p, d in zip(support, periods) if r % d in hit_sets[p])
+            for r in range(L)
+        ]
+        mean = sum(values) / L
+        direct = sum((v - mean) ** 2 for v in values) / L
+        self.assertAlmostEqual(twin_finite_log_variance(support, 6), direct, places=12)
+
+    def test_log_phase_parseval(self):
+        for support in ((5, 7, 11), (5, 7, 11, 13, 17, 19)):
+            self.assertAlmostEqual(
+                twin_finite_log_variance(support, 6),
+                twin_finite_log_parseval_power(support, 6),
+                places=11,
+            )
+
+    def test_log_variance_is_dyadic_invariant(self):
+        support = (5, 7, 11, 13, 17, 19, 23, 29, 31)
+        reference = twin_finite_log_variance(support, 6)
+        for k in range(6):
+            self.assertAlmostEqual(
+                twin_finite_log_variance(support, (2**k) * 6),
+                reference,
+                places=12,
+            )
 
 
 if __name__ == "__main__":
