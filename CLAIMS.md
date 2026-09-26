@@ -99,6 +99,12 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-D065 | For every \(x\ge6\) with \(6\mid x\), the full two-twin-pair singular series factorizes exactly as \(\mathfrak S(H_x)=\frac{27}{2}C_*Z(x)R(x^2-4)\), with finite correction products over prime divisors of \(x\) and \(x^2-4\). | PROVED | Exact three-level local factor classification; only finitely many channels differ from the universal background. |
 | OP-D066 | Along the dyadic orbit \(x_r=2^rh\) with \(6\mid h\), \(\mathfrak S(H_{2^rh})=\frac{27}{2}C_*Z(h)R(4^rh^2-4)\). All time dependence is carried by the finite \(\pm2\) phase-hit divisors of \(4^rh^2-4\). | PROVED | Odd divisors of \(2^rh\) equal those of \(h\); dynamic special channels satisfy \(2^rh\equiv\pm2\pmod p\). |
 
+| OP-D067 | For each \(p\ge5\), the dyadic-time density of special hits \(2^rh\equiv\pm2\pmod p\) is exactly \(0\), \(1/d_p\), or \(2/d_p\), according to the local orbit class, and always at most \(2/d_p\). | PROVED | Exact finite orbit counting. |
+| OP-D068 | The global logarithmic correction \(\sum_{p\ge5}\delta_p(h)\log((p-3)/(p-4))\) converges absolutely. | PROVED | \(\delta_p\le2/d_p\), \(d_p\ge\log_2(p+1)\), and \(\log((p-3)/(p-4))\ll1/p\). |
+| OP-D069 | For every admissible \(h\ge6\), the Cesaro mean of \(\log\mathfrak S(H_{2^rh})\) exists and equals \(\log((27/2)C_*Z(h))+\sum_p\delta_p(h)\log((p-3)/(p-4))\). | PROVED | Periodic finite truncations plus summable tail control in Cesaro mean. |
+| OP-D070 | The resulting global geometric mean \(\mathcal G(h)=\exp(\mathcal L(h))\) is finite, positive, and dyadically invariant: \(\mathcal G(2^kh)=\mathcal G(h)\). | PROVED | OP-D069 plus orbit invariance. |
+| OP-D071 | The unresolved arithmetic Cesaro mean has the rigorous lower bound \(\liminf_T T^{-1}\sum_{r<T}\mathfrak S(H_{2^rh})\ge\mathcal G(h)>0\). | PROVED | Jensen's inequality plus OP-D069. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
