@@ -80,6 +80,19 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 
 | OP-S011 | Classical restricted-support zeta/L-function correlation theorems agree with the GUE/sine-kernel correlation law on their stated test classes; this is external validation, not an input to OP-D048--OP-D050. | STANDARD / PARTIAL_EXTERNAL_BINDING | Montgomery 1973; Rudnick--Sarnak 1996. Full zeta quasi-free/projector occupancy remains open. |
 
+
+| OP-D051 | For any finite real spectral sample \(\{\gamma_j\}_{j=1}^N\) and \(q>0\), \(N|N^{-1}\sum_j q^{i\gamma_j}|^2=N^{-1}\sum_{j,k}e^{i(\gamma_j-\gamma_k)\log q}\). | PROVED | Exact finite Wiener--Khintchine identity; no zeta input required. |
+| OP-D052 | With frozen local density \(\nu_T=(2\pi)^{-1}\log(T/2\pi)\), \(u_{T,j}=\nu_T(\gamma_j-T)\), and \(\tau_q=\log q/\log(T/2\pi)\), the finite form factor obeys \(K_{\Gamma,T}(\tau_q)=N|R_q|^2\). | PROVED | Exact phase-coordinate change; global phase cancels. |
+| OP-D053 | For prime powers \(q=p^m\), the phase-bank samples the frozen-unfolding form factor at \(\tau_{p^m}=m\log p/\log(T/2\pi)\); in particular \(\tau_{2^m}=m\log2/\log(T/2\pi)\). | PROVED | OP-D052 plus \(\log(p^m)=m\log p\). |
+| OP-S012 | The Montgomery form-factor scaling uses logarithmic frequencies of order \(\alpha\log T\); this corresponds asymptotically to \(q(T)\asymp T^\alpha\), while fixed \(q\) collapses to \(\tau=0\). | STANDARD / SCALING CROSSWALK | Fixed-\(q\) Landau and fixed-nonzero-\(\tau\) Montgomery regimes must not be conflated. |
+| OP-S013 | Landau's fixed-\(x\) formula reconstructs von Mangoldt support from zeta-zero spectral sums. | STANDARD | Imported from the spectral von Mangoldt phase-bank line. |
+| OP-D054 | Combining Landau's fixed-\(x\) formula with \(\log n=\sum_{d\mid n}\Lambda(d)\) gives a finite-divisor spectral reconstruction of \(\log n\). | PROVED_FROM_STANDARD | Finite divisor set; no infinite interchange. |
+| OP-D055 | The shifted prime-power divisor tower of \(\log(p+1)\) therefore has a matching Landau spectral channel at every divisor scale \(r^j\mid p+1\). | PROVED_FROM_STANDARD | Reindexed finite-divisor identity. |
+| OP-D056 | For \(p+1=a_p2^{k_p}\), the dyadic term \(k_p\log2\) equals the sum of the first \(k_p\) dyadic Landau channels. | PROVED_FROM_STANDARD | Since \(\Lambda(2^j)=\log2\). |
+| OP-N004 | The inherited 256-zero phase-bank computation is a finite numerical witness to the classical Landau mechanism and a diagnostic Montgomery/GUE sanity check only. | NUMERICAL | Historical receipt retained; not used as proof input for OP-D048--OP-D053. |
+| OP-O008 | The forced ramp \(S(\tau)=\min(|\tau|,1)\) applies to actual zeta zeros at the arithmetic sampling frequencies \(\tau_q\) without further assumptions. | OPEN | Requires full zeta local occupancy/projector/window binding; fixed-\(q\) Landau alone is insufficient. |
+| OP-O009 | A continuation-safe, smoothed \(q(T)\)-scaled prime-power phase observable may close the remaining bridge between the arithmetic phase bank and the full local form factor. | OPEN | New research gate; must preserve explicit-formula provenance and avoid target fitting. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
