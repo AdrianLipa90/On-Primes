@@ -1,0 +1,33 @@
+{
+  "schema": "ON_PRIMES_FEJER_AVERAGED_HIGH_TAIL_LONG_WINDOW_V0_1",
+  "date": "2026-09-26",
+  "repository": "AdrianLipa90/On-Primes",
+  "branch": "integrate/fejer-averaged-mobius-crt-low-block-v0.1-20260926",
+  "status": "PROVED_FROM_STANDARD_SAFFARI_VAUGHAN__UNCONDITIONAL_LONG_WINDOW_AVERAGED_TAIL_CLOSED",
+  "standard_external_input": {
+    "theorem": "Saffari-Vaughan short-interval mean-square / Selberg integral",
+    "consequence": "J(X,L)=o(X L^2) in the unconditional range L >= X^(1/6+epsilon)",
+    "novelty_claim": false
+  },
+  "exact_repository_inputs": [
+    "Fejer shift-average identity",
+    "Mobius-CRT low-divisor phase block",
+    "uniform low-block counting error"
+  ],
+  "scale_choice": "R=X^(1/3)",
+  "range": "X^(1/6+epsilon) <= H+1 <= X^(1-delta)",
+  "conclusions": [
+    "full localized Fejer correlation / X -> 1",
+    "low-divisor Fejer block / X -> 1",
+    "Fejer-averaged high-divisor tail / X -> 0"
+  ],
+  "fixed_shift_hardy_littlewood_used": false,
+  "twin_prime_claim": false,
+  "remaining_frontier": "OP-F29 shorter-window or exact q(T)-window averaged tail",
+  "local_validator": {
+    "status": "PASS",
+    "scope": "finite correlation/sliding-window boundary crosswalk only; external asymptotic not numerically reproved",
+    "max_boundary_to_bound_ratio": 0.15
+  },
+  "canon_allowed": false
+}
