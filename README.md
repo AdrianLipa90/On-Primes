@@ -685,3 +685,71 @@ C_h(k)
 This is the rigorous logarithmic phase-power spectrum of the dyadic two-twin-pair singular-series orbit.
 
 See proofs/ARPL_GLOBAL_B2_PHASE_SPECTRUM_V0_1.md.
+
+
+### Quadratic phase clock and subcritical all-orders moments
+
+For the twin observable, the sign pair \(+2,-2\) quotients the base-2 clock to
+
+\[
+\boxed{
+e_p=\operatorname{ord}_p(4)
+=
+\frac{\operatorname{ord}_p(2)}
+{\gcd(\operatorname{ord}_p(2),2)}.
+}
+\]
+
+Every active channel becomes exactly one pulse train,
+
+\[
+E_p(r;h)
+=
+\mathbf1_{\{r\equiv\rho_p(h)\pmod{e_p}\}}.
+\]
+
+Thus joint phase hits are governed by ordinary CRT on one phase class per prime.
+
+For a compatible finite set \(J\),
+
+\[
+L_J=\operatorname{lcm}_{p\in J}e_p
+\]
+
+satisfies
+
+\[
+\prod_{p\in J}p\mid4^{L_J}-1,
+\]
+
+and hence
+
+\[
+L_J>
+\frac{\sum_{p\in J}\log p}{\log4}.
+\]
+
+This yields an all-orders theorem below the critical exponent. For every
+
+\[
+0<s<1,
+\]
+
+the Cesaro moment
+
+\[
+\boxed{
+\mathcal M_s^{\mathfrak S}(h)
+=
+\lim_{T\to\infty}
+\frac1T
+\sum_{r<T}
+\mathfrak S(H_{2^rh})^s
+}
+\]
+
+exists and is finite.
+
+The compatible-subset expansion converges absolutely at every \(s<1\). The current unconditional majorant becomes logarithmically critical at \(s=1\), so the raw arithmetic mean remains open.
+
+See proofs/ARPL_QUADRATIC_PHASE_CLOCK_V0_1.md and proofs/ARPL_SUBCRITICAL_FRACTIONAL_MOMENTS_V0_1.md.
