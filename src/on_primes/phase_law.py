@@ -732,3 +732,70 @@ def twin_channel_is_dynamically_active(p: int, h: int) -> bool:
         return False
     kind = twin_local_mean_class(p, int(h))
     return kind in {"special-even", "special-odd"}
+
+
+def twin_background_factor(p: int) -> Fraction:
+    """Generic p>=5 local factor beta_p for residues u not in {0,+2,-2}."""
+    p = int(p)
+    base, _ = twin_quadruplet_factor_decomposition(p)
+    return base
+
+
+def twin_zero_correction_ratio(p: int) -> Fraction:
+    """Ratio B_p(0)/beta_p = (p-2)/(p-4)."""
+    p = int(p)
+    if not _is_prime_small(p) or p < 5:
+        raise ValueError("p must be a prime >= 5")
+    return Fraction(p - 2, p - 4)
+
+
+def twin_special_correction_ratio(p: int) -> Fraction:
+    """Ratio B_p(+/-2)/beta_p = (p-3)/(p-4)."""
+    p = int(p)
+    if not _is_prime_small(p) or p < 5:
+        raise ValueError("p must be a prime >= 5")
+    return Fraction(p - 3, p - 4)
+
+
+def twin_finite_instantaneous_product(primes: Sequence[int], h: int, r: int) -> Fraction:
+    """Finite product prod_p B_p(2**r h)."""
+    support = tuple(int(p) for p in primes)
+    if len(set(support)) != len(support):
+        raise ValueError("primes must be distinct")
+    r = int(r)
+    if r < 0:
+        raise ValueError("r must be nonnegative")
+    x = (2**r) * int(h)
+    result = Fraction(1, 1)
+    for p in support:
+        result *= twin_quadruplet_local_factor(p, x)
+    return result
+
+
+def twin_finite_instantaneous_factorization(primes: Sequence[int], h: int, r: int) -> Fraction:
+    """Finite baseline-times-finite-corrections factorization.
+
+    For support P:
+      prod_{p in P} B_p(x)
+      = prod beta_p
+        * prod_{p|h, p in P} (p-2)/(p-4)
+        * prod_{p|(x^2-4), p in P} (p-3)/(p-4),
+    with x=2**r h and p>=5.
+    """
+    support = tuple(int(p) for p in primes)
+    if len(set(support)) != len(support):
+        raise ValueError("primes must be distinct")
+    r = int(r)
+    if r < 0:
+        raise ValueError("r must be nonnegative")
+    x = (2**r) * int(h)
+    result = Fraction(1, 1)
+    for p in support:
+        if not _is_prime_small(p) or p < 5:
+            raise ValueError("support must contain distinct primes >= 5")
+        result *= twin_background_factor(p)
+        if int(h) % p == 0:
+            result *= twin_zero_correction_ratio(p)
+        elif (x * x - 4) % p == 0:
+            result *= twin_special_correction_ratio(p)
+    return result
