@@ -633,3 +633,84 @@ The next valid target is either:
 2. a direct all-orders bound for simultaneous special-hit subsets;
 3. a known mean-value theorem for multiplicative weights on the exponential sequence \(4^rh^2-4\);
 4. or a no-go/counterexample mechanism.
+
+
+### OP-F25 — quadratic phase clock CLOSED
+
+The actual twin-observable clock is now reduced from
+\(\operatorname{ord}_p(2)\) to
+
+\[
+e_p=\operatorname{ord}_p(4).
+\]
+
+Every active odd-prime channel is one exact pulse class
+
+\[
+r\equiv\rho_p(h)\pmod{e_p},
+\]
+
+so all finite joint hit densities are ordinary generalized-CRT densities:
+zero when phase classes are incompatible, otherwise
+\(1/\operatorname{lcm}(e_p)\).
+
+This supersedes the signed \(+2/-2\) representation as the minimal observable clock, while remaining exactly equivalent to it.
+
+### OP-F26 — all subcritical raw moments CLOSED
+
+For every fixed
+
+\[
+0<s<1,
+\]
+
+the all-orders compatible-subset expansion is absolutely convergent and the raw fractional Cesaro moment
+
+\[
+\mathcal M_s^{\mathfrak S}(h)
+=
+\lim_T
+T^{-1}\sum_{r<T}\mathfrak S(H_{2^rh})^s
+\]
+
+exists and is finite.
+
+The proof uses:
+
+1. one phase class per active prime on the base-4 clock;
+2. exact density \(1/L_J\) for a compatible finite subset;
+3. the arithmetic lower bound
+   \[
+   L_J>(\sum_{p\in J}\log p)/\log4;
+   \]
+4. the large-prime coefficient
+   \[
+   ((p-3)/(p-4))^s-1\sim s/p;
+   \]
+5. an Euler-product integral majorant with small-parameter behavior
+   \(t^{-c}\), where \(s<c<1\).
+
+### OP-F27 — critical endpoint s=1
+
+The only remaining raw-moment endpoint is now
+
+\[
+s=1.
+\]
+
+The current unconditional all-orders majorant becomes logarithmically critical there:
+
+\[
+t^{-s}\longrightarrow t^{-1}.
+\]
+
+This does not establish divergence. It identifies precisely where additional arithmetic cancellation/order growth is required.
+
+Promising next routes:
+
+1. exploit actual compatibility sparsity of the phases \(\rho_p(h)\), not just the worst-case \(1/L_J\) bound;
+2. use stronger average results for \(\operatorname{ord}_p(4)\);
+3. prove an endpoint logarithmic improvement in the compatible-cluster count;
+4. connect the endpoint to existing results on divisor weights of exponential sequences.
+
+No endpoint mean-value claim is made.
