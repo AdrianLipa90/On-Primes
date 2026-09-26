@@ -499,3 +499,73 @@ C_*\,Z(h)\,R(4^rh^2-4).
 Thus every instantaneous infinite Euler product is compressed into a universal background constant, static odd-prime locks from \(h\), and a finite dynamic correction from the prime divisors of \(4^rh^2-4\).
 
 See proofs/ARPL_INSTANTANEOUS_SINGULAR_SERIES_FACTORIZATION_V0_1.md.
+
+
+## Skewes–Euler–Hilbert–Collatz / spectral phase lane
+
+The additive Skewes–Euler–Hilbert–Collatz bridge is now carried on the current ARPL line. Its exact core is the shared dyadic log-phase clock: the On-Primes map \(x\mapsto2x+1\) advances \(\log(x+1)\) by \(\log2\), while a same-target accelerated Collatz reverse-fibre step advances the shifted coordinate by \(2\log2\). The associated Hilbert shift obeys the exact Weyl relation with phase increment \(\omega_\gamma=\gamma\log2\). No RH or Collatz claim follows from this representation.
+
+The spectral von Mangoldt phase bank then imports the classical Landau channel: fixed prime powers \(q=p^m\) are the nonzero von Mangoldt spectral lines, with the dyadic tower \(2^m\) selecting harmonics of the same \(\gamma\log2\) clock. See \`SKEWES_EULER_HILBERT_COLLATZ_BRIDGE_V0_1.md\`, \`SPECTRAL_VON_MANGOLDT_PHASE_BANK_V0_1.md\`, and \`proofs/SPECTRAL_SHIFTED_VON_MANGOLDT_CLOSURE_V0_1.md\`.
+
+## Montgomery–Dyson forced phase spectroscopy
+
+The shared consecutive-projector + filled-CAR sector forces both
+
+\[
+g_2(s)=1-\left(\frac{\sin\pi s}{\pi s}\right)^2
+\]
+
+and its Fourier-dual form factor
+
+\[
+\boxed{S(\tau)=\min(|\tau|,1)}.
+\]
+
+In phase coordinates \(\Delta\Phi=2\pi s\),
+
+\[
+g_2(\Delta\Phi)
+=
+1-
+\left[
+\frac{\sin(\Delta\Phi/2)}
+{\Delta\Phi/2}
+\right]^2.
+\]
+
+These are **DERIVED_IN_FRAMEWORK / FORCED_PREDICTION** for the declared projector/CAR sector; GUE, Montgomery and zeta-zero samples are not derivation inputs. The zeta-specific occupancy/operator binding remains separate and open.
+
+## Prime-power phase bank ↔ form-factor duality
+
+For any finite spectral sample,
+
+\[
+R_q=\frac1N\sum_jq^{i\gamma_j}
+\]
+
+obeys the exact finite identity
+
+\[
+\boxed{
+N|R_q|^2
+=
+\frac1N\sum_{j,k}
+e^{i(\gamma_j-\gamma_k)\log q}.
+}
+\]
+
+At reference height \(T\), frozen local unfolding maps
+
+\[
+\boxed{
+\tau_q(T)=\frac{\log q}{\log(T/2\pi)},
+}
+\]
+
+so the phase-bank power is exactly the finite form-factor power at \(\tau_q\). Prime powers sample the logarithmic lattice
+
+\[
+\tau_{p^m}(T)=\frac{m\log p}{\log(T/2\pi)}.
+\]
+
+Fixed \(q\) collapses toward \(\tau=0\); probing fixed nonzero \(\tau\) requires \(q(T)\asymp(T/2\pi)^\tau\) plus the correct window/smoothing limit. See \`proofs/PHASE_BANK_FORM_FACTOR_DUALITY_V0_1.md\`.
