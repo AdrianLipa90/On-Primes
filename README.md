@@ -975,3 +975,44 @@ The rectangular limit gives \(K_V(s)=(1-|s|)_+\), exactly the Fejér shift kerne
 Thus the remaining short-window frontier is analytic, not representational.
 
 See \`proofs/MELLIN_ADDITIVE_WINDOW_AUTOCORRELATION_BRIDGE_V0_1.md\`.
+
+
+## RH-conditional short-window validation envelope
+
+There is also a strictly separated **validation-only** envelope. Under RH, the standard Saffari--Vaughan/Selberg estimate gives
+
+\[
+J(X,H)
+\ll
+XH\left(1+\log\frac{X}{H}\right)^2.
+\]
+
+Therefore, if
+
+\[
+\frac{H}{(1+\log(X/H))^2}\to\infty
+\]
+
+and
+
+\[
+H\log^2X=o(X),
+\]
+
+the full Fejér average satisfies \(\mathcal C_{X,H}/X\to1\). With
+
+\[
+R=H^{1/2},
+\]
+
+the exact Möbius--CRT low block also tends to the same main term, so conditionally
+
+\[
+\boxed{
+\mathcal T_{X,H,R}/X\to0.
+}
+\]
+
+This extends the **validation range** down toward polylogarithmic windows, but it cannot be used as a premise in any proof whose target is RH. It is recorded only to test scaling, normalization and compatibility of the forced phase-spectroscopy cage.
+
+See \`proofs/RH_CONDITIONAL_FEJER_AVERAGED_TAIL_VALIDATION_V0_1.md\`.
