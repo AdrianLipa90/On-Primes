@@ -1403,3 +1403,42 @@ def twin_phase_covering_optimal_l2_bound(primes: Sequence[int], h: int) -> Fract
     if value < 0 or value > 1:
         raise ArithmeticError("projection bound escaped [0,1]")
     return value
+
+
+def twin_phase_avoidance_hazards(
+    primes: Sequence[int], h: int
+) -> tuple[Fraction, ...]:
+    """Exact conditional hit hazards along a finite active-channel ordering.
+
+    eta_N = 1 - a_{N+1}/a_N, where a_N is the exact avoidance mass after N
+    channels. Exponential-time through finite inclusion-exclusion.
+    """
+    support = tuple(int(p) for p in primes)
+    if len(set(support)) != len(support):
+        raise ValueError("primes must be distinct")
+    hazards: list[Fraction] = []
+    previous = Fraction(1, 1)
+    for n in range(1, len(support) + 1):
+        current = twin_finite_lower_edge_mass(support[:n], int(h))
+        if previous == 0:
+            hazards.append(Fraction(0, 1))
+        else:
+            hazards.append(Fraction(1, 1) - current / previous)
+        previous = current
+    return tuple(hazards)
+
+
+def twin_phase_compatibility_fractions(
+    primes: Sequence[int], h: int
+) -> tuple[Fraction, ...]:
+    """Exact c_N=b_N*eta_N compatibility fractions of surviving parent cells."""
+    support = tuple(int(p) for p in primes)
+    hazards = twin_phase_avoidance_hazards(support, int(h))
+    branching = twin_phase_refinement_branching(support, int(h))
+    out: list[Fraction] = []
+    for eta, b in zip(hazards, branching):
+        c = eta * b
+        if c < 0 or c > 1:
+            raise ArithmeticError("compatibility fraction escaped [0,1]")
+        out.append(c)
+    return tuple(out)
