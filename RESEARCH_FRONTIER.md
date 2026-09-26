@@ -582,3 +582,54 @@ Potential rigorous routes:
 5. prove divergence/no-go if rare large divisor-weight spikes prevent Cesaro convergence.
 
 No arithmetic-mean existence claim is made.
+
+
+### OP-F23 — B2 phase spectrum CLOSED
+
+The centered logarithmic orbit
+
+\[
+Y_h(r)=\log\mathfrak S(H_{2^rh})-\mathcal L(h)
+\]
+
+is now proved to be a discrete Besicovitch-\(B^2\) almost-periodic sequence.
+
+Consequences now closed:
+
+- finite global variance \(\mathcal V(h)\);
+- exact absolutely convergent covariance representation;
+- rational pure-point Fourier--Bohr spectrum
+  \[
+  \lambda=m/\operatorname{ord}_p(2)\pmod1;
+  \]
+- Parseval power identity;
+- autocorrelation/power-spectrum duality;
+- density control of large logarithmic excursions.
+
+This is the rigorous spectral object underlying the ARPL “phase spectrum” terminology.
+
+### OP-F24 — arithmetic mean remains the unique raw-amplitude gate
+
+The unresolved raw observable is still
+
+\[
+\lim_{T\to\infty}
+\frac1T\sum_{r<T}\mathfrak S(H_{2^rh}),
+\]
+
+equivalently the Cesaro mean of
+
+\[
+R(4^rh^2-4).
+\]
+
+The logarithm has mean and finite \(B^2\) variance, but exponentiation is not continuous from \(B^2\) to \(L^1\) without additional uniform-integrability control.
+
+Therefore no raw arithmetic-mean existence claim follows from the B2 theorem alone.
+
+The next valid target is either:
+
+1. an exponential-integrability/uniform-integrability bound for the logarithmic field;
+2. a direct all-orders bound for simultaneous special-hit subsets;
+3. a known mean-value theorem for multiplicative weights on the exponential sequence \(4^rh^2-4\);
+4. or a no-go/counterexample mechanism.
