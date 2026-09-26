@@ -922,3 +922,88 @@ Moreover,
 for every \(k\ge0\): the **entire limiting distribution** is a dyadic-orbit invariant.
 
 See proofs/ARPL_ENTIRE_PHASE_MOMENT_LIMITING_LAW_V0_1.md.
+
+
+### Mellin law and cumulant geometry
+
+Let \(\nu_h\) be the limiting law of
+
+\[
+Y=\log\mathfrak S(H_{2^rh})
+\]
+
+and let
+
+\[
+\mu_h=(\exp)_*\nu_h
+\]
+
+be the corresponding limiting law of the positive singular-series amplitude.
+
+The entire phase transform is simultaneously
+
+\[
+\boxed{
+\mathcal M_h(z)
+=
+\int_{\mathbb R}e^{zy}\,d\nu_h(y)
+=
+\int_{(0,\infty)}x^z\,d\mu_h(x).
+}
+\]
+
+Thus it is both the bilateral Laplace transform of the log law and the Mellin transform of the positive amplitude law.
+
+Because \(\mathcal M_h(0)=1\), the normalized logarithm
+
+\[
+K_h(z)=\log\mathcal M_h(z)
+\]
+
+is analytic near \(0\) and defines the complete cumulant tower
+
+\[
+\kappa_n(h)=K_h^{(n)}(0).
+\]
+
+In particular,
+
+\[
+\boxed{
+\kappa_1(h)=\mathcal L(h),
+\qquad
+\kappa_2(h)=\mathcal V(h).
+}
+\]
+
+Every polynomial log moment exists, and the limiting law is moment-determinate.
+
+The entire transform also gives optimized Chernoff envelopes:
+
+\[
+\Pr(Y\ge y)
+\le
+\inf_{s>0}
+\exp(K_h(s)-sy),
+\]
+
+and for the positive amplitude \(X=e^Y\),
+
+\[
+\Pr(X\ge x)
+\le
+\inf_{s>0}
+\frac{\mathcal M_h(s)}{x^s}.
+\]
+
+Finally,
+
+\[
+\boxed{
+\kappa_n(2^kh)=\kappa_n(h)
+}
+\]
+
+for every \(n\ge1\): the complete cumulant geometry is a dyadic-orbit invariant.
+
+See proofs/ARPL_MELLIN_CUMULANT_GEOMETRY_V0_1.md.
