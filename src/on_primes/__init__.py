@@ -164,6 +164,10 @@ from .phase_law import (
     twin_phase_refinement_branching,
     twin_quadratic_subset_hit_density,
     twin_finite_lower_edge_mass,
+    twin_phase_covering_gram,
+    twin_phase_covering_density_vector,
+    twin_phase_covering_equal_weight_bound,
+    twin_phase_covering_optimal_l2_bound,
 )
 from .modular import (
     is_obstructed_by,
@@ -321,4 +325,8 @@ __all__ = [
     "twin_phase_refinement_branching",
     "twin_quadratic_subset_hit_density",
     "twin_finite_lower_edge_mass",
+    "twin_phase_covering_gram",
+    "twin_phase_covering_density_vector",
+    "twin_phase_covering_equal_weight_bound",
+    "twin_phase_covering_optimal_l2_bound",
 ]
