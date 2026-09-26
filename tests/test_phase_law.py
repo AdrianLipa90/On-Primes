@@ -14,6 +14,15 @@ from on_primes.phase_law import (
     phase_value,
     prime_power_signature,
     reconstruct_from_gaps,
+    ramanujan_sum,
+    finite_prime_pair_singular_product,
+    finite_prime_pair_ramanujan_expansion,
+    twin_quadruplet_residue_count,
+    twin_quadruplet_local_factor,
+    finite_twin_quadruplet_singular_product,
+    twin_gap_mod6_admissible,
+    twin_quadruplet_dyadic_local_orbit,
+    even_sector_pair_singular_dyadic_invariant,
 )
 
 
@@ -85,6 +94,46 @@ class ArithmeticRelationalPhaseLawTests(unittest.TestCase):
         self.assertTrue(all(g % 6 == 0 for g in gaps))
         self.assertTrue(all(phase_residue(g, 2) == 0 for g in gaps))
         self.assertTrue(all(phase_residue(g, 3) == 0 for g in gaps))
+
+
+    def test_finite_euler_ramanujan_factorization(self):
+        support = (2, 3, 5, 7, 11)
+        for h in range(1, 65):
+            self.assertEqual(
+                finite_prime_pair_singular_product(h, support),
+                finite_prime_pair_ramanujan_expansion(h, support),
+            )
+
+    def test_prime_pair_local_channels(self):
+        self.assertEqual(ramanujan_sum(5, 10), 4)
+        self.assertEqual(ramanujan_sum(5, 11), -1)
+        self.assertEqual(finite_prime_pair_singular_product(3, (2, 3, 5)), 0)
+        self.assertGreater(finite_prime_pair_singular_product(6, (2, 3, 5)), 0)
+
+    def test_even_sector_pair_singular_series_is_dyadic_invariant(self):
+        support = (2, 3, 5, 7, 11, 13)
+        for h in range(2, 100, 2):
+            self.assertTrue(even_sector_pair_singular_dyadic_invariant(h, support))
+
+    def test_twin_quadruplet_mod6_gate(self):
+        for h in range(1, 120):
+            self.assertEqual(twin_gap_mod6_admissible(h), h % 6 == 0)
+            local23 = finite_twin_quadruplet_singular_product(h, (2, 3))
+            if h % 6 == 0:
+                self.assertGreater(local23, 0)
+                self.assertEqual(twin_quadruplet_residue_count(2, h), 1)
+                self.assertEqual(twin_quadruplet_residue_count(3, h), 2)
+            else:
+                self.assertEqual(local23, 0)
+
+    def test_twin_quadruplet_factor_tracks_dyadic_phase_orbit(self):
+        p, h, steps = 7, 6, 12
+        orbit = twin_quadruplet_dyadic_local_orbit(p, h, steps)
+        residue = h % p
+        for observed_residue, factor in orbit:
+            self.assertEqual(observed_residue, residue)
+            self.assertEqual(factor, twin_quadruplet_local_factor(p, residue))
+            residue = (2 * residue) % p
 
 
 if __name__ == "__main__":
