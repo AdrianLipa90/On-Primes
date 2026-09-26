@@ -644,3 +644,91 @@ def twin_connected_resonance_cumulant(primes: Sequence[int], h: int) -> Fraction
         return total
 
     return cumulant(support)
+
+
+def _bell_number(n: int) -> int:
+    """Bell number B_n."""
+    n = int(n)
+    if n < 0:
+        raise ValueError("n must be nonnegative")
+    row = [1]
+    for _ in range(n):
+        new = [row[-1]]
+        for j in range(len(row)):
+            new.append(new[-1] + row[j])
+        row = new
+    return row[0]
+
+
+def twin_centered_joint_moment(primes: Sequence[int], h: int) -> Fraction:
+    """Exact common-clock moment of centered local twin-factor observables."""
+    support = tuple(int(p) for p in primes)
+    if len(set(support)) != len(support):
+        raise ValueError("primes must be distinct")
+    if not support:
+        return Fraction(1, 1)
+    periods = [twin_local_dyadic_period(p, int(h)) for p in support]
+    period = math.lcm(*periods)
+    residues = {p: int(h) % p for p in support}
+    means = {p: twin_local_orbit_mean(p, int(h)) for p in support}
+    total = Fraction(0, 1)
+    for _ in range(period):
+        value = Fraction(1, 1)
+        for p in support:
+            value *= twin_quadruplet_local_factor(p, residues[p]) - means[p]
+        total += value
+        for p in support:
+            residues[p] = (2 * residues[p]) % p
+    return total / period
+
+
+def twin_centered_moment_resonance_bound(primes: Sequence[int], h: int) -> Fraction:
+    """Finite Fourier-resonance upper bound for a centered joint moment.
+
+    |E prod X_p| <= 2^n * prod(alpha_p) / lcm(d_p(h)).
+    """
+    support = tuple(int(p) for p in primes)
+    if len(set(support)) != len(support):
+        raise ValueError("primes must be distinct")
+    if not support:
+        return Fraction(1, 1)
+    periods = [twin_local_dyadic_period(p, int(h)) for p in support]
+    L = math.lcm(*periods)
+    alpha_product = Fraction(1, 1)
+    for p in support:
+        _, alpha = twin_quadruplet_factor_decomposition(p)
+        alpha_product *= alpha
+    return Fraction(2 ** len(support), L) * alpha_product
+
+
+def twin_connected_cumulant_fixed_order_bound(primes: Sequence[int], h: int) -> Fraction:
+    """Crude rigorous fixed-order bound for the connected cumulant.
+
+    For n>=2:
+      |K(J;h)| <= Bell(n)*(n-1)!*2^n*prod(alpha_p)/max_p d_p(h).
+    """
+    support = tuple(int(p) for p in primes)
+    n = len(support)
+    if n < 2:
+        raise ValueError("at least two channels are required")
+    if len(set(support)) != n:
+        raise ValueError("primes must be distinct")
+    periods = [twin_local_dyadic_period(p, int(h)) for p in support]
+    D = max(periods)
+    alpha_product = Fraction(1, 1)
+    for p in support:
+        _, alpha = twin_quadruplet_factor_decomposition(p)
+        alpha_product *= alpha
+    coefficient = _bell_number(n) * math.factorial(n - 1) * (2 ** n)
+    return Fraction(coefficient, D) * alpha_product
+
+
+def twin_channel_is_dynamically_active(p: int, h: int) -> bool:
+    """Whether the centered local observable is nonconstant along the dyadic orbit."""
+    p = int(p)
+    if not _is_prime_small(p) or p < 5:
+        raise ValueError("p must be a prime >= 5")
+    if int(h) % p == 0:
+        return False
+    kind = twin_local_mean_class(p, int(h))
+    return kind in {"special-even", "special-odd"}
