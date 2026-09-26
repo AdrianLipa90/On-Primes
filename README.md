@@ -1007,3 +1007,72 @@ Finally,
 for every \(n\ge1\): the complete cumulant geometry is a dyadic-orbit invariant.
 
 See proofs/ARPL_MELLIN_CUMULANT_GEOMETRY_V0_1.md.
+
+
+### Procyclic phase-refinement tower
+
+Enumerate the active base-4 channel periods
+
+\[
+e_j=\operatorname{ord}_{p_j}(4)
+\]
+
+and define
+
+\[
+L_N=\operatorname{lcm}(e_1,\dots,e_N).
+\]
+
+The finite diagonal common-clock state is exactly
+
+\[
+\boxed{
+K_{h,N}\cong\mathbb Z/L_N\mathbb Z.
+}
+\]
+
+When a new channel is added, every old phase cell has exactly
+
+\[
+\boxed{
+b_N
+=
+\frac{L_{N+1}}{L_N}
+=
+\frac{e_{N+1}}{\gcd(e_{N+1},L_N)}
+}
+\]
+
+children. Thus \(b_N=1\) identifies an exact clock-resolution redundancy, while \(b_N>1\) gives a genuine refinement.
+
+The global phase hull is the compact procyclic inverse limit
+
+\[
+\boxed{
+K_h
+\cong
+\varprojlim_N
+\mathbb Z/L_N\mathbb Z.
+}
+\]
+
+Its Pontryagin dual is the rational frequency module
+
+\[
+\boxed{
+\widehat K_h
+\cong
+\bigcup_N
+\frac1{L_N}\mathbb Z/\mathbb Z
+\subset\mathbb Q/\mathbb Z.
+}
+\]
+
+The previously derived Fourier--Bohr frequencies \(m/e_p\) are elements of this same module.
+
+Equivalently, the exact phase-refinement graph has level-\(N\) vertices
+\(\mathbb Z/L_N\mathbb Z\), reduction edges between successive levels, and coherent infinite paths equal to points of \(K_h\).
+
+This is an exact inverse-limit hierarchy. No Hausdorff/fractal dimension is claimed without an explicit metric and a separate theorem.
+
+See proofs/ARPL_PROCYCLIC_PHASE_REFINEMENT_TOWER_V0_1.md.
