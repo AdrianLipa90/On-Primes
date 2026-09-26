@@ -319,3 +319,28 @@ A(h)^z
 \]
 
 together with its number-theoretic clock periods \(e_p=\operatorname{ord}_p(4)\) and generalized-CRT compatibility relation. A targeted search has not established literature novelty for this exact specialization.
+
+
+## Prime divisors of non-degenerate linear recurrences
+
+The proof that the ARPL active channel set is infinite uses a classical theorem and does not claim novelty for that input.
+
+For an integer linear recurrence whose distinct characteristic roots have no quotient that is a root of unity, there are infinitely many distinct prime divisors among the sequence values. This result goes back to:
+
+- G. Pólya, *Arithmetische Eigenschaften der Reihenentwicklungen rationaler Funktionen*, Journal für die reine und angewandte Mathematik 151 (1921), 99--100.
+
+A modern discussion is:
+
+- H. Roskam, *Prime divisors of linear recurrences and Artin's primitive root conjecture for number fields*, Journal de Théorie des Nombres de Bordeaux 13(1) (2001), 303--314.
+
+Roskam explicitly notes that Pólya's 1921 result already gives infinitude of prime divisors for every non-degenerate integer linear recurrence of order at least two.
+
+ARPL applies this classical theorem to
+
+\[
+U_r=(h/2)^2 4^r-1,
+\]
+
+whose characteristic roots are \(4\) and \(1\). Since \(6\mid h\), every prime divisor of \(U_r\) is different from \(2\) and \(3\), hence is an active ARPL channel \(p\ge5\).
+
+This prior-art input establishes active-channel infinitude only. The subsequent procyclic/Haar lower-edge atom criterion is the project-specific specialization.
