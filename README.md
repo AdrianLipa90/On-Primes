@@ -763,3 +763,85 @@ C_h(X)-C_{h,\le R}(X),
 the high-divisor tail \(d>R\) or \(e>R\).
 
 See \`proofs/MOBIUS_CRT_LOW_DIVISOR_PHASE_BLOCK_V0_1.md\`.
+
+
+## Fejér-averaged Möbius–CRT low block
+
+The fixed-shift high-divisor problem is stronger than the phase-spectroscopy form factor actually requires. Introduce the triangular shift weights
+
+\[
+w_H(h)=1-\frac{|h|}{H+1}.
+\]
+
+The exact averaged CRT compatibility gate is
+
+\[
+\boxed{
+\frac1{H+1}
+\sum_{\substack{|h|\le H\\g\mid h}}
+w_H(h)
+=
+\frac1g+
+\frac{r(g-r)}{g(H+1)^2},
+\qquad
+r=(H+1)\bmod g.
+}
+\]
+
+Applied to the low Möbius--CRT density coefficient,
+
+\[
+\boxed{
+\overline M_{H,R}
+=
+\left(
+\sum_{d\le R}
+\frac{\mu(d)\log d}{d}
+\right)^2
++
+\mathcal B_{H,R},
+}
+\]
+
+with the explicit bound
+
+\[
+|\mathcal B_{H,R}|
+\le
+\frac{\log^2R}{4(H+1)^2}
+\left[
+5R+(1+\log R)^2
+\right].
+\]
+
+The already-proved uniform low-block counting error therefore gives
+
+\[
+\frac{\overline C_{H,R}(X)}{X}\to1
+\]
+
+when
+
+\[
+(R\log R)^2=o(X),
+\qquad
+R\log^2R=o(H^2),
+\qquad
+R\to\infty,
+\]
+
+using the standard PNT-related identity
+
+\[
+\sum_{n\ge1}\frac{\mu(n)\log n}{n}=-1.
+\]
+
+This moves the actual spectral frontier from a fixed-\(h\) twin-prime-strength statement to the weaker and naturally Fourier-compatible target
+
+\[
+\boxed{
+\overline T_{H,R}(X)=o(X).
+}
+\]
+
+See \`proofs/FEJER_AVERAGED_MOBIUS_CRT_LOW_BLOCK_V0_1.md\`.
