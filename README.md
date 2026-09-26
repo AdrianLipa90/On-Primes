@@ -164,3 +164,44 @@ For the fibre \(x_{a,k}=a2^k-1\), modular divisor obstructions are equivalently 
 See proofs/ARITHMETIC_RELATIONAL_PHASE_LAW_V0_1.md and tests/test_phase_law.py.
 
 Prior-art firewall: Fourier/CRT/profinite character machinery, Wiener--Khintchine duality, Ramanujan sums, and earlier Ramanujan--Fourier work on prime-pair correlations are established mathematics. ARPL v0.1 does not claim a zeta-zero equivalence, a twin-prime proof, or RH.
+
+
+### Singular-series phase bridge
+
+ARPL now closes the local Hardy--Littlewood bridge. For a prime-pair gap \(h\),
+
+\[
+\mathfrak S_P(h)
+=
+\prod_{p\in P}
+\left(1+\frac{c_p(h)}{(p-1)^2}\right)
+\]
+
+is exactly determined by the finite modular phase state \((h\bmod p)_{p\in P}\), and equals the corresponding finite squarefree Ramanujan expansion.
+
+For two twin pairs separated by \(h\), the four-point pattern
+
+\[
+H_h=\{0,2,h,h+2\}
+\]
+
+has local factor
+
+\[
+B_p(h)=
+\frac{1-\nu_p(H_h)/p}{(1-1/p)^4}.
+\]
+
+The \(p=2\) and \(p=3\) channels are jointly nonzero exactly when
+
+\[
+h\equiv0\pmod6.
+\]
+
+Higher prime channels modulate the local factor through \(h\bmod p\). Under the existing dyadic transport \(h\mapsto2h\), these channel states evolve by
+
+\[
+u\mapsto2u\pmod p.
+\]
+
+See proofs/ARPL_SINGULAR_SERIES_PHASE_BRIDGE_V0_1.md and receipts/ARPL_SINGULAR_SERIES_REVERSE_TEST_V0_1.md.
