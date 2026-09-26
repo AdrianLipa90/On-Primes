@@ -23,6 +23,13 @@ from on_primes.phase_law import (
     twin_gap_mod6_admissible,
     twin_quadruplet_dyadic_local_orbit,
     even_sector_pair_singular_dyadic_invariant,
+    doubling_order_mod_prime,
+    doubling_orbits_mod_prime,
+    dyadic_transfer_spectrum_multiplicities,
+    twin_quadruplet_factor_decomposition,
+    twin_special_residue_cycles,
+    twin_special_mode_support,
+    twin_special_cycles_coincide,
 )
 
 
@@ -134,6 +141,49 @@ class ArithmeticRelationalPhaseLawTests(unittest.TestCase):
             self.assertEqual(observed_residue, residue)
             self.assertEqual(factor, twin_quadruplet_local_factor(p, residue))
             residue = (2 * residue) % p
+
+
+    def test_doubling_orbit_decomposition(self):
+        for p in (5, 7, 11, 13, 17, 19, 23, 29, 31):
+            d = doubling_order_mod_prime(p)
+            orbits = doubling_orbits_mod_prime(p)
+            nonzero = tuple(o for o in orbits if o != (0,))
+            self.assertEqual(orbits[0], (0,))
+            self.assertTrue(all(len(o) == d for o in nonzero))
+            self.assertEqual(len(nonzero), (p - 1) // d)
+            self.assertEqual({u for o in orbits for u in o}, set(range(p)))
+
+    def test_transfer_spectrum_multiplicities(self):
+        for p in (5, 7, 11, 13, 17, 23, 31):
+            d, mult = dyadic_transfer_spectrum_multiplicities(p)
+            cycles = (p - 1) // d
+            self.assertEqual(mult[0], cycles + 1)
+            for m in range(1, d):
+                self.assertEqual(mult[m], cycles)
+            self.assertEqual(sum(mult.values()), p)
+
+    def test_twin_local_factor_three_level_decomposition(self):
+        for p in (5, 7, 11, 13, 17, 19):
+            base, spike = twin_quadruplet_factor_decomposition(p)
+            for u in range(p):
+                predicted = base
+                if u == 0:
+                    predicted += 2 * spike
+                if u in (2, (-2) % p):
+                    predicted += spike
+                self.assertEqual(predicted, twin_quadruplet_local_factor(p, u))
+
+    def test_special_cycle_parity_selection_rule(self):
+        for p in (5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43):
+            d = doubling_order_mod_prime(p)
+            plus, minus = twin_special_residue_cycles(p)
+            self.assertEqual(twin_special_cycles_coincide(p), d % 2 == 0)
+            if d % 2 == 0:
+                self.assertEqual(set(twin_special_mode_support(p)), set(range(0, d, 2)))
+                self.assertEqual(plus, minus)
+            else:
+                self.assertEqual(set(twin_special_mode_support(p)), set(range(d)))
+                self.assertNotEqual(plus, minus)
 
 
 if __name__ == "__main__":
