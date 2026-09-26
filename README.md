@@ -1076,3 +1076,70 @@ Equivalently, the exact phase-refinement graph has level-\(N\) vertices
 This is an exact inverse-limit hierarchy. No Hausdorff/fractal dimension is claimed without an explicit metric and a separate theorem.
 
 See proofs/ARPL_PROCYCLIC_PHASE_REFINEMENT_TOWER_V0_1.md.
+
+
+### Phase-resolution information and limiting-law tails
+
+At refinement level \(N\), Haar measure is uniform on \(L_N\) phase states, so the finite clock-state Shannon entropy is
+
+\[
+\boxed{
+H_N=\log L_N.
+}
+\]
+
+Adding channel \(N+1\) contributes exactly
+
+\[
+\boxed{
+\Delta H_N
+=
+\log b_N
+}
+\]
+
+nats, or \(\log_2 b_N\) bits. Thus a channel with \(b_N=1\) adds no new clock resolution, while \(b_N>1\) adds an exact finite phase-resolution increment. This is finite-group Shannon information, not thermodynamic entropy.
+
+The limiting amplitude law also has a hard lower edge. With
+
+\[
+A(h)=\frac{27}{2}C_*Z(h),
+\]
+
+every instantaneous value satisfies
+
+\[
+\mathfrak S(H_{2^rh})\ge A(h),
+\]
+
+hence
+
+\[
+\mu_h([A(h),\infty))=1.
+\]
+
+Because all positive moments are finite, for every \(N>0\),
+
+\[
+\boxed{
+\mu_h([x,\infty))
+=
+O_{h,N}(x^{-N})
+}
+\]
+
+and therefore the log-amplitude upper tail satisfies
+
+\[
+\boxed{
+\nu_h([y,\infty))
+=
+O_{h,N}(e^{-Ny})
+}
+\]
+
+for every prescribed fixed \(N\).
+
+These are tail-probability statements; no density or atomlessness claim is made.
+
+See proofs/ARPL_PROCYCLIC_PHASE_REFINEMENT_TOWER_V0_1.md and proofs/ARPL_LIMIT_LAW_SUPPORT_TAILS_V0_1.md.
