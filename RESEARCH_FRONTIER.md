@@ -387,3 +387,41 @@ A successful formulation should produce weights \(K(J;h)\) on finite prime subse
 - convergence of a suitable sum of connected weights would imply convergence of the fully coupled global observable.
 
 This is the current hard gate.
+
+
+### OP-F18 status update — finite connected expansion CLOSED
+
+The finite connected/cumulant expansion is now exact. The connected weights
+
+\[
+K(J;h)
+\]
+
+reconstruct all finite common-clock moments by partition expansion, and vanish across distinct period-overlap components.
+
+The finite compression problem is therefore closed at the algebraic level.
+
+### OP-F19 — Infinite connected-cluster convergence
+
+The remaining problem is analytic:
+
+Determine whether the connected weights obey a summable bound under a specified increasing prime support, sufficient to make the connected expansion converge.
+
+A successful theorem could take the form
+
+\[
+\sum_{\substack{J\ni p_0\\|J|\ge2}}
+|K(J;h)|\,W(J)<\infty
+\]
+
+for an explicit weight \(W\), or an equivalent cluster criterion.
+
+This would promote the finite decomposition
+
+\[
+\text{baseline}+\text{connected resonances}
+\]
+
+to a fully coupled infinite-channel ARPL observable.
+
+Failure to obtain such a bound should be recorded as a no-go rather than hidden by finite numerics.
