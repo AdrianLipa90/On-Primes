@@ -49,6 +49,11 @@ from on_primes.phase_law import (
     twin_centered_moment_resonance_bound,
     twin_connected_cumulant_fixed_order_bound,
     twin_channel_is_dynamically_active,
+    twin_background_factor,
+    twin_zero_correction_ratio,
+    twin_special_correction_ratio,
+    twin_finite_instantaneous_product,
+    twin_finite_instantaneous_factorization,
 )
 
 
@@ -334,6 +339,32 @@ class ArithmeticRelationalPhaseLawTests(unittest.TestCase):
         self.assertTrue(inactive)
         p = inactive[0]
         self.assertEqual(twin_centered_joint_moment((p, 7), 6), 0)
+
+
+    def test_instantaneous_factorization_identity(self):
+        support = (5, 7, 11, 13, 17, 19, 23, 29, 31)
+        for h in (6, 18, 30, 42, 66):
+            for r in range(8):
+                self.assertEqual(
+                    twin_finite_instantaneous_product(support, h, r),
+                    twin_finite_instantaneous_factorization(support, h, r),
+                )
+
+    def test_local_correction_ratios(self):
+        for p in (5, 7, 11, 13, 17, 19):
+            beta = twin_background_factor(p)
+            self.assertEqual(
+                twin_quadruplet_local_factor(p, 0) / beta,
+                twin_zero_correction_ratio(p),
+            )
+            self.assertEqual(
+                twin_quadruplet_local_factor(p, 2) / beta,
+                twin_special_correction_ratio(p),
+            )
+            self.assertEqual(
+                twin_quadruplet_local_factor(p, -2) / beta,
+                twin_special_correction_ratio(p),
+            )
 
 
 if __name__ == "__main__":
