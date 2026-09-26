@@ -277,3 +277,39 @@ The dual dyadic operator has the exact kernel
 On-Primes independently has a half-integer boundary lemma in the original affine variable. These are mathematically distinct occurrences of \(1/2\).
 
 Open task: determine whether there is a rigorous conjugacy, functorial relation, or no-go theorem between these two appearances. Numerical coincidence alone is not evidence of identity.
+
+
+### OP-F15 — Scaled prime-power form-factor closure
+
+The finite coordinate bridge is now exact:
+
+\[
+q^{i\gamma_j}
+\quad\longleftrightarrow\quad
+e^{2\pi i\tau_q u_{T,j}},
+\qquad
+\tau_q=\frac{\log q}{\log(T/2\pi)},
+\]
+
+and
+
+\[
+K_{\Gamma,T}(\tau_q)=N|R_q|^2.
+\]
+
+The remaining nontrivial gate is asymptotic rather than representational. Construct a continuation-safe and properly windowed family of arithmetic frequencies \(q(T)\) with
+
+\[
+\log q(T)\sim\tau\log(T/2\pi)
+\]
+
+for fixed \(0<\tau<1\), and derive its pair-power limit from the prime/explicit-formula side without inserting the sine kernel or Montgomery target.
+
+A valid closure must distinguish:
+- fixed-\(q\) Landau asymptotics, which collapse to \(\tau=0\);
+- \(q(T)\)-scaled arithmetic frequencies;
+- local versus global zero windows;
+- diagonal/self terms versus connected pair terms;
+- unconditional statements from RH-conditional phase-only simplifications.
+
+If this gate is closed and the resulting local projector/occupancy is independently identified with the shared Hardy--CAR sector, the forced ramp becomes a zeta-specific consequence rather than merely an internally forced target.
