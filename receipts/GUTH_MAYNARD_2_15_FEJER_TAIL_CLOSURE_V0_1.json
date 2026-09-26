@@ -1,0 +1,32 @@
+{
+  "schema": "ON_PRIMES_GUTH_MAYNARD_2_15_FEJER_TAIL_CLOSURE_V0_1",
+  "date": "2026-09-26",
+  "repository": "AdrianLipa90/On-Primes",
+  "branch": "integrate/fejer-averaged-mobius-crt-low-block-v0.1-20260926",
+  "status": "PROVED_FROM_STANDARD_GUTH_MAYNARD_2026__UNCONDITIONAL_AVERAGED_TAIL_CLOSED_TO_2_OVER_15_PLUS_EPSILON",
+  "external_input": {
+    "authors": "Larry Guth; James Maynard",
+    "title": "New large value estimates for Dirichlet polynomials",
+    "venue": "Annals of Mathematics 203 (2026), 623-675",
+    "doi": "10.4007/annals.2026.203.2.6",
+    "zero_density": "N(sigma,T) <= T^(30(1-sigma)/13+o(1))",
+    "almost_all_short_interval_threshold": "2/15+epsilon",
+    "proof_uses_von_mangoldt_L2": true,
+    "rh_used": false
+  },
+  "repository_inputs": [
+    "exact Fejer/sliding-window crosswalk",
+    "exact Mobius-CRT low-divisor phase block",
+    "Fejer-averaged low-block factorization"
+  ],
+  "scale_choice": "R=X^(1/4)",
+  "range": "X^(2/15+epsilon) <= H+1 <= X^0.99",
+  "conclusions": [
+    "full localized Fejer correlation / X -> 1",
+    "low-divisor Fejer block / X -> 1",
+    "Fejer-averaged high-divisor tail / X -> 0"
+  ],
+  "fixed_shift_twin_prime_asymptotic_used": false,
+  "remaining_frontier": "OP-F30 below-2/15 or exact smooth q(T)-window closure",
+  "canon_allowed": false
+}
