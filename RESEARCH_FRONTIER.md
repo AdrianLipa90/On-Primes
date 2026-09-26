@@ -714,3 +714,73 @@ Promising next routes:
 4. connect the endpoint to existing results on divisor weights of exponential sequences.
 
 No endpoint mean-value claim is made.
+
+
+### OP-F27 status update — critical endpoint \(s=1\) CLOSED
+
+The previous elementary proof correctly identified \(s=1\) as the endpoint where its worst-case majorant became logarithmically critical. The endpoint is now closed by adding a standard quantitative multiplicative-order theorem.
+
+Erdős--Murty give, for fixed \(a=2\),
+
+\[
+\operatorname{ord}_p(2)
+\ge
+\sqrt p\,e^{(\log p)^\delta}
+\]
+
+outside an exceptional set of \(O(x/(\log x)^{1+\alpha})\) primes.
+
+The exceptional set has summable reciprocal mass. On the complementary channels,
+
+\[
+\operatorname{ord}_p(4)
+\ge
+\frac12\sqrt p\,e^{(\log p)^\delta}.
+\]
+
+This supplies enough decay to sum every compatible interaction order absolutely.
+
+Consequently the raw arithmetic Cesaro mean and, more generally, every fixed real moment of the singular-series orbit exist and are finite.
+
+### OP-F28 — complex moment transform and limiting distribution
+
+The next analytic gate is no longer existence of the arithmetic mean.
+
+Define formally
+
+\[
+\mathcal M_h(z)
+=
+\lim_{T\to\infty}
+\frac1T
+\sum_{r<T}
+\mathfrak S(H_{2^rh})^z,
+\qquad z\in\mathbb C,
+\]
+
+using the real logarithm because the singular-series factors are positive.
+
+The good/bad Erdős--Murty split suggests compact-uniform convergence in \(z\), which would make \(\mathcal M_h(z)\) entire.
+
+If this is proved, then on the imaginary axis
+
+\[
+\mathcal M_h(it)
+\]
+
+is the limiting characteristic function of
+
+\[
+\log\mathfrak S(H_{2^rh}),
+\]
+
+and Lévy's continuity theorem would give a limiting probability distribution for the logarithmic phase-amplitude field.
+
+Required next outputs:
+
+1. compact-uniform absolute convergence of the complex subset expansion;
+2. entire-ness of the moment transform;
+3. weak convergence of the empirical log-amplitude measures;
+4. identification of derivatives at \(z=0\) with the already proved logarithmic mean, variance and higher cumulants.
+
+No complex-transform or distribution theorem is claimed yet.
