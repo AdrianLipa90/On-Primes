@@ -140,6 +140,13 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-S015 | Möbius inversion for \(\Lambda\) and the generalized Chinese remainder theorem are standard arithmetic ingredients used in OP-D085--OP-D088. | STANDARD | No novelty claim for the component theorems. |
 | OP-O012 | The growing signed Möbius--CRT double sum in OP-D086 admits the uniform cancellation needed to derive the Hardy--Littlewood shifted-correlation asymptotic in the \(q(T)\)-scaled form-factor regime. | OPEN | Exact finite phase representation does not prove the asymptotic cancellation. |
 
+
+| OP-D089 | For the truncated divisor block \(d,e\le R\), \(C_{h,\le R}(X)=X M_{h,R}+E_{h,R}(X)\) with \(|E_{h,R}(X)|\le(R\log R)^2\), uniformly in \(h\). | PROVED | CRT residue count differs from \(X/\operatorname{lcm}(d,e)\) by at most one; absolute finite sum bound. |
+| OP-D090 | If \(R\log R=o(\sqrt X)\), then the low-divisor block satisfies \(C_{h,\le R}(X)=X M_{h,R}+o(X)\); in particular \(R=X^{1/2-\varepsilon}\) works for every fixed \(\varepsilon>0\). | PROVED | OP-D089. |
+| OP-D091 | The low-block coefficient \(M_{h,R}\) is an exact finite ARPL Fourier observable through \(\mathbf1_{g\mid h}=g^{-1}\sum_{a=0}^{g-1}e^{2\pi iah/g}\) with \(g=\gcd(d,e)\). | PROVED | Finite character orthogonality. |
+| OP-D092 | The full shifted correlation splits exactly as \(C_h(X)=X M_{h,R}+E_{h,R}(X)+T_{h,R}(X)\), where all terms with \(d>R\) or \(e>R\) are isolated in the high-divisor tail \(T_{h,R}\). | PROVED | Definition plus OP-D086/OP-D089. |
+| OP-O013 | For a sub-square-root cutoff \(R(X)\), the high-divisor tail \(T_{h,R}(X)\) is \(o(X)\) uniformly in the moving shift/window regime required by the scaled form-factor problem. | OPEN | This is now the concentrated arithmetic obstruction. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
