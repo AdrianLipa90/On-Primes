@@ -121,6 +121,9 @@ from .phase_law import (
     twin_product_of_local_means,
     twin_dyadic_resonance_correction,
     local_periods_pairwise_coprime,
+    twin_finite_dyadic_orbit_invariant,
+    twin_local_mean_class,
+    twin_local_mean_closed_form,
 )
 from .modular import (
     is_obstructed_by,
@@ -235,4 +238,7 @@ __all__ = [
     "twin_product_of_local_means",
     "twin_dyadic_resonance_correction",
     "local_periods_pairwise_coprime",
+    "twin_finite_dyadic_orbit_invariant",
+    "twin_local_mean_class",
+    "twin_local_mean_closed_form",
 ]
