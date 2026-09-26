@@ -342,3 +342,46 @@ for every \(k\ge0\). On positive integers, \(\mathcal I\) depends only on the od
 This is the first controlled infinite-channel ARPL observable. It is the independently averaged baseline; the fully coupled infinite common-clock resonance limit remains open.
 
 See proofs/ARPL_GLOBAL_DYADIC_ORBIT_INVARIANT_V0_1.md.
+
+
+### Connected resonance expansion
+
+Finite common-clock moments now admit an exact connected expansion. For a finite prime subset \(J\),
+
+\[
+K(J;h)
+=
+\sum_{\pi\in\Pi(J)}
+(|\pi|-1)!(-1)^{|\pi|-1}
+\prod_{A\in\pi}M(A;h),
+\]
+
+with the inverse partition reconstruction of \(M(J;h)\).
+
+For two channels, \(K\) is exactly the previously defined resonance correction. Higher \(K\) isolate irreducible multi-channel couplings.
+
+The period-overlap graph
+
+\[
+p\sim q
+\iff
+\gcd(d_p(h),d_q(h))>1
+\]
+
+provides an exact compression rule: moments factor across its connected components, and every connected cumulant spanning more than one component is zero.
+
+At \(h=6\),
+
+\[
+K(\{7,13,19\};6)
+=
+-\frac{5168743489}{457019805007872}\ne0,
+\]
+
+while
+
+\[
+K(\{5,7,11\};6)=0.
+\]
+
+See proofs/ARPL_CONNECTED_RESONANCE_EXPANSION_V0_1.md.
