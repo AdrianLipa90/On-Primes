@@ -612,5 +612,29 @@ class ArithmeticRelationalPhaseLawTests(unittest.TestCase):
         self.assertEqual(len(twin_finite_phase_hull(support, 6)), levels[-1])
 
 
+    def test_subset_hit_density_generalized_crt(self):
+        self.assertEqual(twin_quadratic_subset_hit_density((), 6), 1)
+        self.assertEqual(twin_quadratic_subset_hit_density((5,), 6), __import__("fractions").Fraction(1, 2))
+        self.assertEqual(twin_quadratic_subset_hit_density((5, 7), 6), __import__("fractions").Fraction(1, 6))
+        self.assertEqual(twin_quadratic_subset_hit_density((7, 13), 6), __import__("fractions").Fraction(1, 6))
+        self.assertEqual(twin_quadratic_subset_hit_density((5, 13), 6), 0)
+
+    def test_finite_lower_edge_mass_exact(self):
+        active_prefixes = (
+            ((5,), __import__("fractions").Fraction(1, 2)),
+            ((5, 7), __import__("fractions").Fraction(1, 3)),
+            ((5, 7, 11), __import__("fractions").Fraction(4, 15)),
+            ((5, 7, 11, 13), __import__("fractions").Fraction(2, 15)),
+            ((5, 7, 11, 13, 19, 23), __import__("fractions").Fraction(4, 33)),
+            ((5, 7, 11, 13, 19, 23, 29, 37, 47, 53), __import__("fractions").Fraction(8, 69)),
+        )
+        previous = __import__("fractions").Fraction(1, 1)
+        for support, expected in active_prefixes:
+            mass = twin_finite_lower_edge_mass(support, 6)
+            self.assertEqual(mass, expected)
+            self.assertLessEqual(mass, previous)
+            previous = mass
+
+
 if __name__ == "__main__":
     unittest.main()
