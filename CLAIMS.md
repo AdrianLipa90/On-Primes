@@ -158,6 +158,9 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`, `RES
 | OP-D114 | The Pontryagin dual frequency module is \(\widehat K_h\cong\bigcup_N (1/L_N)\mathbb Z/\mathbb Z\subset\mathbb Q/\mathbb Z\); the previously derived local frequencies \(m/e_p\) lie in this module. | PROVED/STANDARD | Dual of an inverse limit of finite cyclic groups is the direct limit of their character groups. |
 | OP-D115 | The leveled graph with vertices \(V_N=\mathbb Z/L_N\mathbb Z\) and reduction edges \(V_{N+1}\to V_N\) has boundary canonically identified with \(K_h\); each level-\(N\) vertex has exactly \(b_N\) children. | PROVED | Direct graph realization of the inverse system. No metric-fractal dimension is claimed. |
 
+| OP-D116 | The refinement factor \(b_N=L_{N+1}/L_N\) is an exact clock/frequency novelty index: \(b_N=1\) iff \(e_{N+1}\mid L_N\), equivalently the new channel's character group is already contained in the existing finite dual module; for \(b_N>1\), the finite phase and dual-frequency groups grow by index \(b_N\). | PROVED/STANDARD | Elementary lcm arithmetic plus finite cyclic duality. |
+| OP-D117 | Haar-uniform phase information at level \(N\) is \(H_N=\log L_N\), with exact refinement increment \(H_{N+1}-H_N=\log b_N\) nats \(=\log_2 b_N\) bits. | PROVED/STANDARD | Shannon entropy of a uniform finite quotient; no physical entropy interpretation is claimed. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
