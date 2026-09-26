@@ -78,6 +78,12 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-D052 | For fixed \(h\) and finite prime support, the subsets with nonzero \(\mathcal C_J(h)\) define a deterministic dyadic resonance hypergraph on the prime channels. | PROVED | Definition plus exact rational observables; this is not a probabilistic dependence claim. |
 | OP-O005 | The ARPL dyadic resonance hypergraph may carry ordered/global arithmetic information not reducible to standard singular-series marginals. | OPEN | Requires comparison theorems or a new invariant beyond finite Fourier repackaging. |
 
+| OP-D053 | For \(p\ge5\), the local dyadic orbit mean \(\mu_p(h)\) of the two-twin-pair factor has four exact classes: zero-fixed \(\beta_p+2\alpha_p\), ordinary \(\beta_p\), special-even \(\beta_p+2\alpha_p/d_p\), and special-odd \(\beta_p+\alpha_p/d_p\), where \(d_p=\operatorname{ord}_p(2)\). | PROVED | Exact orbit counting of the \(0,\pm2\) defects. |
+| OP-D054 | For every \(p\ge5\), \(h\ne0\), and \(k\ge0\), the local orbit mean is dyadically invariant: \(\mu_p(2^kh)=\mu_p(h)\). | PROVED | Multiplication by \(2^k\) rotates the same nonzero doubling orbit; zero-fixed states remain fixed. |
+| OP-D055 | For every fixed nonzero integer \(h\), the product \(\mathcal I(h)=\prod_{p\ge5}\mu_p(h)\) converges absolutely in the Euler-product sense to a finite positive nonzero value. | PROVED | \(|\mu_p-1|=O(p^{-2})+O(1/(p\operatorname{ord}_p(2)))\), \(\operatorname{ord}_p(2)\ge\log_2(p+1)\), and \(\sum_p1/(p\log p)<\infty\). |
+| OP-D056 | The convergent global orbit baseline is exactly dyadically invariant: \(\mathcal I(2^kh)=\mathcal I(h)\). For positive \(h\), it depends only on the odd part of \(h\). | PROVED | Termwise local invariance plus absolute convergence. |
+| OP-O006 | The fully coupled increasing-support common-clock mean may admit a global limit expressible as the convergent orbit baseline plus a controlled resonance correction. | OPEN | Finite resonance corrections are exact; infinite-channel convergence is not yet proved. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
