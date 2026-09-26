@@ -1251,3 +1251,69 @@ a_{15}(6)=\frac{252}{3335}\approx0.07556221889.
 This is an upper bound on the limiting atom mass, not evidence by itself that the atom is positive.
 
 See proofs/ARPL_SOURCE_HULL_NONATOMIC_EDGE_ATOM_V0_1.md.
+
+
+### The global ARPL clock is an odometer
+
+The inverse-limit phase hull
+
+\[
+K_h\cong\varprojlim_N\mathbb Z/L_N\mathbb Z,
+\qquad
+L_N=\operatorname{lcm}(e_{p_1},\dots,e_{p_N}),
+\]
+
+with translation
+
+\[
+T_h(x)=x+1
+\]
+
+on every finite cyclic factor, is exactly a procyclic **odometer / adding machine**.
+
+Consequently the phase dynamics is:
+
+\[
+\boxed{\text{minimal}}
+\]
+
+\[
+\boxed{\text{uniquely ergodic}}
+\]
+
+with Haar measure,
+
+\[
+\boxed{h_{\rm top}(T_h)=0}
+\]
+
+and
+
+\[
+\boxed{h_{\rm Haar}(T_h)=0}.
+\]
+
+Its Koopman spectrum is pure point and equals the character group of the phase hull:
+
+\[
+\boxed{
+\widehat K_h
+=
+\bigcup_N
+\frac1{L_N}\mathbb Z/\mathbb Z.
+}
+\]
+
+Thus the previously derived rational phase frequencies are not merely Fourier coordinates of one chosen signal. They are characters of the canonical global time-phase dynamical system.
+
+The actual singular-series observable excites only a subset of these available system frequencies.
+
+The divergence
+
+\[
+H_N=\log L_N\to\infty
+\]
+
+is therefore growing **phase resolution**, not positive entropy production per time step.
+
+See proofs/ARPL_ODOMETER_DYNAMICS_V0_1.md.
