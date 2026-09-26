@@ -1,0 +1,73 @@
+{
+  "schema": "ON_PRIMES_PHASE_SPECTROSCOPY_INTEGRATION_SNAPSHOT_20260926",
+  "date": "2026-09-26",
+  "repository": "AdrianLipa90/On-Primes",
+  "integration_branch": "integrate/phase-bank-form-factor-duality-v0.1-20260926-r3",
+  "base_branch": "feat/arithmetic-relational-phase-law-v0.1",
+  "base_head_sha": "c897e73224fb4b0122842c2c5c5e0e8184e17680",
+  "base_mode": "FROZEN_EXACT_SHA",
+  "provenance_sources": [
+    "integrate/phase-bank-form-factor-duality-v0.1-20260926-r2",
+    "feat/skewes-euler-hilbert-collatz-v0.1",
+    "AdrianLipa90/Infinities:formalize/hardy-car-sine-kernel-forced-prediction-v0.1-20260926",
+    "AdrianLipa90/secret-of-a-half:formalize/montgomery-dyson-hard-car-binding-v0.1-20260926"
+  ],
+  "claim_allocation": {
+    "base_max_D": "OP-D071",
+    "integrated_D_range": "OP-D072..OP-D081",
+    "base_max_frontier": "OP-F22",
+    "integrated_frontier": [
+      "OP-F23",
+      "OP-F24"
+    ]
+  },
+  "integrated_additive_files": [
+    "SKEWES_EULER_HILBERT_COLLATZ_BRIDGE_V0_1.md",
+    "SPECTRAL_VON_MANGOLDT_PHASE_BANK_V0_1.md",
+    "experiments/phase_bank_von_mangoldt_v0_1.py",
+    "experiments/validate_montgomery_dyson_phase_spectroscopy_v0_1.py",
+    "experiments/validate_phase_bank_form_factor_duality_v0_1.py",
+    "experiments/validate_skewes_euler_hilbert_collatz_bridge_v0_1.py",
+    "proofs/MONTGOMERY_DYSON_FORCED_PHASE_SPECTROSCOPY_V0_1.md",
+    "proofs/PHASE_BANK_FORM_FACTOR_DUALITY_V0_1.md",
+    "proofs/SPECTRAL_SHIFTED_VON_MANGOLDT_CLOSURE_V0_1.md",
+    "receipts/MONTGOMERY_DYSON_FORCED_PHASE_SPECTROSCOPY_V0_1.json",
+    "receipts/PHASE_BANK_FORM_FACTOR_DUALITY_V0_1.json",
+    "receipts/SKEWES_EULER_HILBERT_COLLATZ_BRIDGE_V0_1_VALIDATION.json",
+    "receipts/SPECTRAL_SHIFTED_VON_MANGOLDT_CLOSURE_V0_1.json",
+    "receipts/SPECTRAL_VON_MANGOLDT_PHASE_BANK_V0_1.json"
+  ],
+  "shared_files_semantically_joined": [
+    "CLAIMS.md",
+    "README.md",
+    "RESEARCH_FRONTIER.md"
+  ],
+  "deletions_intended": false,
+  "validators": {
+    "phase_bank_form_factor_duality": {
+      "status": "PASS",
+      "max_abs_phase_power_error": 6.494804694057166e-15,
+      "max_abs_form_factor_map_error": 1.1659636140548046e-14,
+      "note": "global phase cancelled analytically before finite pair-power comparison"
+    },
+    "hardy_car_forced_pair_law": "PASS_UPSTREAM",
+    "hardy_car_forced_form_factor": "PASS_UPSTREAM"
+  },
+  "forced_core": {
+    "pair_law": "g2(s)=1-[sin(pi s)/(pi s)]^2",
+    "form_factor": "S(tau)=min(|tau|,1)"
+  },
+  "exact_phase_bank_map": "tau_{p^m}(T)=m log(p)/log(T/(2pi))",
+  "firewalls": [
+    "fixed-q Landau does not imply fixed-nonzero-tau ramp",
+    "RH-conditional Montgomery ramp is validation only if RH is the proof target",
+    "plateau for |alpha|>1 remains conjectural for zeta",
+    "full zeta CAR/projector occupancy remains open",
+    "no merge to main performed"
+  ],
+  "external_dependency_heads": {
+    "infinities_forced_core": "4899c0c2ad8f4a38561a612c0eda8b48e9f529d3",
+    "soh_binding_branch": "formalize/montgomery-dyson-hard-car-binding-v0.1-20260926"
+  },
+  "canon_allowed": false
+}
