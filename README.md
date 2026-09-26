@@ -830,3 +830,95 @@ exists and is finite for every real \(s\).
 This closes the raw-amplitude mean problem for the standard singular-series weight. It does not prove the Hardy--Littlewood occurrence asymptotic or twin-prime infinitude.
 
 See proofs/ARPL_ALL_REAL_MOMENTS_ARITHMETIC_MEAN_V0_1.md.
+
+
+### Entire phase transform and limiting law
+
+The real-moment theorem extends to the whole complex plane. For
+
+\[
+b_p(z)
+=
+\left(\frac{p-3}{p-4}\right)^z-1,
+\]
+
+the compatible-subset expansion
+
+\[
+F_h(z)
+=
+1+
+\sum_{\varnothing\ne J}
+\delta_J(h)
+\prod_{p\in J}b_p(z)
+\]
+
+converges absolutely and locally uniformly on \(\mathbb C\). Therefore
+
+\[
+\boxed{
+\mathcal M_h(z)
+=
+\lim_{T\to\infty}
+\frac1T
+\sum_{r<T}
+\mathfrak S(H_{2^rh})^z
+=
+A(h)^zF_h(z)
+}
+\]
+
+exists for every \(z\in\mathbb C\) and is entire.
+
+On the imaginary axis,
+
+\[
+\phi_h(t)=\mathcal M_h(it)
+\]
+
+is the limiting characteristic function of
+
+\[
+Y_r(h)=\log\mathfrak S(H_{2^rh}).
+\]
+
+Hence the empirical measures of \(Y_r(h)\) converge weakly to a probability law \(\nu_h\), and
+
+\[
+\boxed{
+\mathcal M_h(z)
+=
+\int_{\mathbb R}e^{zy}\,d\nu_h(y)
+}
+\]
+
+for every complex \(z\).
+
+The law has a canonical compact arithmetic realization. If
+
+\[
+e_p=\operatorname{ord}_p(4),
+\]
+
+then the closure of the diagonal clock
+
+\[
+K_h=
+\overline{
+\{r(1\bmod e_p)_p:r\in\mathbb Z\}
+}
+\]
+
+is a compact procyclic phase hull. The limiting law is the Haar pushforward of the ARPL pulse field on \(K_h\).
+
+Moreover,
+
+\[
+\boxed{
+\nu_{2^kh}=\nu_h
+}
+\]
+
+for every \(k\ge0\): the **entire limiting distribution** is a dyadic-orbit invariant.
+
+See proofs/ARPL_ENTIRE_PHASE_MOMENT_LIMITING_LAW_V0_1.md.
