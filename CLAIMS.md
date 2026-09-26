@@ -174,6 +174,14 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`, `RES
 | OP-D127 | If an infinite active subfamily has pairwise-coprime observable periods and divergent \(\sum1/e_p\), then the lower-edge atom vanishes. | PROVED | CRT makes that subfamily's hit cylinders independent; the avoidance product \(\prod(1-1/e_p)\) then vanishes. The existence of such a subfamily is not claimed. |
 | OP-O009 | The full pushforward law \(\nu_h\) is non-atomic. | OPEN | Source Haar measure is non-atomic, but a measurable pushforward can still have atoms; lower-edge atomicity is reduced to OP-D124--OP-D126. |
 
+| OP-D128 | The global ARPL base-4 phase system is the procyclic odometer \(T_h:x\mapsto x+g\) on \(K_h\cong\varprojlim_N\mathbb Z/L_N\mathbb Z\). | PROVED/STANDARD | The finite phase clocks are cyclic rotations by \(+1\); the global system is their inverse limit. |
+| OP-D129 | The ARPL odometer is minimal. | PROVED/STANDARD | The phase increment \(g\) topologically generates \(K_h\). |
+| OP-D130 | The ARPL odometer is uniquely ergodic, with Haar probability measure as its unique invariant measure. | PROVED/STANDARD | Invariance under the dense cyclic subgroup extends to all translations; normalized Haar is unique. |
+| OP-D131 | Continuous/cylinder phase observables obey uniform Birkhoff averaging, with finite cylinder means equal to exact averages over \(\mathbb Z/L_N\mathbb Z\). | PROVED/STANDARD | Unique ergodicity plus the finite-factor cyclic representation. |
+| OP-D132 | The ARPL odometer is equicontinuous and has zero topological entropy. | PROVED/STANDARD | Translation is an isometry for a compatible invariant metric; compact equicontinuous systems have zero topological entropy. |
+| OP-D133 | The Koopman spectrum is pure point with eigenvalue group \(\{e^{2\pi i\lambda}:\lambda\in\widehat K_h\}\), where \(\widehat K_h=\bigcup_N(1/L_N)\mathbb Z/\mathbb Z\). | PROVED/STANDARD | Characters form the \(L^2\) eigenbasis for compact abelian group rotations. |
+| OP-D134 | Haar measure entropy of the ARPL odometer is zero. | PROVED/STANDARD | Compact group rotations / odometers have zero Kolmogorov--Sinai entropy. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
