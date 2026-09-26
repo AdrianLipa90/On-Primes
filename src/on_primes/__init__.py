@@ -168,6 +168,8 @@ from .phase_law import (
     twin_phase_covering_density_vector,
     twin_phase_covering_equal_weight_bound,
     twin_phase_covering_optimal_l2_bound,
+    twin_phase_avoidance_hazards,
+    twin_phase_compatibility_fractions,
 )
 from .modular import (
     is_obstructed_by,
@@ -329,4 +331,6 @@ __all__ = [
     "twin_phase_covering_density_vector",
     "twin_phase_covering_equal_weight_bound",
     "twin_phase_covering_optimal_l2_bound",
+    "twin_phase_avoidance_hazards",
+    "twin_phase_compatibility_fractions",
 ]
