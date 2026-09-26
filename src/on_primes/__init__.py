@@ -162,6 +162,8 @@ from .phase_law import (
     twin_finite_phase_hull,
     twin_phase_refinement_moduli,
     twin_phase_refinement_branching,
+    twin_quadratic_subset_hit_density,
+    twin_finite_lower_edge_mass,
 )
 from .modular import (
     is_obstructed_by,
@@ -317,4 +319,6 @@ __all__ = [
     "twin_finite_phase_hull",
     "twin_phase_refinement_moduli",
     "twin_phase_refinement_branching",
+    "twin_quadratic_subset_hit_density",
+    "twin_finite_lower_edge_mass",
 ]
