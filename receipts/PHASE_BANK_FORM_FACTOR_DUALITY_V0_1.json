@@ -1,0 +1,33 @@
+{
+  "schema": "ON_PRIMES_PHASE_BANK_FORM_FACTOR_DUALITY_V0_1",
+  "date": "2026-09-26",
+  "repository": "AdrianLipa90/On-Primes",
+  "branch": "integrate/phase-bank-form-factor-duality-v0.1-20260926",
+  "status": "EXACT_FINITE_IDENTITY__EXACT_FROZEN_UNFOLDING_MAP__FULL_ZETA_RAMP_BINDING_OPEN",
+  "inputs": [
+    "finite real spectral sample",
+    "phase bank R_q=N^-1 sum exp(i gamma log q)",
+    "frozen Riemann-von-Mangoldt density derivative"
+  ],
+  "zero_list_required_for_identity": false,
+  "identities": {
+    "phase_power": "N|R_q|^2=N^-1 sum_jk exp(i(gamma_j-gamma_k)log q)",
+    "frequency_map": "tau_q(T)=log(q)/log(T/(2pi))",
+    "form_factor_sample": "K_{Gamma,T}(tau_q)=N|R_q|^2",
+    "prime_power_frequency": "tau_{p^m}=m log(p)/log(T/(2pi))"
+  },
+  "firewall": {
+    "fixed_q_landau_implies_full_ramp": false,
+    "fixed_nonzero_tau_requires": "q(T) asymptotic to (T/(2pi))^tau",
+    "full_zeta_projector_binding": "OPEN"
+  },
+  "local_validator": {
+    "status": "PASS",
+    "validator_commit": "656289d9e0e7e24318826b991feb249b579d0040",
+    "max_abs_phase_power_error": 6.494804694057166e-15,
+    "max_abs_form_factor_map_error": 1.1659636140548046e-14,
+    "note": "Validator compares pair differences after analytic cancellation of the irrelevant global phase."
+  },
+  "canon_allowed": false,
+  "supersedes_validator_note": "Initial direct global-phase float comparison was numerically ill-conditioned at large T; theorem unchanged."
+}
