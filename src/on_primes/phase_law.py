@@ -1135,3 +1135,89 @@ def twin_finite_real_moment_subset_mean(primes: Sequence[int], h: int, s: float)
             weight *= b[p]
         total += weight / L
     return total
+
+
+def twin_complex_moment_multiplier(p: int, z: complex) -> complex:
+    """b_{p,z}=((p-3)/(p-4))**z-1 using the real logarithm of the positive ratio."""
+    p = int(p)
+    z = complex(z)
+    if not (math.isfinite(z.real) and math.isfinite(z.imag)):
+        raise ValueError("z must be finite")
+    return cmath.exp(z * math.log(float(twin_special_correction_ratio(p)))) - 1.0
+
+
+def twin_finite_complex_moment_common_clock(
+    primes: Sequence[int], h: int, z: complex
+) -> complex:
+    """Direct finite-support common-clock mean of the dynamic factor**z."""
+    support = tuple(int(p) for p in primes)
+    if len(set(support)) != len(support):
+        raise ValueError("primes must be distinct")
+    z = complex(z)
+    if not (math.isfinite(z.real) and math.isfinite(z.imag)):
+        raise ValueError("z must be finite")
+    periods = [quadruplet_observable_period(p, int(h)) for p in support]
+    L = math.lcm(*periods) if periods else 1
+    phases = {p: twin_quadratic_hit_phase(p, int(h)) for p in support}
+    multipliers = {p: twin_complex_moment_multiplier(p, z) for p in support}
+    total = 0j
+    for r in range(L):
+        value = 1 + 0j
+        for p, e in zip(support, periods):
+            phase = phases[p]
+            if phase is not None and r % e == phase:
+                value *= 1 + multipliers[p]
+        total += value
+    return total / L
+
+
+def twin_finite_complex_moment_subset_mean(
+    primes: Sequence[int], h: int, z: complex
+) -> complex:
+    """Finite generalized-CRT subset expansion for a complex exponent z."""
+    support = tuple(int(p) for p in primes)
+    if len(set(support)) != len(support):
+        raise ValueError("primes must be distinct")
+    z = complex(z)
+    if not (math.isfinite(z.real) and math.isfinite(z.imag)):
+        raise ValueError("z must be finite")
+    phases = {p: twin_quadratic_hit_phase(p, int(h)) for p in support}
+    periods = {p: quadruplet_observable_period(p, int(h)) for p in support}
+    b = {p: twin_complex_moment_multiplier(p, z) for p in support}
+    total = 1 + 0j
+    n = len(support)
+    for mask in range(1, 1 << n):
+        chosen = [support[i] for i in range(n) if (mask >> i) & 1]
+        if any(phases[p] is None for p in chosen):
+            continue
+        compatible = True
+        for i, p in enumerate(chosen):
+            for q in chosen[i + 1 :]:
+                if (phases[p] - phases[q]) % math.gcd(periods[p], periods[q]) != 0:
+                    compatible = False
+                    break
+            if not compatible:
+                break
+        if not compatible:
+            continue
+        L = math.lcm(*(periods[p] for p in chosen))
+        weight = 1 + 0j
+        for p in chosen:
+            weight *= b[p]
+        total += weight / L
+    return total
+
+
+def twin_finite_phase_hull(
+    primes: Sequence[int], h: int
+) -> tuple[tuple[int, ...], ...]:
+    """Finite projection of the procyclic base-4 phase hull.
+
+    Coordinates are r mod e_p, sampled once over the common period.
+    """
+    support = tuple(int(p) for p in primes)
+    if len(set(support)) != len(support):
+        raise ValueError("primes must be distinct")
+    periods = tuple(quadruplet_observable_period(p, int(h)) for p in support)
+    L = math.lcm(*periods) if periods else 1
+    return tuple(tuple(r % e for e in periods) for r in range(L))
