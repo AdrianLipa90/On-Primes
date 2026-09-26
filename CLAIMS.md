@@ -115,6 +115,18 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-D078 | The lag autocorrelation exists for every integer \(k\) and satisfies \(C_h(k)=\sum_\lambda|a_h(\lambda)|^2e^{2\pi i\lambda k}\), with absolute convergence of the power series. | PROVED/STANDARD | Consequence of the \(B^2\) theorem and standard Fourier--Bohr autocorrelation/Parseval machinery. |
 | OP-D079 | Logarithmic phase excursions obey the density bound \(\limsup_T T^{-1}\#\{r<T:|Y_h(r)|\ge A\}\le\mathcal V(h)/A^2\). | PROVED | Cesaro Chebyshev inequality. |
 
+| OP-D080 | For \(p\ge5\), the sign-symmetric twin observable has minimal carrier period \(e_p=\operatorname{ord}_p(4)=\operatorname{ord}_p(2)/\gcd(\operatorname{ord}_p(2),2)\) on nonzero channels. | PROVED | Standard order-of-a-power identity applied to the squared \(\pm2\) event. |
+| OP-D081 | Every active odd-prime channel has exactly one phase class \(r\equiv\rho_p(h)\pmod{e_p}\) satisfying \(4^rh^2\equiv4\pmod p\); inactive channels have none. | PROVED | Cyclicity of the \(4\)-power orbit. |
+| OP-D082 | For active channels \(p,q\), the joint hit density is \(1/\operatorname{lcm}(e_p,e_q)\) iff \(\rho_p\equiv\rho_q\pmod{\gcd(e_p,e_q)}\), otherwise zero. | PROVED | Generalized CRT. |
+| OP-D083 | An active local hit indicator has nonzero Fourier modes \(m/e_p\) with equal magnitude \(1/e_p\); the previous even-\(d_p\) odd-mode cancellation is exactly quotienting to the \(e_p=\operatorname{ord}_p(4)\) clock. | PROVED | Exact Fourier transform of a single residue-class pulse. |
+| OP-D084 | For every compatible finite active set \(J\), \(L_J=\operatorname{lcm}_{p\in J}e_p\) satisfies \(L_J>(\sum_{p\in J}\log p)/\log4\). | PROVED | \(\prod_{p\in J}p\mid4^{L_J}-1\). |
+| OP-D085 | For every fixed \(0<s<1\), the all-orders subset series \(\sum_{J\ne\varnothing}\delta_J(h)\prod_{p\in J}[(\frac{p-3}{p-4})^s-1]\) converges absolutely. | PROVED | Integral majorant; near the endpoint it behaves as \(t^{-c}\) for some \(s<c<1\). |
+| OP-D086 | For every \(0<s<1\), the Cesaro mean of \(R(4^rh^2-4)^s\) exists and equals the absolutely convergent finite-subset/CRT expansion. | PROVED | OP-D085 plus finite-horizon endpoint control. |
+| OP-D087 | The full singular-series orbit has finite Cesaro moment \(\mathcal M_s^{\mathfrak S}(h)\) for every \(0<s<1\). | PROVED | Static factor times OP-D086. |
+| OP-D088 | Every subcritical moment is dyadically invariant: \(\mathcal M_s^{\mathfrak S}(2^kh)=\mathcal M_s^{\mathfrak S}(h)\). | PROVED | Phase-class rotation preserves joint densities. |
+| OP-D089 | For every \(0<s<1\), raw singular-series spikes satisfy the upper-density bound \(\overline{\mathrm{dens}}\{\mathfrak S(H_{2^rh})\ge X\}\le\mathcal M_s^{\mathfrak S}(h)X^{-s}\). | PROVED | Markov inequality. |
+| OP-O008 | The arithmetic Cesaro mean at the endpoint \(s=1\) exists. | OPEN | The present unconditional all-orders majorant is integrable for every \(s<1\) and becomes logarithmically critical at \(s=1\); this does not prove divergence. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
