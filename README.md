@@ -126,3 +126,14 @@ See `proofs/CENTERED_HEXAGONAL_PRIME_CHANNEL_V0_1.md`.
 The additive research note [SKEWES_EULER_HILBERT_COLLATZ_BRIDGE_V0_1.md](SKEWES_EULER_HILBERT_COLLATZ_BRIDGE_V0_1.md) derives an exact common dyadic log-phase clock across the existing (2x+1) fibres, Hilbert-Hotel shift operators, zeta-zero phase factors, and accelerated odd-Collatz reverse fibres. Its finite algebraic validator is `experiments/validate_skewes_euler_hilbert_collatz_bridge_v0_1.py`.
 
 The bridge is explicitly typed as exact representation plus open spectral programme; it does not promote RH, Collatz, or the first Skewes crossing to solved status.
+
+
+## Spectral von Mangoldt phase bank
+
+The branch now contains a continuation-safe spectral closure of the shifted von Mangoldt tower:
+
+- [SPECTRAL_VON_MANGOLDT_PHASE_BANK_V0_1.md](SPECTRAL_VON_MANGOLDT_PHASE_BANK_V0_1.md)
+- [proofs/SPECTRAL_SHIFTED_VON_MANGOLDT_CLOSURE_V0_1.md](proofs/SPECTRAL_SHIFTED_VON_MANGOLDT_CLOSURE_V0_1.md)
+- [experiments/phase_bank_von_mangoldt_v0_1.py](experiments/phase_bank_von_mangoldt_v0_1.py)
+
+The core identity is classical Landau/von-Mangoldt mathematics expressed in the repository's \(p+1\) prime-power channels. The finite 256-zero computation is a numerical witness only.
