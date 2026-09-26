@@ -54,6 +54,13 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-S006 | Ramanujan--Fourier expansions and Wiener--Khintchine ideas have prior literature applications to prime-pair correlations, including Gadiyar--Padma (1999, 2014). | STANDARD | The 2014 argument is explicitly heuristic because of an unjustified interchange of limits; see PRIOR_ART.md. |
 | OP-O004 | A direct operator equivalence between the ordered prime-gap phase representation and the nontrivial zeta-zero spectrum may exist. | OPEN | No such equivalence is proved by ARPL v0.1. |
 
+| OP-D037 | For any finite set \(P\) of distinct primes, the finite prime-pair singular product \(\prod_{p\in P}(1+c_p(h)/(p-1)^2)\) equals exactly the squarefree Ramanujan expansion over moduli supported on \(P\). | PROVED | Finite expansion using multiplicativity of Ramanujan sums. |
+| OP-D038 | In the even sector, the prime-pair singular-series local factor is dyadically invariant: \(\mathfrak S_P(2h)=\mathfrak S_P(h)\) for every finite prime support \(P\) and every even \(h\); the standard infinite product has the same invariance where defined. | PROVED | Doubling adds no odd prime divisor and preserves divisibility by 2. |
+| OP-D039 | For the two-twin-pair pattern \(H_h=\{0,2,h,h+2\}\), local admissibility at \(p=2,3\) holds iff \(h\equiv0\pmod6\). | PROVED | Exact residue-count computation of \(\nu_2(H_h)\) and \(\nu_3(H_h)\). |
+| OP-D040 | For \(H_h=\{0,2,h,h+2\}\), each local \(k\)-tuple singular factor is an observable of \(h\bmod p\); under dyadic transport \(h\mapsto2h\), it evolves along the finite orbit \(u\mapsto2u\pmod p\). | PROVED | Direct from the definition of \(\nu_p(H_h)\) and the ARPL dyadic phase law. |
+| OP-S007 | The prime-pair singular series has the standard Ramanujan expansion \(\sum_q \mu(q)^2c_q(h)/\varphi(q)^2\) and Euler product \(\prod_p(1+c_p(h)/(p-1)^2)\). | STANDARD | Explicitly documented in the classical/modern prime-pair singular-series literature; see PRIOR_ART.md. |
+| OP-S008 | For a finite tuple \(H\), the Hardy--Littlewood local factor is \((1-\nu_p(H)/p)(1-1/p)^{-|H|}\), with admissibility equivalent to \(\nu_p(H)<p\) for every prime \(p\). | STANDARD | Standard prime \(k\)-tuple singular-series machinery. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
