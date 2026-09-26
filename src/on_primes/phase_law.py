@@ -942,3 +942,62 @@ def twin_finite_log_fourier_coefficients(primes: Sequence[int], h: int) -> dict[
 def twin_finite_log_parseval_power(primes: Sequence[int], h: int) -> float:
     """Sum of squared aggregated nonzero Fourier coefficients."""
     return sum(abs(c) ** 2 for c in twin_finite_log_fourier_coefficients(primes, int(h)).values())
+
+
+def quadruplet_observable_period(p: int, h: int) -> int:
+    """Minimal carrier period for the +/-2 twin observable under dyadic time.
+
+    For p not dividing h this is ord_p(4) = ord_p(2)/gcd(ord_p(2),2).
+    A zero-locked channel p|h is dynamically constant and is assigned period 1.
+    """
+    p = int(p)
+    if not _is_prime_small(p) or p < 5:
+        raise ValueError("p must be a prime >= 5")
+    if int(h) % p == 0:
+        return 1
+    d = doubling_order_mod_prime(p)
+    return d // math.gcd(d, 2)
+
+
+def twin_quadratic_hit_phase(p: int, h: int) -> int | None:
+    """Unique r mod ord_p(4) with 4**r h**2 == 4 mod p, if it exists."""
+    p = int(p)
+    h = int(h)
+    if not _is_prime_small(p) or p < 5:
+        raise ValueError("p must be a prime >= 5")
+    if h % p == 0:
+        return None
+    e = quadruplet_observable_period(p, h)
+    target = 4 % p
+    h2 = (h * h) % p
+    u = h2
+    for r in range(e):
+        if u == target:
+            return r
+        u = (4 * u) % p
+    return None
+
+
+def twin_quadratic_hit_density(p: int, h: int) -> Fraction:
+    """Exact special-hit density in the compressed base-4 clock."""
+    phase = twin_quadratic_hit_phase(int(p), int(h))
+    if phase is None:
+        return Fraction(0, 1)
+    return Fraction(1, quadruplet_observable_period(int(p), int(h)))
+
+
+def twin_quadratic_joint_hit_density(p: int, q: int, h: int) -> Fraction:
+    """Exact joint density using one residue class per active base-4 channel."""
+    p = int(p)
+    q = int(q)
+    if p == q:
+        return twin_quadratic_hit_density(p, int(h))
+    rp = twin_quadratic_hit_phase(p, int(h))
+    rq = twin_quadratic_hit_phase(q, int(h))
+    if rp is None or rq is None:
+        return Fraction(0, 1)
+    ep = quadruplet_observable_period(p, int(h))
+    eq = quadruplet_observable_period(q, int(h))
+    if (rp - rq) % math.gcd(ep, eq) != 0:
+        return Fraction(0, 1)
+    return Fraction(1, math.lcm(ep, eq))
