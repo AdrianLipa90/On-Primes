@@ -15,7 +15,10 @@
   "high_divisor_tail_closed": false,
   "zeta_binding_claim": false,
   "local_validator": {
-    "status": "PASS"
+    "status": "PASS",
+    "tested_R": "2..30",
+    "max_abs_log_lcm_minus_psi_error": 3.552713678800501e-15,
+    "max_abs_exact_factorization_error": 1.1102230246251565e-15
   },
   "canon_allowed": false
 }
