@@ -1,0 +1,20 @@
+{
+  "schema": "ON_PRIMES_RH_CONDITIONAL_FEJER_AVERAGED_TAIL_VALIDATION_V0_1",
+  "date": "2026-09-26",
+  "repository": "AdrianLipa90/On-Primes",
+  "branch": "integrate/fejer-averaged-mobius-crt-low-block-v0.1-20260926",
+  "status": "RH_CONDITIONAL_VALIDATION_ONLY",
+  "external_input": "Saffari-Vaughan/Selberg mean-square bound under RH",
+  "mean_square_bound": "J(X,H) << X H (1+log(X/H))^2",
+  "sufficient_relative_decay": "H/(1+log(X/H))^2 -> infinity",
+  "low_block_scale": "R=H^(1/2)",
+  "additional_boundary_condition": "H log(X)^2=o(X)",
+  "conditional_conclusion": "Fejer-averaged high-divisor tail / X -> 0",
+  "admissible_as_rh_proof_premise": false,
+  "use_cases": [
+    "validation",
+    "normalization check",
+    "conditional envelope"
+  ],
+  "canon_allowed": false
+}
