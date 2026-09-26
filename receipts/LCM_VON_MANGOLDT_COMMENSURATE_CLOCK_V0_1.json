@@ -1,0 +1,21 @@
+{
+  "schema": "ON_PRIMES_LCM_VON_MANGOLDT_COMMENSURATE_CLOCK_V0_1",
+  "date": "2026-09-26",
+  "repository": "AdrianLipa90/On-Primes",
+  "branch": "integrate/fejer-averaged-mobius-crt-low-block-v0.1-20260926",
+  "status": "EXACT_FINITE_COMMON_CLOCK",
+  "identities": {
+    "clock": "L_R=lcm(1,...,R)",
+    "von_mangoldt": "log L_R=psi(R)=sum_{p^m<=R} log p",
+    "commensurability": "L_R | (H+1) => Q_H(g)=1/g for all g<=R",
+    "exact_low_block": "Mbar_HR=(sum_{d<=R} mu(d)log(d)/d)^2"
+  },
+  "asymptotic_external_input": "psi(R)~R and sum mu(d)log(d)/d -> -1 from PNT",
+  "implication_limit": "on commensurate clocks Mbar_HR -> 1",
+  "high_divisor_tail_closed": false,
+  "zeta_binding_claim": false,
+  "local_validator": {
+    "status": "PASS"
+  },
+  "canon_allowed": false
+}
