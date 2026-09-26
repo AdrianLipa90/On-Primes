@@ -578,3 +578,39 @@ Jensen also gives
 The arithmetic Cesaro mean itself remains open.
 
 See proofs/ARPL_GLOBAL_LOGARITHMIC_PHASE_MEAN_V0_1.md.
+
+
+### Pointwise growth control
+
+The dynamic divisor weight also satisfies the exact comparison
+
+\[
+R(N)
+\le
+C_R\frac{N}{\varphi(N)},
+\qquad
+C_R=
+\prod_{p\ge5}
+\left(1+\frac{3}{p(p-4)}\right)
+<\infty.
+\]
+
+Hence the classical bound \(N/\varphi(N)\ll\log\log N\) gives
+
+\[
+R(N)\ll\log\log N.
+\]
+
+Along the dyadic orbit,
+
+\[
+\boxed{
+\mathfrak S(H_{2^rh})
+\ll_h
+\log(r+2).
+}
+\]
+
+So the unresolved arithmetic-mean problem has a deterministic logarithmic pointwise envelope; faster spikes are excluded.
+
+See proofs/ARPL_DIVISOR_WEIGHT_GROWTH_BOUND_V0_1.md.
