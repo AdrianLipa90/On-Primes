@@ -554,5 +554,49 @@ class ArithmeticRelationalPhaseLawTests(unittest.TestCase):
             )
 
 
+    def test_complex_moment_subset_equals_common_clock(self):
+        supports = (
+            (5, 7),
+            (7, 13),
+            (7, 13, 19),
+            (5, 7, 11, 13),
+        )
+        exponents = (
+            0.5 + 0.7j,
+            2.3j,
+            -1.2 + 0.4j,
+            2.0 + 0j,
+        )
+        for support in supports:
+            for z in exponents:
+                direct = twin_finite_complex_moment_common_clock(support, 6, z)
+                subset = twin_finite_complex_moment_subset_mean(support, 6, z)
+                self.assertAlmostEqual(direct.real, subset.real, places=11)
+                self.assertAlmostEqual(direct.imag, subset.imag, places=11)
+
+    def test_complex_transform_conjugate_symmetry_on_imaginary_axis(self):
+        support = (5, 7, 11, 13, 17, 19)
+        for t in (0.0, 0.5, 1.0, 2.5, 7.0):
+            plus = twin_finite_complex_moment_common_clock(support, 6, 1j * t)
+            minus = twin_finite_complex_moment_common_clock(support, 6, -1j * t)
+            self.assertAlmostEqual(minus.real, plus.conjugate().real, places=11)
+            self.assertAlmostEqual(minus.imag, plus.conjugate().imag, places=11)
+
+    def test_complex_real_axis_matches_real_moment(self):
+        support = (5, 7, 11, 13, 17)
+        for s in (-2.0, -0.5, 0.0, 0.75, 1.0, 2.0):
+            zmean = twin_finite_complex_moment_common_clock(support, 6, complex(s, 0.0))
+            rmean = twin_finite_real_moment_common_clock(support, 6, s)
+            self.assertAlmostEqual(zmean.real, rmean, places=11)
+            self.assertAlmostEqual(zmean.imag, 0.0, places=11)
+
+    def test_finite_phase_hull_has_lcm_size(self):
+        support = (5, 7, 13)
+        periods = tuple(quadruplet_observable_period(p, 6) for p in support)
+        hull = twin_finite_phase_hull(support, 6)
+        self.assertEqual(len(hull), __import__("math").lcm(*periods))
+        self.assertEqual(len(set(hull)), len(hull))
+
+
 if __name__ == "__main__":
     unittest.main()
