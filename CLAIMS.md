@@ -95,6 +95,10 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-D063 | For every fixed nonzero \(h\) and fixed connected order \(n\ge2\), the global layer \(\mathcal K_n(h)=\sum_{|J|=n}K(J;h)\) is absolutely convergent over all prime channels \(p\ge5\). | PROVED | Uses \(\alpha_p\ll1/p\), \(d_p\ge\log_2(p+1)\), Mertens' reciprocal-prime bound, and \(\pi(x)\ll x/\log x\). |
 | OP-O007 | The all-orders connected sum \(\sum_{n\ge2}\mathcal K_n(h)\) converges. | OPEN | Fixed-order convergence does not provide a summable majorant uniform in \(n\). |
 
+| OP-D064 | The universal generic-channel product \(C_*=\prod_{p\ge5}p^3(p-4)/(p-1)^4\) converges to a finite positive nonzero constant. | PROVED | \(1-\beta_p=O(p^{-2})\). |
+| OP-D065 | For every \(x\ge6\) with \(6\mid x\), the full two-twin-pair singular series factorizes exactly as \(\mathfrak S(H_x)=\frac{27}{2}C_*Z(x)R(x^2-4)\), with finite correction products over prime divisors of \(x\) and \(x^2-4\). | PROVED | Exact three-level local factor classification; only finitely many channels differ from the universal background. |
+| OP-D066 | Along the dyadic orbit \(x_r=2^rh\) with \(6\mid h\), \(\mathfrak S(H_{2^rh})=\frac{27}{2}C_*Z(h)R(4^rh^2-4)\). All time dependence is carried by the finite \(\pm2\) phase-hit divisors of \(4^rh^2-4\). | PROVED | Odd divisors of \(2^rh\) equal those of \(h\); dynamic special channels satisfy \(2^rh\equiv\pm2\pmod p\). |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
