@@ -678,3 +678,28 @@ The remaining hard step is cancellation/uniformity in the **growing signed doubl
 A purely absolute-majorant proof is not assumed to work; if it provably cannot close the sum, that no-go should be recorded.
 
 The exact phase representation must not be promoted into a Hardy--Littlewood occurrence theorem without this analytic step.
+
+
+### OP-F27 — high-divisor tail closure
+
+The low-divisor sector is now controlled uniformly:
+
+\[
+C_{h,\le R}(X)
+=
+X M_{h,R}
++
+O((R\log R)^2).
+\]
+
+For \(R=X^{1/2-\varepsilon}\), the low-block counting error is \(o(X)\). The remaining shifted-correlation problem is concentrated in
+
+\[
+T_{h,R}(X),
+\]
+
+containing divisor pairs with \(d>R\) or \(e>R\).
+
+The next theorem should either prove a uniform estimate for this tail in the \(q(T)\)-scaled window/shift regime, derive an explicit additional main term carried by the tail, or establish a no-go for the proposed decomposition.
+
+A full-range absolute residue-count majorant is insufficient: at \(R\asymp X\) the elementary bound is \(O(X^2\log^2X)\), far above the \(O(X)\) correlation scale. The high sector therefore requires cancellation, sieve/dispersion input, large-sieve structure, or an equivalent operator identity.
