@@ -167,6 +167,14 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-N006 | The long-window crosswalk validator passes the finite Fejér/sliding-window boundary estimate; maximum observed boundary-to-bound ratio is \(0.018216716598738407\). | NUMERICAL / VALIDATOR | External Saffari--Vaughan asymptotic is not numerically reproved. |
 | OP-O015 | The averaged high-divisor tail can be controlled below the classical unconditional \(X^{1/6+\varepsilon}\) threshold, or for the exact smooth/logarithmic window induced by the \(q(T)\)-scaled explicit formula. | OPEN | Current long-window closure does not cover shorter windows or every form-factor test function. |
 
+
+| OP-D102 | For any admissible smooth additive window \(v(x)\), the logarithmic pullback \(G_v(t)=e^{t/2}v(e^t)\) satisfies \(\Lambda(n)n^{-1/2}G_v(\log n)=\Lambda(n)v(n)\) exactly. | PROVED | Direct substitution; closes log-window versus additive-window coordinate mismatch. |
+| OP-D103 | For \(v_{Q,L}(x)=V((x-Q)/L)\), translation averaging gives \(\int v_{Q,L}(n)\overline{v_{Q,L}(m)}\,dQ=L K_V((m-n)/L)\), where \(K_V(s)=\int V(u)\overline{V(u+s)}du\). | PROVED | Exact change of variables. |
+| OP-D104 | The induced shift kernel is positive definite with \(\widehat K_V=|\widehat V|^2\ge0\); the rectangular window gives \(K_V(s)=(1-|s|)_+\), i.e. the Fejér triangular shift kernel. | STANDARD + EXACT APPLICATION | Wiener--Khintchine plus direct rectangle autocorrelation. |
+| OP-D105 | Smooth \(L^2\) approximants to the rectangle have autocorrelation kernels converging uniformly to the Fejér kernel, with \(\|K_V-K_W\|_\infty\le(\|V\|_2+\|W\|_2)\|V-W\|_2\). | PROVED | Cauchy--Schwarz and translation unitarity. |
+| OP-N007 | Mellin/additive-window validator PASS: pullback error \(4.44\times10^{-16}\), Gaussian-kernel error \(2.22\times10^{-16}\), translation-identity error \(8.88\times10^{-16}\). | NUMERICAL / VALIDATOR | Synthetic smooth windows only; no zeta-zero input. |
+| OP-O016 | The short-scale averaged prime-correlation bound for the exact smooth kernel induced by the declared explicit-formula test can be extended below the current unconditional long-window threshold. | OPEN | Window representation is closed; remaining issue is analytic mean-square/dispersion control. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
