@@ -1,0 +1,14 @@
+{
+  "schema": "ON_PRIMES_THETA_TO_PSI_SHORT_INTERVAL_TRANSFER_V0_1",
+  "date": "2026-09-26",
+  "repository": "AdrianLipa90/On-Primes",
+  "branch": "integrate/fejer-averaged-mobius-crt-low-block-v0.1-20260926",
+  "status": "ELEMENTARY_TRANSFER_PROVED",
+  "bound": "(psi-theta)(x+h)-(psi-theta)(x)=O(h X^-1/2 log^2 X + log^2 X)",
+  "range": "x in [X,2X], 1<=h<=X",
+  "consequence": "for h>=X^(1/6+epsilon), theta mean-square o(Xh^2) implies psi mean-square o(Xh^2)",
+  "standard_input_not_reproved": "Saffari-Vaughan/Huxley theta short-interval mean-square",
+  "rh_used": false,
+  "fixed_shift_hardy_littlewood_used": false,
+  "canon_allowed": false
+}
