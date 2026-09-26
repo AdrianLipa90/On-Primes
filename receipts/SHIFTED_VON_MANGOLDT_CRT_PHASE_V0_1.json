@@ -20,7 +20,24 @@
     "q(T)-scaled smoothed form-factor closure"
   ],
   "validator": {
-    "status": "PENDING_LOCAL_EXECUTION"
+    "status": "PASS",
+    "max_abs_correlation_error": 1.7053025658242404e-13,
+    "crt_phase_gate_checks": "PASS",
+    "tested_X": [
+      10,
+      20,
+      40,
+      80
+    ],
+    "tested_h": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      10
+    ],
+    "hardy_littlewood_asymptotic_used": false
   },
   "canon_allowed": false
 }
