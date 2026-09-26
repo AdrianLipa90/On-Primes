@@ -159,3 +159,38 @@ where \(\nu_p(H)\) counts distinct residues of \(H\) modulo \(p\). This standard
 - J. Pintz, *On the singular series in the prime k-tuple conjecture*, arXiv:1004.1084.
 
 ARPL does not claim these formulas as new. Its project-specific use is to treat the local factors as observables of modular phase coordinates and to transport them under the already existing dyadic map \(T(x)=2x+1\).
+
+
+## Profinite completion and Pontryagin duality
+
+The global ARPL phase space uses standard structure:
+
+\[
+\widehat{\mathbb Z}
+=
+\varprojlim_n\mathbb Z/n\mathbb Z
+\cong
+\prod_p\mathbb Z_p,
+\]
+
+and the Pontryagin dual of \(\widehat{\mathbb Z}\) is the discrete torsion group
+
+\[
+\mathbb Q/\mathbb Z.
+\]
+
+This is established harmonic-analysis/profinite theory and is not claimed as novel.
+
+Useful references:
+
+- nLab, *profinite completion of the integers* and *Pontryagin duality for torsion abelian groups*.
+- Jordan Bell, *The Pontryagin duals of Q/Z and Q and the adeles*.
+- Standard treatments of harmonic analysis on number fields and locally compact abelian groups.
+
+In this language, the ARPL characters
+
+\[
+e^{2\pi ian/q}
+\]
+
+are the finite-order characters indexed by \(a/q\pmod1\), and Ramanujan sums are sums over characters of exact order \(q\). The project-specific layer is the integration of this standard duality with the On-Primes dyadic operator and singular-series observables.
