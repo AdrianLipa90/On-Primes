@@ -45,6 +45,10 @@ from on_primes.phase_law import (
     twin_period_overlap_components,
     twin_component_factorized_mean,
     twin_connected_resonance_cumulant,
+    twin_centered_joint_moment,
+    twin_centered_moment_resonance_bound,
+    twin_connected_cumulant_fixed_order_bound,
+    twin_channel_is_dynamically_active,
 )
 
 
@@ -293,6 +297,43 @@ class ArithmeticRelationalPhaseLawTests(unittest.TestCase):
             twin_connected_resonance_cumulant((5, 7, 11), 6),
             0,
         )
+
+
+    def test_centered_joint_moment_resonance_bound(self):
+        supports = (
+            (5, 7),
+            (7, 13),
+            (7, 13, 19),
+            (5, 7, 11),
+            (7, 13, 19, 37),
+        )
+        for support in supports:
+            moment = twin_centered_joint_moment(support, 6)
+            bound = twin_centered_moment_resonance_bound(support, 6)
+            self.assertLessEqual(abs(moment), bound)
+
+    def test_connected_cumulant_fixed_order_bound(self):
+        supports = (
+            (5, 7),
+            (7, 13),
+            (13, 19),
+            (7, 13, 19),
+            (5, 7, 11),
+            (7, 13, 19, 37),
+        )
+        for support in supports:
+            actual = twin_connected_resonance_cumulant(support, 6)
+            bound = twin_connected_cumulant_fixed_order_bound(support, 6)
+            self.assertLessEqual(abs(actual), bound)
+
+    def test_inactive_channel_kills_centered_moment(self):
+        inactive = tuple(
+            p for p in (5, 7, 11, 13, 17, 19, 23, 29, 31)
+            if not twin_channel_is_dynamically_active(p, 6)
+        )
+        self.assertTrue(inactive)
+        p = inactive[0]
+        self.assertEqual(twin_centered_joint_moment((p, 7), 6), 0)
 
 
 if __name__ == "__main__":
