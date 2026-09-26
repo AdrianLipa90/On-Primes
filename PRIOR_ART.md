@@ -246,3 +246,44 @@ The project-specific statement is not the existence of Besicovitch theory. It is
 and number-theoretically controlled prime-channel tails.
 
 No literature novelty claim is made for this specialization without a dedicated audit.
+
+
+## Quantitative multiplicative-order input: Erdős--Murty
+
+The closure of the raw \(s=1\) arithmetic mean uses a standard external theorem, not an ARPL-internal estimate.
+
+P. Erdős and M. Ram Murty, *On the Order of \(a\) (mod \(p\))*,
+in *Number Theory (Ottawa, ON, 1996)*, CRM Proceedings and Lecture Notes 19,
+American Mathematical Society (1999), 87--97.
+
+Their Theorem 3 states that for fixed \(a>1\) there exist constants
+\(\alpha,\delta>0\) such that
+
+\[
+\operatorname{ord}_p(a)
+\ge
+\sqrt p\,\exp((\log p)^\delta)
+\]
+
+for all but
+
+\[
+O\!\left(\frac{x}{(\log x)^{1+\alpha}}\right)
+\]
+
+primes \(p\le x\).
+
+ARPL applies this theorem with \(a=2\). Since
+
+\[
+\operatorname{ord}_p(4)
+=
+\frac{\operatorname{ord}_p(2)}
+{\gcd(\operatorname{ord}_p(2),2)},
+\]
+
+the same lower bound holds up to a factor \(1/2\) on the nonexceptional prime channels.
+
+The exceptional counting bound implies by partial summation that the exceptional primes have finite reciprocal mass. This is the decisive external input that upgrades the elementary \(0<s<1\) fractional-moment theorem to all fixed real \(s\), including the arithmetic endpoint \(s=1\).
+
+No novelty is claimed for the Erdős--Murty theorem.
