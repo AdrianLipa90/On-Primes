@@ -338,3 +338,97 @@ def even_sector_pair_singular_dyadic_invariant(h: int, primes: Iterable[int]) ->
         raise ValueError("h must be even")
     support = tuple(int(p) for p in primes)
     return finite_prime_pair_singular_product(h, support) == finite_prime_pair_singular_product(2 * h, support)
+
+
+def doubling_order_mod_prime(p: int) -> int:
+    """Multiplicative order of 2 modulo an odd prime p."""
+    p = int(p)
+    if not _is_prime_small(p) or p == 2:
+        raise ValueError("p must be an odd prime")
+    x = 2 % p
+    order = 1
+    while x != 1:
+        x = (2 * x) % p
+        order += 1
+    return order
+
+
+def doubling_orbits_mod_prime(p: int) -> tuple[tuple[int, ...], ...]:
+    """Orbit decomposition of u -> 2u mod p on Z/pZ."""
+    p = int(p)
+    if not _is_prime_small(p) or p == 2:
+        raise ValueError("p must be an odd prime")
+    seen: set[int] = set()
+    out: list[tuple[int, ...]] = []
+    for seed in range(p):
+        if seed in seen:
+            continue
+        orbit: list[int] = []
+        u = seed
+        while u not in seen:
+            seen.add(u)
+            orbit.append(u)
+            u = (2 * u) % p
+        out.append(tuple(orbit))
+    return tuple(out)
+
+
+def dyadic_transfer_spectrum_multiplicities(p: int) -> tuple[int, dict[int, int]]:
+    """Exact multiplicities of d-th-root eigenmodes of the doubling permutation.
+
+    Returns (d, multiplicities), where key m denotes exp(2*pi*i*m/d).
+    The zero residue contributes one additional eigenvalue 1.
+    """
+    p = int(p)
+    d = doubling_order_mod_prime(p)
+    cycles = (p - 1) // d
+    multiplicities = {m: cycles for m in range(d)}
+    multiplicities[0] += 1
+    return d, multiplicities
+
+
+def twin_quadruplet_factor_decomposition(p: int) -> tuple[Fraction, Fraction]:
+    """Return (baseline, spike) for p>=5.
+
+    B_p(u)=baseline + spike*(2*1_{u=0}+1_{u=2}+1_{u=-2}).
+    """
+    p = int(p)
+    if not _is_prime_small(p) or p < 5:
+        raise ValueError("p must be a prime >= 5")
+    spike = Fraction(p**3, (p - 1) ** 4)
+    baseline = Fraction(p**3 * (p - 4), (p - 1) ** 4)
+    return baseline, spike
+
+
+def twin_special_residue_cycles(p: int) -> tuple[tuple[int, ...], tuple[int, ...]]:
+    """Return doubling cycles containing +2 and -2 modulo p."""
+    p = int(p)
+    if not _is_prime_small(p) or p < 5:
+        raise ValueError("p must be a prime >= 5")
+    orbits = doubling_orbits_mod_prime(p)
+    plus = next(orbit for orbit in orbits if 2 in orbit)
+    minus_residue = (-2) % p
+    minus = next(orbit for orbit in orbits if minus_residue in orbit)
+    return plus, minus
+
+
+def twin_special_mode_support(p: int) -> tuple[int, ...]:
+    """Nonzero Fourier-mode support of the baseline-subtracted +2 cycle.
+
+    If ord_p(2) is even, +2 and -2 are half an orbit apart and odd modes cancel.
+    If ord_p(2) is odd, -2 lies in a different cycle and every mode is present
+    on either special cycle.
+    """
+    p = int(p)
+    if not _is_prime_small(p) or p < 5:
+        raise ValueError("p must be a prime >= 5")
+    d = doubling_order_mod_prime(p)
+    if d % 2 == 0:
+        return tuple(m for m in range(d) if m % 2 == 0)
+    return tuple(range(d))
+
+
+def twin_special_cycles_coincide(p: int) -> bool:
+    """Whether +2 and -2 lie on the same doubling cycle modulo p."""
+    plus, minus = twin_special_residue_cycles(p)
+    return plus == minus
