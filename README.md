@@ -270,3 +270,55 @@ This law is therefore typed **DERIVED_IN_FRAMEWORK / FORCED_PREDICTION** for the
 On-Primes keeps three coordinates distinct: ARPL modular gap phases, prime-power log frequencies \(m\log p\), and unfolded zero phases. The remaining zeta-specific gate is SOH-MD001: derive the actual zeta spectral occupancy/projector binding without importing GUE/Montgomery statistics.
 
 See \`proofs/MONTGOMERY_DYSON_FORCED_PHASE_SPECTROSCOPY_V0_1.md\`.
+
+
+## Prime-power phase bank ↔ form-factor duality
+
+The spectral von Mangoldt phase-bank line and the forced Montgomery–Dyson line are now joined by an exact finite identity. For any finite spectral sample,
+
+\[
+R_q=\frac1N\sum_j q^{i\gamma_j}
+\]
+
+satisfies
+
+\[
+\boxed{
+N|R_q|^2
+=
+\frac1N\sum_{j,k}
+e^{i(\gamma_j-\gamma_k)\log q}.
+}
+\]
+
+At reference height \(T\), with frozen local unfolding density
+
+\[
+\nu_T=\frac1{2\pi}\log\frac{T}{2\pi},
+\]
+
+the arithmetic frequency \(q\) maps exactly to
+
+\[
+\boxed{
+\tau_q(T)=\frac{\log q}{\log(T/2\pi)},
+}
+\]
+
+so
+
+\[
+\boxed{
+K_{\Gamma,T}(\tau_q)=N|R_q|^2.
+}
+\]
+
+For prime powers \(q=p^m\), the phase bank therefore samples form-factor power on the logarithmic lattice
+
+\[
+\tau_{p^m}(T)=\frac{m\log p}{\log(T/2\pi)}.
+\]
+
+This closes the coordinate/frequency bridge. It does **not** permit fixed-\(q\) Landau asymptotics to be identified with the full universal ramp: fixed \(q\) tends to \(\tau=0\), while fixed nonzero \(\tau\) requires \(q(T)\asymp(T/2\pi)^\tau\) together with the correct smoothing/window limit.
+
+See \`proofs/PHASE_BANK_FORM_FACTOR_DUALITY_V0_1.md\`.
