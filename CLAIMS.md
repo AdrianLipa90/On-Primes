@@ -46,3 +46,15 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 ## Firewall
 
 The identities OP-D001--OP-D028 do **not** characterize primality. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
+
+
+## Spectral von Mangoldt phase-bank extension
+
+| ID | Statement | Status | Notes |
+|---|---|---|---|
+| OP-S006 | For fixed \(x>1\), Landau's formula reconstructs \(\Lambda(x)\) from the zeta-zero sum \(\sum_{\gamma\le T}x^\rho\). | STANDARD | Classical Landau formula; fixed-\(x\) asymptotic. |
+| OP-D029 | Combining Landau's formula with \(\log n=\sum_{d\mid n}\Lambda(d)\) gives a finite-divisor zero-spectral reconstruction of \(\log n\), hence of \(\log(p+1)\). | PROVED_FROM_STANDARD | Finite divisor sum; no infinite interchange. |
+| OP-D030 | For \(p+1=a_p2^{k_p}\), the term \(k_p\log2\) is the sum of the first \(k_p\) dyadic Landau channels \(2^j\). | PROVED_FROM_STANDARD | Uses \(\Lambda(2^j)=\log2\). |
+| OP-S007 | Under critical-line placement, the phase response at integer base \(q\) has main term proportional to \(-\Lambda(q)/\sqrt q\); prime powers are precisely the nonzero main-term bases. | STANDARD_COROLLARY | Phase-only specialization of Landau. |
+| OP-N003 | On the first 256 positive critical-line zeros, the \(q=2,4,8\) dyadic phase-response magnitudes agree with the Landau main-term magnitudes at ratios about 0.989, 0.969, 0.988. | NUMERICAL | mpmath 1.3.0 finite witness; receipt committed. |
+| OP-O006 | Any residual correlation between zero phases and finite dyadic prime-shell errors must be retested with an independent preregistered null because both already contain the standard Landau dyadic channel. | OPEN | Current global-shift exploration is non-independent and not promoted. |
