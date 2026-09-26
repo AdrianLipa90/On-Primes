@@ -636,5 +636,39 @@ class ArithmeticRelationalPhaseLawTests(unittest.TestCase):
             previous = mass
 
 
+    def test_phase_covering_gram_is_exact(self):
+        support = (5, 7, 11, 13, 19)
+        G = twin_phase_covering_gram(support, 6)
+        d = twin_phase_covering_density_vector(support, 6)
+        self.assertEqual(tuple(G[i][i] for i in range(len(support))), d)
+        self.assertEqual(G[0][1], __import__("fractions").Fraction(1, 6))
+        self.assertEqual(G[0][3], 0)
+        self.assertEqual(G[1][3], __import__("fractions").Fraction(1, 6))
+
+    def test_phase_covering_l2_bounds(self):
+        cases = (
+            ((5, 7, 11, 13, 19),
+             __import__("fractions").Fraction(3481, 4680),
+             __import__("fractions").Fraction(57, 73)),
+            ((5, 7, 11, 13, 19, 23, 29, 37, 47, 53),
+             __import__("fractions").Fraction(1238018951569, 1679916708470),
+             __import__("fractions").Fraction(62891, 78951)),
+            ((5, 7, 11, 13, 19, 23, 29, 37, 47, 53, 59, 61, 67, 71, 79),
+             __import__("fractions").Fraction(8909939269035, 11572360119749),
+             __import__("fractions").Fraction(1268391857255, 1516708968451)),
+        )
+        previous = __import__("fractions").Fraction(0, 1)
+        for support, equal_expected, optimal_expected in cases:
+            equal_bound = twin_phase_covering_equal_weight_bound(support, 6)
+            optimal_bound = twin_phase_covering_optimal_l2_bound(support, 6)
+            exact_union = 1 - twin_finite_lower_edge_mass(support, 6)
+            self.assertEqual(equal_bound, equal_expected)
+            self.assertEqual(optimal_bound, optimal_expected)
+            self.assertLessEqual(equal_bound, optimal_bound)
+            self.assertLessEqual(optimal_bound, exact_union)
+            self.assertGreaterEqual(optimal_bound, previous)
+            previous = optimal_bound
+
+
 if __name__ == "__main__":
     unittest.main()
