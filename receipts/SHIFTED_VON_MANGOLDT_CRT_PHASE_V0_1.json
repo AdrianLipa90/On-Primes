@@ -1,0 +1,26 @@
+{
+  "schema": "ON_PRIMES_SHIFTED_VON_MANGOLDT_CRT_PHASE_V0_1",
+  "date": "2026-09-26",
+  "repository": "AdrianLipa90/On-Primes",
+  "branch": "integrate/phase-bank-form-factor-duality-v0.1-20260926-r3",
+  "status": "EXACT_FINITE_IDENTITY__EXACT_CRT_PHASE_GATE__ASYMPTOTIC_CANCELLATION_OPEN",
+  "identities": {
+    "von_mangoldt_mobius": "Lambda(n)=-sum_{d|n} mu(d) log d",
+    "shifted_correlation": "C_h(X)=sum_{d<=X,e<=X+h} mu(d)mu(e)log(d)log(e) N_{d,e}(X;h)",
+    "compatibility": "N channel solvable iff gcd(d,e)|h",
+    "phase_gate": "exp(2pi i h/gcd(d,e))=1 iff gcd(d,e)|h"
+  },
+  "closes": [
+    "finite actual Lambda-Lambda correlation -> modular CRT relation representation",
+    "CRT compatibility -> ARPL phase-lock representation"
+  ],
+  "remains_open": [
+    "uniform Möbius cancellation in growing divisor ranges",
+    "Hardy-Littlewood shifted-correlation asymptotic",
+    "q(T)-scaled smoothed form-factor closure"
+  ],
+  "validator": {
+    "status": "PENDING_LOCAL_EXECUTION"
+  },
+  "canon_allowed": false
+}
