@@ -598,5 +598,19 @@ class ArithmeticRelationalPhaseLawTests(unittest.TestCase):
         self.assertEqual(len(set(hull)), len(hull))
 
 
+    def test_phase_refinement_tower(self):
+        support = (5, 7, 11, 13, 19)
+        periods = tuple(quadruplet_observable_period(p, 6) for p in support)
+        levels = twin_phase_refinement_moduli(support, 6)
+        branching = twin_phase_refinement_branching(support, 6)
+        previous = 1
+        for e, L, b in zip(periods, levels, branching):
+            self.assertEqual(L, __import__("math").lcm(previous, e))
+            self.assertEqual(b, L // previous)
+            self.assertEqual(b, e // __import__("math").gcd(e, previous))
+            previous = L
+        self.assertEqual(len(twin_finite_phase_hull(support, 6)), levels[-1])
+
+
 if __name__ == "__main__":
     unittest.main()
