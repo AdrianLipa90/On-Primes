@@ -1,0 +1,30 @@
+{
+  "schema": "ON_PRIMES_MONTGOMERY_DYSON_PHASE_SPECTROSCOPY_V0_1",
+  "date": "2026-09-26",
+  "repository": "AdrianLipa90/On-Primes",
+  "branch": "integrate/montgomery-dyson-forced-phase-spectroscopy-v0.1-20260926",
+  "parent_branch": "feat/arithmetic-relational-phase-law-v0.1",
+  "status": "CORE_DERIVED_IN_FRAMEWORK_FORCED_PREDICTION__ZETA_BINDING_OPEN",
+  "dependency": {
+    "repository": "AdrianLipa90/Infinities",
+    "branch": "formalize/hardy-car-sine-kernel-forced-prediction-v0.1-20260926",
+    "head": "7008a9121d878674a7190d0966faa727f9eacb55",
+    "claim": "INF-270"
+  },
+  "typed_coordinates": [
+    "ARPL modular gap phase",
+    "prime-power log-frequency omega=m log p",
+    "unfolded zero phase DeltaPhi=2pi*s"
+  ],
+  "exact_finite_pair_law": "1-[sin(pi*s)/(M*sin(pi*s/M))]^2",
+  "limiting_pair_law": "1-[sin(pi*s)/(pi*s)]^2",
+  "phase_pair_law": "1-[sin(DeltaPhi/2)/(DeltaPhi/2)]^2",
+  "forbidden_derivation_inputs": [
+    "GUE",
+    "Montgomery target",
+    "zeta zero list",
+    "fitted sine kernel"
+  ],
+  "remaining_gate": "SOH-MD001 zeta spectral occupancy / quasi-free-CAR projector binding",
+  "canon_allowed": false
+}
