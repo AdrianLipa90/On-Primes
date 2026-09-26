@@ -64,6 +64,10 @@ from on_primes.phase_law import (
     twin_finite_log_variance,
     twin_finite_log_fourier_coefficients,
     twin_finite_log_parseval_power,
+    quadruplet_observable_period,
+    twin_quadratic_hit_phase,
+    twin_quadratic_hit_density,
+    twin_quadratic_joint_hit_density,
 )
 
 
@@ -460,6 +464,40 @@ class ArithmeticRelationalPhaseLawTests(unittest.TestCase):
                 twin_finite_log_variance(support, (2**k) * 6),
                 reference,
                 places=12,
+            )
+
+
+    def test_base4_observable_period_reduction(self):
+        import math
+        for p in (5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43):
+            if 6 % p == 0:
+                continue
+            d = doubling_order_mod_prime(p)
+            e = quadruplet_observable_period(p, 6)
+            self.assertEqual(e, d // math.gcd(d, 2))
+            self.assertEqual(pow(4, e, p), 1)
+
+    def test_base4_single_hit_phase_matches_plusminus2_clock(self):
+        for p in (5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43):
+            phase = twin_quadratic_hit_phase(p, 6)
+            e = quadruplet_observable_period(p, 6)
+            old_hits = twin_special_hit_positions(p, 6)
+            reduced = {r % e for r in old_hits}
+            if phase is None:
+                self.assertEqual(reduced, set())
+                self.assertEqual(twin_quadratic_hit_density(p, 6), 0)
+            else:
+                self.assertEqual(reduced, {phase})
+                self.assertEqual(
+                    twin_quadratic_hit_density(p, 6),
+                    __import__("fractions").Fraction(1, e),
+                )
+
+    def test_base4_joint_density_matches_old_density(self):
+        for p, q in ((5, 7), (7, 13), (13, 19), (11, 29), (17, 31)):
+            self.assertEqual(
+                twin_quadratic_joint_hit_density(p, q, 6),
+                twin_joint_special_hit_density(p, q, 6),
             )
 
 
