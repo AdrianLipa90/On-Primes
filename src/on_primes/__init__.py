@@ -124,6 +124,9 @@ from .phase_law import (
     twin_finite_dyadic_orbit_invariant,
     twin_local_mean_class,
     twin_local_mean_closed_form,
+    twin_period_overlap_components,
+    twin_component_factorized_mean,
+    twin_connected_resonance_cumulant,
 )
 from .modular import (
     is_obstructed_by,
@@ -241,4 +244,7 @@ __all__ = [
     "twin_finite_dyadic_orbit_invariant",
     "twin_local_mean_class",
     "twin_local_mean_closed_form",
+    "twin_period_overlap_components",
+    "twin_component_factorized_mean",
+    "twin_connected_resonance_cumulant",
 ]
