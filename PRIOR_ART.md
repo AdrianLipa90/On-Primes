@@ -194,3 +194,32 @@ e^{2\pi ian/q}
 \]
 
 are the finite-order characters indexed by \(a/q\pmod1\), and Ramanujan sums are sums over characters of exact order \(q\). The project-specific layer is the integration of this standard duality with the On-Primes dyadic operator and singular-series observables.
+
+
+## Divisor weights on exponential sequences
+
+The current ARPL arithmetic-mean frontier has been reduced to the divisor-weight sequence
+
+\[
+R(4^rh^2-4).
+\]
+
+There is classical prior art on divisor sums and prime divisors of exponential sequences, so this lane must not be treated as unexplored.
+
+Relevant references include:
+
+- P. Erdős, *On the sum \(\sum_{d\mid 2^n-1}d^{-1}\)*, Israel Journal of Mathematics 9 (1971), 43--48. Erdős proves an upper bound of order \(\log\log n\) for the reciprocal-divisor sum of \(2^n-1\).
+- G. R. Everest and I. E. Shparlinski, *Divisor sums of generalized exponential polynomials*, Canadian Mathematical Bulletin 39 (1996), 35--46.
+- Florian Luca, *On the sum of divisors of the Mersenne numbers*, Mathematica Slovaca 53(5) (2003), 457--466.
+- J. von zur Gathen, A. Knopfmacher, F. Luca, L. G. Lucht, I. E. Shparlinski, *Average order in cyclic groups*, Journal de Théorie des Nombres de Bordeaux 16 (2004), 107--123.
+
+These works are relevant to growth bounds, divisor statistics, and multiplicative-order averages. They do not, from the targeted search performed on 2026-09-26, directly establish the specific Cesaro mean of
+
+\[
+R(4^rh^2-4)
+=
+\prod_{\substack{p\mid 4^rh^2-4\\p\ge5}}
+\frac{p-3}{p-4}.
+\]
+
+That absence of a direct match is not a novelty proof.
