@@ -565,3 +565,82 @@ def twin_local_mean_closed_form(p: int, h: int) -> Fraction:
     if kind == "special-odd":
         return base + Fraction(1, d) * spike
     return base
+
+
+def twin_period_overlap_components(primes: Sequence[int], h: int) -> tuple[tuple[int, ...], ...]:
+    """Connected components of the graph gcd(d_p(h), d_q(h)) > 1."""
+    support = tuple(int(p) for p in primes)
+    if len(set(support)) != len(support):
+        raise ValueError("primes must be distinct")
+    periods = {p: twin_local_dyadic_period(p, int(h)) for p in support}
+    unseen = set(support)
+    components: list[tuple[int, ...]] = []
+    while unseen:
+        seed = min(unseen)
+        stack = [seed]
+        unseen.remove(seed)
+        component: list[int] = []
+        while stack:
+            p = stack.pop()
+            component.append(p)
+            linked = [q for q in tuple(unseen) if math.gcd(periods[p], periods[q]) > 1]
+            for q in linked:
+                unseen.remove(q)
+                stack.append(q)
+        components.append(tuple(sorted(component)))
+    return tuple(sorted(components))
+
+
+def twin_component_factorized_mean(primes: Sequence[int], h: int) -> Fraction:
+    """Product of exact common-clock means over period-overlap components."""
+    result = Fraction(1, 1)
+    for component in twin_period_overlap_components(primes, int(h)):
+        result *= twin_global_orbit_mean(component, int(h))
+    return result
+
+
+def twin_connected_resonance_cumulant(primes: Sequence[int], h: int) -> Fraction:
+    """Exact connected common-clock cumulant of the local twin-factor channels.
+
+    Uses the moment-cumulant recursion with one distinguished anchor.
+    Computational cost is exponential in the number of channels; this helper is
+    intended for finite theorem/diagnostic supports rather than large scans.
+    """
+    support = tuple(sorted(int(p) for p in primes))
+    if len(set(support)) != len(support):
+        raise ValueError("primes must be distinct")
+    if not support:
+        return Fraction(0, 1)
+
+    moment_cache: dict[tuple[int, ...], Fraction] = {(): Fraction(1, 1)}
+    cumulant_cache: dict[tuple[int, ...], Fraction] = {}
+
+    def moment(subset: tuple[int, ...]) -> Fraction:
+        subset = tuple(sorted(subset))
+        if subset not in moment_cache:
+            moment_cache[subset] = twin_global_orbit_mean(subset, int(h))
+        return moment_cache[subset]
+
+    def cumulant(subset: tuple[int, ...]) -> Fraction:
+        subset = tuple(sorted(subset))
+        if subset in cumulant_cache:
+            return cumulant_cache[subset]
+        if len(subset) == 1:
+            value = moment(subset)
+            cumulant_cache[subset] = value
+            return value
+        anchor = subset[0]
+        rest = subset[1:]
+        total = moment(subset)
+        # Sum over all proper blocks B containing the anchor.
+        for mask in range(1 << len(rest)):
+            block = (anchor,) + tuple(rest[i] for i in range(len(rest)) if (mask >> i) & 1)
+            if len(block) == len(subset):
+                continue
+            block_set = set(block)
+            complement = tuple(x for x in subset if x not in block_set)
+            total -= cumulant(tuple(sorted(block))) * moment(complement)
+        cumulant_cache[subset] = total
+        return total
+
+    return cumulant(support)
