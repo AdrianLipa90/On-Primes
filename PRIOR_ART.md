@@ -256,7 +256,7 @@ P. Erdős and M. Ram Murty, *On the Order of \(a\) (mod \(p\))*,
 in *Number Theory (Ottawa, ON, 1996)*, CRM Proceedings and Lecture Notes 19,
 American Mathematical Society (1999), 87--97.
 
-Their Theorem 3 states that for fixed \(a>1\) there exist constants
+Their Theorem 5(2), specialized to rank one, gives the quantitative form needed here: for fixed \(a>1\) there exist constants
 \(\alpha,\delta>0\) such that
 
 \[
@@ -286,4 +286,36 @@ the same lower bound holds up to a factor \(1/2\) on the nonexceptional prime ch
 
 The exceptional counting bound implies by partial summation that the exceptional primes have finite reciprocal mass. This is the decisive external input that upgrades the elementary \(0<s<1\) fractional-moment theorem to all fixed real \(s\), including the arithmetic endpoint \(s=1\).
 
-No novelty is claimed for the Erdős--Murty theorem.
+Later literature also attributes the fixed-base quantitative formulation to F. Pappalardi; Kurlberg--Pomerance explicitly cite Pappalardi for the same exceptional-set scale. ARPL therefore treats the estimate strictly as external prior art and does not claim priority for it.
+
+
+## Limiting distributions and almost-periodic phase laws
+
+The passage from periodic/limit-periodic arithmetic sequences to limiting distributions is classical and is not claimed as an ARPL invention.
+
+Relevant general prior art includes:
+
+- A. S. Besicovitch, *Almost Periodic Functions* (1932), for mean almost-periodic spaces and Fourier--Bohr theory.
+- Work on limit-periodic and Besicovitch almost-periodic arithmetic functions showing existence of limiting distributions.
+- A. Iksanov, Z. Kabluchko, A. Marynych, *Almost periodic stochastic processes with applications to analytic number theory* (2025), for a modern probabilistic formulation of asymptotic distributions of Besicovitch almost-periodic functions.
+
+Standard tools used by the ARPL limiting-law theorem also include Lévy's continuity theorem, compact procyclic groups, Haar measure, and locally uniform convergence of holomorphic series.
+
+The project-specific object is the explicit phase-clock transform for the dyadic two-twin-pair singular-series orbit,
+
+\[
+\mathcal M_h(z)
+=
+A(h)^z
+\left[
+1+
+\sum_{J\ne\varnothing}
+\delta_J(h)
+\prod_{p\in J}
+\left(
+\left(\frac{p-3}{p-4}\right)^z-1
+\right)
+\right],
+\]
+
+together with its number-theoretic clock periods \(e_p=\operatorname{ord}_p(4)\) and generalized-CRT compatibility relation. A targeted search has not established literature novelty for this exact specialization.
