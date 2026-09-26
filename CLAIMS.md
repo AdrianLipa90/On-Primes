@@ -204,6 +204,12 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`, `RES
 | OP-D153 | The ARPL odometer translation is an isometry of the canonical phase ultrametric. | PROVED | Translation preserves all congruence-agreement levels. |
 | OP-D154 | Every positive-Haar-measure subset of the canonical phase hull has Hausdorff dimension \(1\); in particular a positive-mass lower-edge avoidance set would have full phase dimension. | PROVED/STANDARD | \(1\)-Ahlfors regularity / mass distribution. |
 
+| OP-D155 | With \(S_N=a_NL_N\) surviving level-\(N\) phase cells, next-step refinement obeys the exact branch-prune recursion \(S_{N+1}=b_NS_N-C_N\), where \(C_N=c_NS_N\) is the number of surviving parents compatible with the new target phase. | PROVED | Each surviving parent has \(b_N\) children and every compatible parent loses exactly one. |
+| OP-D156 | The finite survival phase exponent is \(D_N^{\rm surv}=\log S_N/\log L_N=1+\log a_N/\log L_N\), with codimension \(\Delta_N=-\log a_N/\log L_N\). | PROVED | \(S_N=a_NL_N\). |
+| OP-D157 | The finite phase codimension is the ratio of accumulated hazard cost to accumulated refinement information: \(\Delta_N=\sum_{j<N}-\log(1-c_j/b_j)/\sum_{j<N}\log b_j\). | PROVED | Survival-product and lcm-branching identities. |
+| OP-D158 | The full avoidance set satisfies \(\overline{\dim}_{\rm B}(A_\infty)\le1-\liminf_N[-\log a_N/\log L_N]\) in the canonical phase ultrametric. | PROVED | \(A_\infty\) is covered by at most \(S_N=a_NL_N\) level-\(N\) cylinders. |
+| OP-D159 | Its Hausdorff dimension obeys \(\dim_H(A_\infty)\le\max\{0,1-\Delta_*\}\), \(\Delta_*=\liminf_N[-\log a_N/\log L_N]\). | PROVED | Canonical cylinder \(s\)-content bound \(a_NL_N^{1-s}\). |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
