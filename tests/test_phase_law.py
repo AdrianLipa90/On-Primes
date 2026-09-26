@@ -54,6 +54,10 @@ from on_primes.phase_law import (
     twin_special_correction_ratio,
     twin_finite_instantaneous_product,
     twin_finite_instantaneous_factorization,
+    twin_special_hit_density,
+    twin_local_log_orbit_mean,
+    twin_local_log_orbit_formula,
+    twin_finite_log_geometric_mean,
 )
 
 
@@ -365,6 +369,43 @@ class ArithmeticRelationalPhaseLawTests(unittest.TestCase):
                 twin_quadruplet_local_factor(p, -2) / beta,
                 twin_special_correction_ratio(p),
             )
+
+
+    def test_local_log_orbit_formula(self):
+        for p in (5, 7, 11, 13, 17, 19, 23, 29, 31):
+            for h in (6, 18, 30, 42, 66):
+                self.assertAlmostEqual(
+                    twin_local_log_orbit_mean(p, h),
+                    twin_local_log_orbit_formula(p, h),
+                    places=12,
+                )
+
+    def test_special_hit_density_matches_direct_orbit(self):
+        for p in (5, 7, 11, 13, 17, 19, 23, 29, 31):
+            h = 6
+            d = twin_local_dyadic_period(p, h)
+            if h % p == 0:
+                expected = 0
+            else:
+                u = h % p
+                hits = 0
+                for _ in range(d):
+                    if u in (2 % p, (-2) % p):
+                        hits += 1
+                    u = (2 * u) % p
+                expected = __import__("fractions").Fraction(hits, d)
+            self.assertEqual(twin_special_hit_density(p, h), expected)
+
+    def test_finite_log_geometric_mean_is_dyadic_invariant(self):
+        support = (5, 7, 11, 13, 17, 19, 23, 29, 31)
+        for h in (6, 18, 30, 42):
+            reference = twin_finite_log_geometric_mean(support, h, include_carriers=True)
+            for k in range(6):
+                self.assertAlmostEqual(
+                    twin_finite_log_geometric_mean(support, (2**k)*h, include_carriers=True),
+                    reference,
+                    places=12,
+                )
 
 
 if __name__ == "__main__":
