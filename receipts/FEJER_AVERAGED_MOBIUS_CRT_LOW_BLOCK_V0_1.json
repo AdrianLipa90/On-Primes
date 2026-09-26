@@ -1,0 +1,31 @@
+{
+  "schema": "ON_PRIMES_FEJER_AVERAGED_MOBIUS_CRT_LOW_BLOCK_V0_1",
+  "date": "2026-09-26",
+  "repository": "AdrianLipa90/On-Primes",
+  "branch": "integrate/fejer-averaged-mobius-crt-low-block-v0.1-20260926",
+  "base_branch": "integrate/phase-bank-form-factor-duality-v0.1-20260926-r3",
+  "base_sha": "a1f02c2d0bddc8b1835f5d43c1187bc7d5ae7564",
+  "status": "EXACT_SHIFT_AVERAGE__LOW_BLOCK_MEAN_CONTROLLED__AVERAGED_HIGH_TAIL_OPEN",
+  "exact_gate_average": "Q_H(g)=1/g+r(g-r)/(g(H+1)^2), r=(H+1) mod g",
+  "exact_factorization": "Mbar_HR=(sum_{d<=R} mu(d) log(d)/d)^2+B_HR",
+  "correction_bound": "|B_HR| <= log(R)^2 [5R+(1+log R)^2]/[4(H+1)^2]",
+  "low_block_average": "Cbar_HR(X)=X Mbar_HR+Ebar, |Ebar|<=(R log R)^2",
+  "standard_external_input": "sum mu(n) log(n)/n = -1, PNT-related classical result",
+  "asymptotic_conditions": [
+    "(R log R)^2=o(X)",
+    "R log(R)^2=o(H^2)",
+    "R->infinity"
+  ],
+  "asymptotic_conclusion": "Cbar_HR(X)/X -> 1",
+  "new_gate": "OP-F28 Fejer-averaged high-divisor tail closure",
+  "fixed_h_twin_prime_asymptotic_used": false,
+  "zeta_zero_list_used": false,
+  "local_validator": {
+    "status": "PASS",
+    "max_gate_error": 5.551115123125783e-17,
+    "max_factorization_error": 4.440892098500626e-16,
+    "max_correction_to_bound_ratio": 0.06632394006889547,
+    "max_low_block_error_to_bound_ratio": 0.048224575347225365
+  },
+  "canon_allowed": false
+}
