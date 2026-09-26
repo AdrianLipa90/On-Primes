@@ -80,7 +80,7 @@ Reference implementation is standard-library Python.
 python -m unittest discover -s tests -v
 ```
 
-Current development branch: `feat/dyadic-prime-fibres-v0.1`.
+Current development branch: feat/arithmetic-relational-phase-law-v0.1.
 
 ## Shifted von Mangoldt tower
 
@@ -120,3 +120,47 @@ which makes the hexagonal lattice connection exact rather than metaphorical. Thi
 
 See `proofs/CENTERED_HEXAGONAL_PRIME_CHANNEL_V0_1.md`.
 
+
+## Arithmetic Relational Phase Law
+
+The ARPL v0.1 theorem pack adds an exact phase-coordinate layer for integer separations. For
+
+\[
+\Delta=y-x,
+\qquad
+\chi_{q,a}(n)=e^{2\pi ian/q},
+\]
+
+the relative phase obeys
+
+\[
+\chi_{q,a}(y)\overline{\chi_{q,a}(x)}=\chi_{q,a}(\Delta).
+\]
+
+A complete prime-power residue signature
+
+\[
+\Phi_\infty(\Delta)=(\Delta\bmod p^j)_{p,\,j\ge1}
+\]
+
+is injective on integers. Therefore an anchor plus the ordered gap stream of any increasing integer sequence can be represented exactly by its complete modular phase signatures.
+
+For the existing dyadic map \(T(x)=2x+1\), separations obey
+
+\[
+\Delta\mapsto2\Delta,
+\]
+
+so each modular character evolves by exact phase squaring:
+
+\[
+\chi_{q,a}(\Delta(T^rx,T^ry))
+=
+\chi_{q,a}(\Delta(x,y))^{2^r}.
+\]
+
+For the fibre \(x_{a,k}=a2^k-1\), modular divisor obstructions are equivalently finite phase-orbit hits. For twin-prime starts above 3, consecutive start gaps are exactly locked to \(0\pmod6\), giving locked mod-2 and mod-3 phase channels.
+
+See proofs/ARITHMETIC_RELATIONAL_PHASE_LAW_V0_1.md and tests/test_phase_law.py.
+
+Prior-art firewall: Fourier/CRT/profinite character machinery, Wiener--Khintchine duality, Ramanujan sums, and earlier Ramanujan--Fourier work on prime-pair correlations are established mathematics. ARPL v0.1 does not claim a zeta-zero equivalence, a twin-prime proof, or RH.
