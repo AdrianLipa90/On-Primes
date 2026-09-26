@@ -422,3 +422,121 @@ ARPL-specific data:
 It is mathematically justified to call \(\Gamma_h\) a **phase-refinement graph** or **inverse-limit phase hierarchy**.
 
 Calling it a metric fractal requires an explicitly chosen metric and a separate dimension theorem.
+
+
+## 13. Clock novelty and dual-frequency novelty — OP-D116
+
+At level \(N\), the finite phase clock has size \(L_N\), and after adding channel \(e_{N+1}\) its size is
+
+\[
+L_{N+1}=b_NL_N.
+\]
+
+The following are equivalent:
+
+\[
+\boxed{
+b_N=1
+}
+\]
+
+\[
+\Longleftrightarrow
+\]
+
+\[
+\boxed{
+e_{N+1}\mid L_N
+}
+\]
+
+\[
+\Longleftrightarrow
+\]
+
+\[
+\boxed{
+\frac1{e_{N+1}}\mathbb Z/\mathbb Z
+\subset
+\frac1{L_N}\mathbb Z/\mathbb Z.
+}
+\]
+
+Thus \(b_N=1\) means that the new channel introduces no new time resolution and no new rational frequency denominator. It may still add a new pulse phase and a new observable weight on the already existing phase space.
+
+If \(b_N>1\), then the new finite clock is a degree-\(b_N\) extension of the previous clock, and the finite dual frequency group grows by the same index:
+
+\[
+\boxed{
+\left[
+(1/L_{N+1})\mathbb Z/\mathbb Z:
+(1/L_N)\mathbb Z/\mathbb Z
+\right]
+=
+b_N.
+}
+\]
+
+Hence \(b_N\) is an exact phase-resolution novelty index.
+
+## 14. Finite Haar phase information — OP-D117
+
+The Haar projection at level \(N\) is uniform on
+
+\[
+L_N
+\]
+
+phase states. Its Shannon entropy, using natural logarithms, is therefore
+
+\[
+\boxed{
+H_N
+=
+-\sum_{a\in\mathbb Z/L_N\mathbb Z}
+\frac1{L_N}\log\frac1{L_N}
+=
+\log L_N.
+}
+\]
+
+Because every parent cell has exactly \(b_N\) equiprobable children,
+
+\[
+\boxed{
+H_{N+1}-H_N
+=
+\log b_N.
+}
+\]
+
+Equivalently,
+
+\[
+\boxed{
+H_N
+=
+\sum_{j=0}^{N-1}\log b_j
+=
+\log L_N,
+}
+\]
+
+with \(L_0=1\).
+
+Therefore:
+
+- \(b_N=1\) contributes zero new clock-state information;
+- \(b_N>1\) contributes exactly \(\log b_N\) nats of finite phase-resolution information.
+
+In bits,
+
+\[
+\boxed{
+\Delta H_N^{(2)}
+=
+\log_2 b_N.
+}
+\]
+
+This is ordinary Shannon entropy of the uniform finite quotient. No thermodynamic or physical entropy claim is made.
