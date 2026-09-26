@@ -432,3 +432,87 @@ def twin_special_cycles_coincide(p: int) -> bool:
     """Whether +2 and -2 lie on the same doubling cycle modulo p."""
     plus, minus = twin_special_residue_cycles(p)
     return plus == minus
+
+
+def twin_local_dyadic_period(p: int, h: int) -> int:
+    """Period of the residue orbit h -> 2h mod p relevant to the local observable."""
+    p = int(p)
+    h = int(h)
+    if not _is_prime_small(p) or p < 5:
+        raise ValueError("p must be a prime >= 5")
+    return 1 if h % p == 0 else doubling_order_mod_prime(p)
+
+
+def twin_local_orbit_values(p: int, h: int) -> tuple[Fraction, ...]:
+    """Exact local-factor values over one dyadic residue period."""
+    period = twin_local_dyadic_period(p, h)
+    u = int(h) % int(p)
+    out: list[Fraction] = []
+    for _ in range(period):
+        out.append(twin_quadruplet_local_factor(int(p), u))
+        u = (2 * u) % int(p)
+    return tuple(out)
+
+
+def twin_local_orbit_mean(p: int, h: int) -> Fraction:
+    """Exact mean of B_p(2^r h) over one local dyadic period."""
+    values = twin_local_orbit_values(p, h)
+    return sum(values, Fraction(0, 1)) / len(values)
+
+
+def twin_local_orbit_variance(p: int, h: int) -> Fraction:
+    """Exact variance of B_p(2^r h) over one local dyadic period."""
+    values = twin_local_orbit_values(p, h)
+    mean = sum(values, Fraction(0, 1)) / len(values)
+    return sum((value - mean) ** 2 for value in values, Fraction(0, 1)) / len(values)
+
+
+def twin_global_dyadic_period(primes: Sequence[int], h: int) -> int:
+    """LCM period of the supplied local twin-factor channels under h -> 2h."""
+    support = tuple(int(p) for p in primes)
+    if len(set(support)) != len(support):
+        raise ValueError("primes must be distinct")
+    period = 1
+    for p in support:
+        period = math.lcm(period, twin_local_dyadic_period(p, int(h)))
+    return period
+
+
+def twin_global_orbit_mean(primes: Sequence[int], h: int) -> Fraction:
+    """Exact common-clock mean of the finite product of local twin factors."""
+    support = tuple(int(p) for p in primes)
+    period = twin_global_dyadic_period(support, int(h))
+    total = Fraction(0, 1)
+    residue_by_p = {p: int(h) % p for p in support}
+    for _ in range(period):
+        value = Fraction(1, 1)
+        for p in support:
+            value *= twin_quadruplet_local_factor(p, residue_by_p[p])
+        total += value
+        for p in support:
+            residue_by_p[p] = (2 * residue_by_p[p]) % p
+    return total / period
+
+
+def twin_product_of_local_means(primes: Sequence[int], h: int) -> Fraction:
+    """Product of independently averaged local twin-factor channels."""
+    result = Fraction(1, 1)
+    for p in tuple(int(p) for p in primes):
+        result *= twin_local_orbit_mean(p, int(h))
+    return result
+
+
+def twin_dyadic_resonance_correction(primes: Sequence[int], h: int) -> Fraction:
+    """Common-clock mean minus the product of independent local means."""
+    support = tuple(int(p) for p in primes)
+    return twin_global_orbit_mean(support, int(h)) - twin_product_of_local_means(support, int(h))
+
+
+def local_periods_pairwise_coprime(primes: Sequence[int], h: int) -> bool:
+    """Whether all nontrivial local dyadic periods are pairwise coprime."""
+    periods = [twin_local_dyadic_period(int(p), int(h)) for p in primes]
+    for i, a in enumerate(periods):
+        for b in periods[i + 1:]:
+            if math.gcd(a, b) != 1:
+                return False
+    return True
