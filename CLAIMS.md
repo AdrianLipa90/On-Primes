@@ -175,6 +175,13 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-N007 | Mellin/additive-window validator PASS: pullback error \(4.44\times10^{-16}\), Gaussian-kernel error \(2.22\times10^{-16}\), translation-identity error \(8.88\times10^{-16}\). | NUMERICAL / VALIDATOR | Synthetic smooth windows only; no zeta-zero input. |
 | OP-O016 | The short-scale averaged prime-correlation bound for the exact smooth kernel induced by the declared explicit-formula test can be extended below the current unconditional long-window threshold. | OPEN | Window representation is closed; remaining issue is analytic mean-square/dispersion control. |
 
+
+| OP-D106 | Under RH, the standard Saffari--Vaughan/Selberg bound \(J(X,H)\ll XH(1+\log(X/H))^2\) implies relative mean-square decay whenever \(H/(1+\log(X/H))^2\to\infty\). | PROVED_FROM_STANDARD / RH-CONDITIONAL | External conditional theorem; validation only. |
+| OP-D107 | Under the same RH-conditional regime and \(H\log^2X=o(X)\), choosing \(R=H^{1/2}\) keeps the Fejér/Möbius--CRT low block asymptotic to \(X\). | PROVED_FROM_STANDARD / RH-CONDITIONAL | OP-D097 scale check; no fixed-shift occurrence theorem. |
+| OP-D108 | Under RH, the Fejér-averaged high-divisor tail with \(R=H^{1/2}\) is \(o(X)\) when \(H/(1+\log(X/H))^2\to\infty\) and \(H\log^2X=o(X)\). | RH-CONDITIONAL VALIDATION ONLY | Difference of the conditional full mean-square result and exact low-block asymptotic. |
+| OP-S019 | The RH-conditional Saffari--Vaughan/Selberg short-interval mean-square estimate used in OP-D106--OP-D108 is standard external mathematics. | STANDARD / RH-CONDITIONAL | It is not admissible as an RH proof premise. |
+| OP-O017 | Reproduce the short-window averaged-tail decay of OP-D108 without assuming RH, or derive an independent operator theorem strong enough to imply it. | OPEN | This is the noncircular short-window frontier. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
