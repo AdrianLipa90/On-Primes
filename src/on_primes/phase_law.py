@@ -847,3 +847,98 @@ def twin_finite_log_geometric_mean(primes: Sequence[int], h: int, include_carrie
     for p in support:
         total += twin_local_log_orbit_formula(p, int(h))
     return total
+
+
+def twin_special_hit_positions(p: int, h: int) -> tuple[int, ...]:
+    """Dyadic-time residues in one local period where 2**r h == +/-2 mod p."""
+    p = int(p)
+    if not _is_prime_small(p) or p < 5:
+        raise ValueError("p must be a prime >= 5")
+    if int(h) % p == 0:
+        return ()
+    d = doubling_order_mod_prime(p)
+    u = int(h) % p
+    hits: list[int] = []
+    for r in range(d):
+        if u in (2 % p, (-2) % p):
+            hits.append(r)
+        u = (2 * u) % p
+    return tuple(hits)
+
+
+def twin_joint_special_hit_density(p: int, q: int, h: int) -> Fraction:
+    """Exact common-clock density of simultaneous +/-2 hits in channels p and q."""
+    p = int(p)
+    q = int(q)
+    if p == q:
+        return twin_special_hit_density(p, int(h))
+    if not _is_prime_small(p) or p < 5 or not _is_prime_small(q) or q < 5:
+        raise ValueError("p and q must be distinct primes >= 5")
+    hp = twin_special_hit_positions(p, int(h))
+    hq = twin_special_hit_positions(q, int(h))
+    if not hp or not hq:
+        return Fraction(0, 1)
+    dp = doubling_order_mod_prime(p)
+    dq = doubling_order_mod_prime(q)
+    g = math.gcd(dp, dq)
+    compatible = sum(1 for a in hp for b in hq if (a - b) % g == 0)
+    return Fraction(compatible, math.lcm(dp, dq))
+
+
+def twin_log_pair_covariance(p: int, q: int, h: int) -> float:
+    """Covariance contribution of two log-correction channels."""
+    p = int(p)
+    q = int(q)
+    wp = math.log(float(twin_special_correction_ratio(p)))
+    wq = math.log(float(twin_special_correction_ratio(q)))
+    dp = float(twin_special_hit_density(p, int(h)))
+    dq = float(twin_special_hit_density(q, int(h)))
+    joint = float(twin_joint_special_hit_density(p, q, int(h)))
+    return wp * wq * (joint - dp * dq)
+
+
+def twin_finite_log_variance(primes: Sequence[int], h: int) -> float:
+    """Exact-period variance of the finite dynamic log correction, via densities."""
+    support = tuple(int(p) for p in primes)
+    if len(set(support)) != len(support):
+        raise ValueError("primes must be distinct")
+    variance = 0.0
+    for p in support:
+        w = math.log(float(twin_special_correction_ratio(p)))
+        delta = float(twin_special_hit_density(p, int(h)))
+        variance += w * w * delta * (1.0 - delta)
+    for i, p in enumerate(support):
+        for q in support[i + 1 :]:
+            variance += 2.0 * twin_log_pair_covariance(p, q, int(h))
+    return variance
+
+
+def twin_finite_log_fourier_coefficients(primes: Sequence[int], h: int) -> dict[Fraction, complex]:
+    """Aggregate nonzero B2 Fourier coefficients of the finite centered log signal.
+
+    Frequencies are represented in Q/Z by Fraction values in [0,1).
+    """
+    support = tuple(int(p) for p in primes)
+    if len(set(support)) != len(support):
+        raise ValueError("primes must be distinct")
+    coeffs: dict[Fraction, complex] = {}
+    for p in support:
+        if not _is_prime_small(p) or p < 5:
+            raise ValueError("support must contain distinct primes >= 5")
+        hits = twin_special_hit_positions(p, int(h))
+        if not hits:
+            continue
+        d = doubling_order_mod_prime(p)
+        w = math.log(float(twin_special_correction_ratio(p)))
+        for m in range(1, d):
+            c = sum(cmath.exp(-2j * math.pi * m * r / d) for r in hits) / d
+            if abs(c) < 1e-15:
+                continue
+            freq = Fraction(m, d)
+            coeffs[freq] = coeffs.get(freq, 0j) + w * c
+    return coeffs
+
+
+def twin_finite_log_parseval_power(primes: Sequence[int], h: int) -> float:
+    """Sum of squared aggregated nonzero Fourier coefficients."""
+    return sum(abs(c) ** 2 for c in twin_finite_log_fourier_coefficients(primes, int(h)).values())
