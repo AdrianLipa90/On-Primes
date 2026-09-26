@@ -140,6 +140,12 @@ from .phase_law import (
     twin_local_log_orbit_mean,
     twin_local_log_orbit_formula,
     twin_finite_log_geometric_mean,
+    twin_special_hit_positions,
+    twin_joint_special_hit_density,
+    twin_log_pair_covariance,
+    twin_finite_log_variance,
+    twin_finite_log_fourier_coefficients,
+    twin_finite_log_parseval_power,
 )
 from .modular import (
     is_obstructed_by,
@@ -273,4 +279,10 @@ __all__ = [
     "twin_local_log_orbit_mean",
     "twin_local_log_orbit_formula",
     "twin_finite_log_geometric_mean",
+    "twin_special_hit_positions",
+    "twin_joint_special_hit_density",
+    "twin_log_pair_covariance",
+    "twin_finite_log_variance",
+    "twin_finite_log_fourier_coefficients",
+    "twin_finite_log_parseval_power",
 ]
