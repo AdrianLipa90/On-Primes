@@ -344,3 +344,29 @@ U_r=(h/2)^2 4^r-1,
 whose characteristic roots are \(4\) and \(1\). Since \(6\mid h\), every prime divisor of \(U_r\) is different from \(2\) and \(3\), hence is an active ARPL channel \(p\ge5\).
 
 This prior-art input establishes active-channel infinitude only. The subsequent procyclic/Haar lower-edge atom criterion is the project-specific specialization.
+
+
+## Odometers / adding machines and compact group rotations
+
+The dynamical-system properties used by the ARPL phase clock are standard and are not claimed as novel.
+
+An odometer (adding machine) can be realized as an inverse limit of finite cyclic rotations. Classical odometers are:
+
+- minimal and uniquely ergodic;
+- equicontinuous;
+- zero-entropy;
+- pure-point systems whose rational point spectrum is the Pontryagin dual of the odometer group.
+
+Useful modern references include:
+
+- T. Downarowicz, *Survey of odometers and Toeplitz flows*, for the classical inverse-limit/addition picture and rational point spectrum.
+- Standard compact-group rotation theory; minimal rotations are uniquely ergodic when the generating orbit is dense, and compact abelian rotations have pure point spectrum.
+- Modern pure-point dynamical-spectrum treatments of minimal compact group rotations.
+
+ARPL specializes this standard framework to the arithmetic clock tower
+
+\[
+L_N=\operatorname{lcm}_{j\le N}\operatorname{ord}_{p_j}(4),
+\]
+
+with prime-channel pulse phases \(\rho_{p_j}(h)\) and singular-series weights. The identification of this arithmetic phase clock with an odometer does not make odometer theory itself new.
