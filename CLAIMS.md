@@ -43,6 +43,17 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-O001 | Prime masks \(M_a(k)=1_{\mathbb P}(a2^k-1)\) may reveal useful modular or spectral structure beyond the reparametrisation itself. | OPEN | Research programme, not a theorem. |
 | OP-O002 | The dyadic-fibre decomposition may yield a useful decomposition or bound for the prime side of \(-\zeta'/\zeta\) or a Weil/Suzuki criterion. | OPEN | No RH implication is claimed. |
 
+| OP-D029 | For every modular character \(\chi_{q,a}(n)=e^{2\pi ian/q}\), the relative phase satisfies \(\chi_{q,a}(y)\overline{\chi_{q,a}(x)}=\chi_{q,a}(y-x)\). | PROVED | Exact character identity; relative phase depends only on separation. |
+| OP-D030 | For pairwise-coprime moduli \(m_j\), the finite phase signature \((\Delta\bmod m_j)_j\) uniquely determines \(\Delta\bmod\prod_jm_j\). | PROVED | Chinese remainder theorem. |
+| OP-D031 | The complete prime-power phase signature \((\Delta\bmod p^j)_{p,j\ge1}\) is injective on \(\mathbb Z\). | PROVED | Equality of all prime-power residues forces the integer difference to vanish. |
+| OP-D032 | An anchor \(x_1\) plus the ordered gap stream \(g_n=x_{n+1}-x_n\) reconstructs the sequence exactly; replacing each gap by its complete phase signature preserves exact reconstructibility. | PROVED | Telescoping sum plus OP-D031. |
+| OP-D033 | For a finite periodic signal, cyclic autocorrelation and DFT power are exact Fourier transforms of one another. | PROVED | Finite Wiener--Khintchine identity. Power alone is not claimed to determine the ordered point set uniquely. |
+| OP-D034 | Every twin-prime start \(p>3\) satisfies \(p\equiv-1\pmod6\); therefore consecutive twin-start gaps are divisible by 6 and have locked mod-2 and mod-3 phase channels. | PROVED | Elementary mod-6 argument. |
+| OP-D035 | Under \(T(x)=2x+1\), separations obey \(\Delta\mapsto2\Delta\), so modular characters obey phase squaring; after \(r\) iterations the phase is raised to \(2^r\). | PROVED | Exact affine difference identity and character multiplicativity. |
+| OP-D036 | In the fibre \(x_{a,k}=a2^k-1\), the orbit \(u_k=a2^k\bmod r\) obeys \(u_{k+1}=2u_k\bmod r\), and \(r\mid x_{a,k}\) iff \(u_k=1\bmod r\); equivalently divisor obstructions are finite phase-orbit hits. | PROVED | Exact reformulation of OP-D007 in phase coordinates. |
+| OP-S006 | Ramanujan--Fourier expansions and Wiener--Khintchine ideas have prior literature applications to prime-pair correlations, including Gadiyar--Padma (1999, 2014). | STANDARD | The 2014 argument is explicitly heuristic because of an unjustified interchange of limits; see PRIOR_ART.md. |
+| OP-O004 | A direct operator equivalence between the ordered prime-gap phase representation and the nontrivial zeta-zero spectrum may exist. | OPEN | No such equivalence is proved by ARPL v0.1. |
+
 ## Firewall
 
-The identities OP-D001--OP-D028 do **not** characterize primality. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
+The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
