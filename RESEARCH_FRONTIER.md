@@ -922,3 +922,103 @@ w_p\mathbf1_{\{x_p=\rho_p(h)\}}.
 \]
 
 No atomlessness or absolute-continuity claim is currently promoted.
+
+
+### OP-F30 status update — source phase geometry CLOSED
+
+The phase-refinement system is now identified exactly as a procyclic odometer:
+
+\[
+K_h\cong\varprojlim_N\mathbb Z/L_N\mathbb Z,
+\qquad
+T_h(x)=x+g.
+\]
+
+Using the classical prime-divisor theorem for non-degenerate linear recurrences, the active channel set is infinite and the observable periods are unbounded. Hence
+
+\[
+L_N\to\infty.
+\]
+
+Consequences now closed:
+
+- source Haar measure is non-atomic;
+- phase-resolution entropy \(\log L_N\) diverges;
+- the odometer is minimal and uniquely ergodic;
+- topological and Haar entropy rates are zero;
+- Koopman spectrum is pure point with frequency module
+  \[
+  \widehat K_h=\bigcup_N(1/L_N)\mathbb Z/\mathbb Z.
+  \]
+
+This separates growing phase resolution from entropy production.
+
+### OP-F31 status update — lower-edge atom reduced exactly
+
+The pushforward law is not yet proved non-atomic.
+
+The possible atom at the hard lower edge
+
+\[
+A(h)=\frac{27}{2}C_*Z(h)
+\]
+
+has exact mass
+
+\[
+a_*(h)
+=
+m_{K_h}
+\left(
+\bigcap_{p\in\mathcal A_h}
+\{x:x_p\ne\rho_p(h)\}
+\right).
+\]
+
+It has two exact approximations/representations:
+
+\[
+a_N(h)
+=
+\sum_{J\subseteq[N]}(-1)^{|J|}\delta_J(h)
+\downarrow a_*(h),
+\]
+
+and
+
+\[
+a_*(h)
+=
+\lim_{t\to\infty}
+A(h)^t\mathcal M_h(-t).
+\]
+
+The next valid target is therefore not generic “atomlessness,” but the arithmetic phase-covering problem:
+
+\[
+\boxed{
+m_{K_h}\left(\bigcup_{p\in\mathcal A_h}C_p\right)
+\stackrel{?}{=}1.
+}
+\]
+
+Equivalent formulations:
+
+1. does \(a_N(h)\to0\)?
+2. does \(A(h)^t\mathcal M_h(-t)\to0\) as \(t\to\infty\)?
+3. do the active base-4 congruence cylinders cover Haar-almost every phase?
+
+A sufficient condition is an infinite pairwise-coprime active subclock family with divergent reciprocal-period mass. Its existence is currently open.
+
+### OP-F32 — output-law measure type
+
+Even if the lower-edge atom is removed, other level-set atoms could in principle remain.
+
+After OP-F31, determine:
+
+- whether every level set of the weighted cylinder field has Haar measure zero;
+- whether \(\nu_h\) has a singular-continuous component;
+- whether Fourier decay of \(\mathcal M_h(it)\) can be established;
+- whether any absolute-continuity criterion from odometer/cylinder-series theory applies.
+
+No pushforward non-atomicity or density claim is promoted yet.
