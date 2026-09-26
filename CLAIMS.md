@@ -196,6 +196,14 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`, `RES
 | OP-D146 | If the hazard series converges and no finite prefix covers the phase hull, then the lower-edge atom is positive. | PROVED | Positive infinite-product criterion. |
 | OP-D147 | If fully compatible refinements \(c_N=1\) satisfy \(\sum 1/b_N=\infty\), then the lower-edge atom vanishes. | PROVED | Their hazards equal \(1/b_N\), forcing survival-product collapse. |
 
+| OP-D148 | The strict ARPL refinement tower \(1=M_0<M_1<\cdots\) carries the canonical ultrametric \(d_h(x,y)=M_{n(x,y)}^{-1}\), where \(n(x,y)\) is the highest clock level on which \(x,y\) agree. | PROVED/STANDARD | Nested congruence equivalence relations give the ultrametric inequality. |
+| OP-D149 | Canonical metric balls are exactly finite phase cylinders; a level-\(k\) cylinder has Haar mass and diameter both equal to \(1/M_k\). | PROVED | Finite quotient structure and the explicit metric definition. |
+| OP-D150 | The ARPL phase hull is \(1\)-Ahlfors regular at its canonical inverse-limit scales. | PROVED/STANDARD | \(m(B)=\operatorname{diam}(B)\) for every canonical ball. |
+| OP-D151 | The canonical arithmetic phase hull has Hausdorff and box dimension exactly \(1\). | PROVED/STANDARD | Level covers give the upper bound; Haar/Frostman mass bound gives the lower bound. |
+| OP-D152 | Haar information dimension in the canonical phase metric is exactly \(1\): \(H_k/\log(1/\varepsilon_k)=1\). | PROVED/STANDARD | \(H_k=\log M_k\), \(\varepsilon_k=1/M_k\). |
+| OP-D153 | The ARPL odometer translation is an isometry of the canonical phase ultrametric. | PROVED | Translation preserves all congruence-agreement levels. |
+| OP-D154 | Every positive-Haar-measure subset of the canonical phase hull has Hausdorff dimension \(1\); in particular a positive-mass lower-edge avoidance set would have full phase dimension. | PROVED/STANDARD | \(1\)-Ahlfors regularity / mass distribution. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
