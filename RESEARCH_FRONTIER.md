@@ -480,3 +480,43 @@ The next valid routes are:
 4. or establish a no-go showing that the unrenormalized all-orders expansion diverges and identify the correct renormalized object.
 
 No all-orders convergence claim is made yet.
+
+
+### OP-F21 — time average of the exact instantaneous factorization
+
+The instantaneous infinite-channel singular-series state is now closed:
+
+\[
+\mathfrak S(H_{2^rh})
+=
+\frac{27}{2}C_*Z(h)R(4^rh^2-4).
+\]
+
+Therefore the fully coupled common-clock problem can be restated without an infinite Euler product at each time:
+
+\[
+\frac1T\sum_{r<T}\mathfrak S(H_{2^rh})
+=
+\frac{27}{2}C_*Z(h)
+\frac1T\sum_{r<T}R(4^rh^2-4).
+\]
+
+The unresolved global question is now the mean behavior of the finite divisor-weight observable
+
+\[
+R(4^rh^2-4)
+=
+\prod_{\substack{p\mid 4^rh^2-4\\p\ge5}}
+\frac{p-3}{p-4}.
+\]
+
+This is a sharper target than an abstract infinite-channel cluster sum.
+
+Required next steps:
+
+1. determine whether the Cesaro mean of \(R(4^rh^2-4)\) exists for fixed admissible \(h\);
+2. compare it with the independently averaged baseline \(\mathcal I(h)\);
+3. express any discrepancy through the connected resonance layers \(\mathcal K_n(h)\);
+4. identify relevant prior art for divisor statistics of exponential sequences \(a\,4^r-4\).
+
+No mean-value theorem is claimed yet.
