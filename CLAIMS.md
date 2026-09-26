@@ -89,6 +89,12 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-D059 | Every connected cumulant \(K(J;h)\) spanning more than one period-overlap component vanishes. | PROVED | Exact component moment factorization plus cumulant Möbius inversion. |
 | OP-N003 | At \(h=6\), the exact connected three-channel term \(K(\{7,13,19\};6)=-5168743489/457019805007872\), while \(K(\{5,7,11\};6)=0\). | NUMERICAL | Exact-rational finite computation; illustrates genuine three-channel coupling of the defined observables. |
 
+| OP-D060 | For every nonconstant centered local twin-factor channel \(X_p\), every nonzero Fourier coefficient satisfies \(|\widehat X_p(m)|\le2\alpha_p/d_p\), where \(d_p=\operatorname{ord}_p(2)\) and \(\alpha_p=p^3/(p-1)^4\). | PROVED | Exact one-defect/two-defect Fourier calculation; odd modes vanish in the even-\(d_p\) two-defect case. |
+| OP-D061 | For finite channel set \(J\), the centered common-clock moment satisfies \(|M_X(J;h)|\le 2^{|J|}\prod_{p\in J}\alpha_p/\operatorname{lcm}_{p\in J}d_p\). | PROVED | Fourier resonance kernel has size \(\prod d_p/\operatorname{lcm}(d_p)\). |
+| OP-D062 | For \(n=|J|\ge2\), the connected cumulant obeys \(|K(J;h)|\le B_n(n-1)!2^n\,\prod_{p\in J}\alpha_p/\max_{p\in J}d_p\), with \(B_n\) the Bell number. | PROVED | Centered moment-cumulant expansion plus OP-D061. |
+| OP-D063 | For every fixed nonzero \(h\) and fixed connected order \(n\ge2\), the global layer \(\mathcal K_n(h)=\sum_{|J|=n}K(J;h)\) is absolutely convergent over all prime channels \(p\ge5\). | PROVED | Uses \(\alpha_p\ll1/p\), \(d_p\ge\log_2(p+1)\), Mertens' reciprocal-prime bound, and \(\pi(x)\ll x/\log x\). |
+| OP-O007 | The all-orders connected sum \(\sum_{n\ge2}\mathcal K_n(h)\) converges. | OPEN | Fixed-order convergence does not provide a summable majorant uniform in \(n\). |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
