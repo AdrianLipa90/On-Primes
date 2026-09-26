@@ -1,0 +1,47 @@
+{
+  "schema": "ON_PRIMES_PHASE_SPECTROSCOPY_ARPL_RECONCILIATION_V0_1",
+  "date": "2026-09-26",
+  "repository": "AdrianLipa90/On-Primes",
+  "branch": "integrate/phase-bank-form-factor-duality-v0.1-20260926-r2",
+  "base_branch": "feat/arithmetic-relational-phase-law-v0.1",
+  "base_commit_at_audit": "b65fc55bd1f4608601c767eb0bcbd401cf474a38",
+  "branch_head_before_receipt": "1df9992a1fc0d0f5b4795387af8c1080de204269",
+  "status": "CONTENT_LOSSLESS_RECONCILIATION_PASS",
+  "graph_status": {
+    "compare_status": "diverged",
+    "ahead_by": 20,
+    "behind_by": 39,
+    "explanation": "Branch histories diverged/rebased, but current tree diff against base contains only additive integration changes; no file removals and zero deleted lines were observed."
+  },
+  "tree_audit": {
+    "changed_files": 17,
+    "deleted_files": [],
+    "total_deletions": 0,
+    "base_content_loss_observed": false
+  },
+  "claim_renumbering": {
+    "old OP-D048": "OP-D067",
+    "old OP-D049": "OP-D068",
+    "old OP-D050": "OP-D069",
+    "forced form-factor dual": "OP-D070",
+    "old OP-D051": "OP-D071",
+    "old OP-D052": "OP-D072",
+    "old OP-D053": "OP-D073",
+    "old OP-D054": "OP-D074",
+    "old OP-D055 + OP-D056 consolidated": "OP-D075",
+    "dual synthesis": "OP-D076",
+    "old OP-O005": "OP-O008"
+  },
+  "preserved_latest_arpl_claim_range": "OP-D001..OP-D066",
+  "integrated_surfaces": [
+    "Montgomery-Dyson forced sine-kernel phase law",
+    "Hardy-CAR forced ramp/plateau",
+    "spectral von Mangoldt phase bank",
+    "shifted von Mangoldt spectral closure",
+    "prime-power phase-bank/form-factor frequency duality",
+    "Skewes-Euler-Hilbert-Collatz bridge"
+  ],
+  "main_modified": false,
+  "merge_to_main": false,
+  "canon_allowed": false
+}
