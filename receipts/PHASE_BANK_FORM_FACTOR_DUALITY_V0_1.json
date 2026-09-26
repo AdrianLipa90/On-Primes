@@ -22,7 +22,12 @@
     "full_zeta_projector_binding": "OPEN"
   },
   "local_validator": {
-    "status": "PASS"
+    "status": "PASS",
+    "validator_commit": "656289d9e0e7e24318826b991feb249b579d0040",
+    "max_abs_phase_power_error": 6.494804694057166e-15,
+    "max_abs_form_factor_map_error": 1.1659636140548046e-14,
+    "note": "Validator compares pair differences after analytic cancellation of the irrelevant global phase."
   },
-  "canon_allowed": false
+  "canon_allowed": false,
+  "supersedes_validator_note": "Initial direct global-phase float comparison was numerically ill-conditioned at large T; theorem unchanged."
 }
