@@ -78,6 +78,8 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-S010 | The same limiting functional form is the standard bulk sine-kernel/GUE two-point law and the target appearing in Montgomery's pair-correlation conjecture for unfolded zeta zeros. | STANDARD | External identification made after, not during, the internal derivation. |
 | OP-O005 | Actual zeta zeros instantiate the specific quasi-free/CAR projector occupancy required by OP-D049. | OPEN | This is SOH-MD001; the forced functional form alone does not supply the zeta-process binding. |
 
+| OP-S011 | Classical restricted-support zeta/L-function correlation theorems agree with the GUE/sine-kernel correlation law on their stated test classes; this is external validation, not an input to OP-D048--OP-D050. | STANDARD / PARTIAL_EXTERNAL_BINDING | Montgomery 1973; Rudnick--Sarnak 1996. Full zeta quasi-free/projector occupancy remains open. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
