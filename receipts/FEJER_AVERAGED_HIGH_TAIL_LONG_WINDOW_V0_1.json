@@ -27,7 +27,7 @@
   "local_validator": {
     "status": "PASS",
     "scope": "finite correlation/sliding-window boundary crosswalk only; external asymptotic not numerically reproved",
-    "max_boundary_to_bound_ratio": 0.15
+    "max_boundary_to_bound_ratio": 0.018216716598738407
   },
   "canon_allowed": false
 }
