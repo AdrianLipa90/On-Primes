@@ -795,3 +795,43 @@ The remaining averaged arithmetic obstruction is now confined to either:
 The next valid theorem should quantify the transformation between the physical/spectral test function and the induced additive-shift kernel, then apply the strongest available mean-square/dispersion estimate to that exact kernel.
 
 Any RH-dependent extension must be tagged as conditional validation if RH is itself the target.
+
+
+### OP-F29 status update — explicit-formula window geometry CLOSED
+
+The logarithmic/additive coordinate issue is now exact:
+
+\[
+G_v(t)=e^{t/2}v(e^t)
+\]
+
+maps an arbitrary declared smooth additive arithmetic window to the standard \(n^{-1/2}\) prime-side explicit-formula normalization.
+
+Translation averaging of a scaled window produces the exact positive-definite shift kernel \(K_V(h/L)\). Smooth windows approximate the Fejér triangle uniformly through the \(L^2\)-autocorrelation estimate.
+
+Therefore the remaining OP-F29 obstruction is not the transformation from a log-spectrum test to an additive shift test.
+
+### OP-F30 — smooth short-window mean-square extension
+
+Extend the averaged high-tail theorem to the exact smooth positive-definite kernel produced by a declared explicit-formula window, especially below
+
+\[
+H\asymp X^{1/6+\varepsilon}.
+\]
+
+The target is a bound on the centered quadratic form
+
+\[
+\sum_h K_V(h/L)
+\sum_n
+(\Lambda(n)-1)(\Lambda(n+h)-1)
+\]
+
+strong enough to be \(o(XL)\) after the declared normalization.
+
+Potential routes include:
+1. weighted Selberg-integral estimates;
+2. dispersion/large sieve;
+3. Vaughan or Heath--Brown decompositions;
+4. zero-density methods;
+5. RH-conditional validation kept strictly separate from any RH proof input.
