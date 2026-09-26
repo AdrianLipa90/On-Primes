@@ -1016,3 +1016,39 @@ the exact Möbius--CRT low block also tends to the same main term, so conditiona
 This extends the **validation range** down toward polylogarithmic windows, but it cannot be used as a premise in any proof whose target is RH. It is recorded only to test scaling, normalization and compatibility of the forced phase-spectroscopy cage.
 
 See \`proofs/RH_CONDITIONAL_FEJER_AVERAGED_TAIL_VALIDATION_V0_1.md\`.
+
+
+## LCM–von Mangoldt commensurate phase clock
+
+For a low-divisor cutoff \(R\), the exact common period of all CRT compatibility channels may be chosen as
+
+\[
+\boxed{
+L_R=\operatorname{lcm}(1,\ldots,R),
+\qquad
+\log L_R=\psi(R)=\sum_{p^m\le R}\log p.
+}
+\]
+
+If \(H+1\) is a multiple of \(L_R\), every gate modulus \(g\le R\) completes an integer number of Fejér cycles, so
+
+\[
+Q_H(g)=\frac1g
+\]
+
+exactly and
+
+\[
+\boxed{
+\overline M_{H,R}
+=
+\left(
+\sum_{d\le R}
+\frac{\mu(d)\log d}{d}
+\right)^2
+}
+\]
+
+with no finite-\(H\) edge correction. This is an exact bridge between the CRT common clock and the cumulative prime-power von Mangoldt bank. The PNT implies \(\log L_R\sim R\), so exact commensurability has exponential clock cost; approximate Fejér closure remains the scalable route.
+
+See \`proofs/LCM_VON_MANGOLDT_COMMENSURATE_CLOCK_V0_1.md\`.
