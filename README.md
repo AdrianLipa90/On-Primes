@@ -499,3 +499,82 @@ C_*\,Z(h)\,R(4^rh^2-4).
 Thus every instantaneous infinite Euler product is compressed into a universal background constant, static odd-prime locks from \(h\), and a finite dynamic correction from the prime divisors of \(4^rh^2-4\).
 
 See proofs/ARPL_INSTANTANEOUS_SINGULAR_SERIES_FACTORIZATION_V0_1.md.
+
+
+### Global logarithmic phase mean
+
+For admissible \(h\ge6\), define the exact special-hit density
+
+\[
+\delta_p(h)
+=
+\operatorname{dens}\{r:2^rh\equiv\pm2\pmod p\}.
+\]
+
+It is exactly \(0\), \(1/d_p\), or \(2/d_p\), where
+\(d_p=\operatorname{ord}_p(2)\).
+
+Because
+
+\[
+\delta_p(h)\le\frac2{d_p},
+\qquad
+d_p\ge\log_2(p+1),
+\]
+
+the logarithmic correction
+
+\[
+\sum_{p\ge5}
+\delta_p(h)\log\frac{p-3}{p-4}
+\]
+
+converges absolutely.
+
+Hence the full infinite-channel Cesaro mean
+
+\[
+\boxed{
+\mathcal L(h)
+=
+\lim_{T\to\infty}
+\frac1T\sum_{r<T}
+\log\mathfrak S(H_{2^rh})
+}
+\]
+
+exists and equals
+
+\[
+\mathcal L(h)
+=
+\log\left(\frac{27}{2}C_*Z(h)\right)
++
+\sum_{p\ge5}
+\delta_p(h)\log\frac{p-3}{p-4}.
+\]
+
+The geometric mean
+
+\[
+\boxed{
+\mathcal G(h)=e^{\mathcal L(h)}
+}
+\]
+
+is finite, positive and dyadically invariant.
+
+Jensen also gives
+
+\[
+\boxed{
+\liminf_{T\to\infty}
+\frac1T\sum_{r<T}\mathfrak S(H_{2^rh})
+\ge
+\mathcal G(h)>0.
+}
+\]
+
+The arithmetic Cesaro mean itself remains open.
+
+See proofs/ARPL_GLOBAL_LOGARITHMIC_PHASE_MEAN_V0_1.md.
