@@ -71,6 +71,13 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-D047 | Under dual dyadic transport, odd exact-order denominator shells are permuted, while even shells lose one factor of 2 in their order; for squarefree \(2m\), the shell maps to the odd shell \(m\). | PROVED | Exact order calculation in \(\mathbb Q/\mathbb Z\). |
 | OP-S009 | \(\widehat{\mathbb Z}=\varprojlim_n\mathbb Z/n\mathbb Z\cong\prod_p\mathbb Z_p\), and its Pontryagin dual is \(\mathbb Q/\mathbb Z\). | STANDARD | Standard profinite/Pontryagin duality; see PRIOR_ART.md. |
 
+
+| OP-D048 | For a consecutive finite Fourier/projector carrier with \(M\) occupied modes, unit-density unfolding gives the exact normalized projector kernel \(\sin(\pi s)/(M\sin(\pi s/M))\), converging to \(\sin(\pi s)/(\pi s)\). | PROVED_FROM_DEPENDENCY | Exact geometric-series projector theorem; no GUE/zeta input. |
+| OP-D049 | With the standard filled CAR/Slater lift, the corresponding two-point law is \(g_{2,M}(s)=1-[\sin(\pi s)/(M\sin(\pi s/M))]^2\), hence \(g_2(s)=1-[\sin(\pi s)/(\pi s)]^2\). | PROVED_FROM_DEPENDENCY | Infinities Hardy–CAR theorem plus SOH Fourier-projector compatibility. |
+| OP-D050 | In ARPL phase coordinates \(\Delta\Phi=2\pi s\), the forced pair law is \(1-[\sin(\Delta\Phi/2)/(\Delta\Phi/2)]^2\) and has coincidence expansion \((\Delta\Phi)^2/12+O(\Delta\Phi^4)\). | PROVED_FROM_DEPENDENCY | Exact reparametrization/Taylor expansion. |
+| OP-S010 | The same limiting functional form is the standard bulk sine-kernel/GUE two-point law and the target appearing in Montgomery's pair-correlation conjecture for unfolded zeta zeros. | STANDARD | External identification made after, not during, the internal derivation. |
+| OP-O005 | Actual zeta zeros instantiate the specific quasi-free/CAR projector occupancy required by OP-D049. | OPEN | This is SOH-MD001; the forced functional form alone does not supply the zeta-process binding. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
