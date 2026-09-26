@@ -182,6 +182,20 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`, `RES
 | OP-D133 | The Koopman spectrum is pure point with eigenvalue group \(\{e^{2\pi i\lambda}:\lambda\in\widehat K_h\}\), where \(\widehat K_h=\bigcup_N(1/L_N)\mathbb Z/\mathbb Z\). | PROVED/STANDARD | Characters form the \(L^2\) eigenbasis for compact abelian group rotations. |
 | OP-D134 | Haar measure entropy of the ARPL odometer is zero. | PROVED/STANDARD | Compact group rotations / odometers have zero Kolmogorov--Sinai entropy. |
 
+| OP-D135 | For finite active channel set \(P\), the exact phase-covering Gram kernel is \(G_{pq}=m(C_p\cap C_q)\), with entries \(1/\operatorname{lcm}(e_p,e_q)\) when the target phases are compatible modulo \(\gcd(e_p,e_q)\), and \(0\) otherwise; \(d_p=m(C_p)=1/e_p\). | PROVED | Generalized CRT cylinder intersections in the Haar phase hull. |
+| OP-D136 | For arbitrary real weights \(w\), the finite hit-cylinder union obeys \(m(U_P)\ge (w^\top d)^2/(w^\top G w)\). | PROVED/STANDARD | Cauchy--Schwarz for a weighted cylinder field supported on the union. |
+| OP-D137 | The optimal finite linear-span covering bound is \(B_P=d^\top G^+d=\|\Pi_P1\|_2^2\le m(U_P)\), where \(\Pi_P\) projects the constant function onto the span of the cylinder indicators. | PROVED/STANDARD | Gram normal equations and Hilbert-space projection. |
+| OP-D138 | The optimal \(L^2\) covering bounds are monotone under channel refinement: \(P\subseteq Q\Rightarrow B_P\le B_Q\). | PROVED/STANDARD | Orthogonal projection norm is monotone for nested subspaces. |
+| OP-D139 | If \(B_{P_N}\to1\) along an exhaustion of active channels, then the lower-edge atom vanishes. | PROVED | \(B_{P_N}\le m(\cup_{p\in P_N}C_p)\uparrow1-a_*(h)\). |
+| OP-D140 | The pairwise second-moment criterion \(S_N^2/Q_N\to1\), with \(S_N=\sum1/e_p\) and \(Q_N=\sum_{p,q}m(C_p\cap C_q)\), is sufficient for lower-edge atom removal. | PROVED/STANDARD | Equal-weight specialization of OP-D136. |
+| OP-D141 | The exact conditional next-channel phase-hit hazard is \(\eta_N=m(A_N\cap C_{N+1})/m(A_N)=1-a_{N+1}/a_N\) whenever \(a_N>0\). | PROVED | \(A_{N+1}=A_N\setminus C_{N+1}\). |
+| OP-D142 | The lower-edge atom is the exact phase-survival product \(a_*(h)=\prod_{N\ge0}(1-\eta_N)\). | PROVED | Iteration of OP-D141 plus monotone limit. |
+| OP-D143 | Writing \(b_N=L_{N+1}/L_N=e_{N+1}/\gcd(e_{N+1},L_N)\), the hazard decomposes exactly as \(\eta_N=c_N/b_N\), where \(c_N\) is the conditional fraction of surviving parent cells compatible with the new target phase modulo \(\gcd(e_{N+1},L_N)\). | PROVED | Each compatible parent has exactly one hit child among its \(b_N\) lifts. |
+| OP-D144 | If no finite prefix kills all avoidance mass, then \(a_*(h)=0\) iff \(\sum_N-\log(1-\eta_N)=\infty\). | PROVED/STANDARD | Standard positive infinite-product criterion. |
+| OP-D145 | Under eventual \(\eta_N\le1/2\), lower-edge atom removal is equivalent to divergence of \(\sum_N\eta_N=\sum_N c_N/b_N\). | PROVED/STANDARD | \(\eta\le-\log(1-\eta)\le2\eta\) for \(0\le\eta\le1/2\). |
+| OP-D146 | If the hazard series converges and no finite prefix covers the phase hull, then the lower-edge atom is positive. | PROVED | Positive infinite-product criterion. |
+| OP-D147 | If fully compatible refinements \(c_N=1\) satisfy \(\sum 1/b_N=\infty\), then the lower-edge atom vanishes. | PROVED | Their hazards equal \(1/b_N\), forcing survival-product collapse. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
