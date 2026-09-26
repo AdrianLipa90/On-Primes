@@ -648,3 +648,31 @@ so the phase-bank power is exactly the finite form-factor power at \(\tau_q\). P
 \]
 
 Fixed \(q\) collapses toward \(\tau=0\); probing fixed nonzero \(\tau\) requires \(q(T)\asymp(T/2\pi)^\tau\) plus the correct window/smoothing limit. See \`proofs/PHASE_BANK_FORM_FACTOR_DUALITY_V0_1.md\`.
+
+
+## Pair-power frontier: where the hard arithmetic actually enters
+
+Squaring the windowed prime-power amplitude exposes the exact finite decomposition
+
+\[
+\left|\sum_{n\le Q}b_n\right|^2
+=
+\sum_{n\le Q}|b_n|^2
++
+2\Re
+\sum_{h=1}^{Q-1}
+\sum_{n\le Q-h}
+b_n\overline{b_{n+h}},
+\]
+
+with
+
+\[
+b_n=\frac{\Lambda(n)}{\sqrt n}W(\log n).
+\]
+
+Hence the off-diagonal content is a weighted shifted von Mangoldt correlation \(\Lambda(n)\Lambda(n+h)\). This sharpens the Montgomery--Dyson frontier: the one-point prime-power phase bank and its frequency map are closed, while the full zeta pair-process/plateau requires control of the moving, smoothed two-point arithmetic correlations.
+
+ARPL already represents the Hardy--Littlewood local factor \(\mathfrak S(h)\) exactly in modular phase coordinates. That does **not** prove the occurrence asymptotic for \(\Lambda(n)\Lambda(n+h)\). The distinction is explicit and enforced as a no-go.
+
+See \`proofs/VON_MANGOLDT_PAIR_POWER_DECOMPOSITION_V0_1.md\`.
