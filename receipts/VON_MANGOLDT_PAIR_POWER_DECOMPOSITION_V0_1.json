@@ -1,0 +1,30 @@
+{
+  "schema": "ON_PRIMES_VON_MANGOLDT_PAIR_POWER_DECOMPOSITION_V0_1",
+  "date": "2026-09-26",
+  "repository": "AdrianLipa90/On-Primes",
+  "branch": "integrate/phase-bank-form-factor-duality-v0.1-20260926-r3",
+  "status": "EXACT_FINITE_ARITHMETIC_DECOMPOSITION__ASYMPTOTIC_CORRELATION_GATE_OPEN",
+  "parent_snapshot_sha": "c897e73224fb4b0122842c2c5c5e0e8184e17680",
+  "exact_identity": "|sum b_n|^2=sum |b_n|^2+2 Re sum_{h>=1} sum_n b_n conjugate(b_{n+h})",
+  "explicit_formula_weight": "b_n=Lambda(n)/sqrt(n) * W(log n)",
+  "off_diagonal_object": "weighted shifted von Mangoldt correlation Lambda(n)Lambda(n+h)",
+  "arpl_status": {
+    "singular_series_phase_representation": "CLOSED_EXACT_LOCAL_FACTOR",
+    "occurrence_asymptotic": "OPEN",
+    "hard_no_go": "representing singular series does not prove Lambda-Lambda occurrence asymptotic"
+  },
+  "montgomery_crosswalk": {
+    "fixed_nonzero_frequency_requires": "q(T)~(T/(2pi))^tau",
+    "subcritical_ramp": "STANDARD_RH_CONDITIONAL",
+    "plateau": "OPEN_CONJECTURAL_FOR_ZETA"
+  },
+  "forbidden_inputs": [
+    "Hardy-Littlewood prime-pair asymptotic as an assumption",
+    "Montgomery plateau target",
+    "zeta zero list as derivation source"
+  ],
+  "validator": {
+    "status": "PENDING_LOCAL_EXECUTION"
+  },
+  "canon_allowed": false
+}
