@@ -69,5 +69,23 @@
     "infinities_forced_core": "4899c0c2ad8f4a38561a612c0eda8b48e9f529d3",
     "soh_binding_branch": "formalize/montgomery-dyson-hard-car-binding-v0.1-20260926"
   },
-  "canon_allowed": false
+  "canon_allowed": false,
+  "atomic_artifact_commit": {
+    "tree_sha": "93433a9a06ec3a5e30242cea1bf3042d2d9e8988",
+    "commit_sha": "a2edad1f34ba917f7ebe3d1c7cf6c806f506b726",
+    "parent_sha": "b5965a3d7b37a24fb3f9fed833e1a53a1e4a61f0",
+    "method": "single Git tree + single commit + fast-forward ref"
+  },
+  "postwrite_audit": {
+    "compared_against_frozen_base_sha": "c897e73224fb4b0122842c2c5c5e0e8184e17680",
+    "status": "ahead",
+    "ahead_by": 5,
+    "behind_by": 0,
+    "changed_files": 18,
+    "total_deletions": 0,
+    "removed_files": [],
+    "all_14_additive_artifacts_reachable_from_branch_head": true
+  },
+  "write_recovery_note": "Earlier per-file contents-API writes returned commit SHAs but were not reachable from the final branch head. They were treated as failed writes and replaced by the atomic tree commit above.",
+  "no_main_merge": true
 }
