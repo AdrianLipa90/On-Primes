@@ -127,6 +127,10 @@ from .phase_law import (
     twin_period_overlap_components,
     twin_component_factorized_mean,
     twin_connected_resonance_cumulant,
+    twin_centered_joint_moment,
+    twin_centered_moment_resonance_bound,
+    twin_connected_cumulant_fixed_order_bound,
+    twin_channel_is_dynamically_active,
 )
 from .modular import (
     is_obstructed_by,
@@ -247,4 +251,8 @@ __all__ = [
     "twin_period_overlap_components",
     "twin_component_factorized_mean",
     "twin_connected_resonance_cumulant",
+    "twin_centered_joint_moment",
+    "twin_centered_moment_resonance_bound",
+    "twin_connected_cumulant_fixed_order_bound",
+    "twin_channel_is_dynamically_active",
 ]
