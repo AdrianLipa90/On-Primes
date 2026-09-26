@@ -385,3 +385,64 @@ K(\{5,7,11\};6)=0.
 \]
 
 See proofs/ARPL_CONNECTED_RESONANCE_EXPANSION_V0_1.md.
+
+
+### Fixed-order global connected layers
+
+For the centered local channel
+
+\[
+X_p(r;h)=B_p(2^rh)-\mu_p(h),
+\]
+
+every nonzero local Fourier coefficient obeys
+
+\[
+|\widehat X_p(m)|
+\le
+\frac{2\alpha_p}{d_p},
+\qquad
+d_p=\operatorname{ord}_p(2).
+\]
+
+For finite \(J\),
+
+\[
+|M_X(J;h)|
+\le
+\frac{2^{|J|}}{\operatorname{lcm}_{p\in J}d_p}
+\prod_{p\in J}\alpha_p.
+\]
+
+This yields a connected-cumulant bound
+
+\[
+|K(J;h)|
+\le
+B_n(n-1)!2^n
+\frac{\prod_{p\in J}\alpha_p}{\max_{p\in J}d_p},
+\qquad n=|J|\ge2.
+\]
+
+Using
+
+\[
+\alpha_p\ll\frac1p,
+\qquad
+d_p\ge\log_2(p+1),
+\]
+
+together with the classical reciprocal-prime Mertens bound and \(\pi(x)\ll x/\log x\), one obtains
+
+\[
+\boxed{
+\sum_{\substack{J\subset\mathbb P_{\ge5}\\|J|=n}}
+|K(J;h)|<\infty
+}
+\]
+
+for every fixed nonzero \(h\) and every fixed \(n\ge2\).
+
+Thus every fixed \(n\)-body connected ARPL layer exists globally. The remaining open problem is convergence after summing over \(n\to\infty\).
+
+See proofs/ARPL_FIXED_ORDER_CONNECTED_SUMMABILITY_V0_1.md.
