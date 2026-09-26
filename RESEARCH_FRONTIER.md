@@ -425,3 +425,58 @@ This would promote the finite decomposition
 to a fully coupled infinite-channel ARPL observable.
 
 Failure to obtain such a bound should be recorded as a no-go rather than hidden by finite numerics.
+
+
+### OP-F19 status update — fixed-order infinite-channel layers CLOSED
+
+For every fixed connected order \(n\ge2\), the global prime-channel sum
+
+\[
+\mathcal K_n(h)
+=
+\sum_{\substack{J\subset\mathbb P_{\ge5}\\|J|=n}}
+K(J;h)
+\]
+
+is now absolutely convergent for every fixed \(h\ne0\).
+
+The proof uses the exact resonance-kernel estimate
+
+\[
+|M_X(J;h)|
+\le
+2^{|J|}
+\frac{\prod_{p\in J}\alpha_p}
+{\operatorname{lcm}_{p\in J}d_p}
+\]
+
+and the resulting cumulant bound with one surviving factor
+\(1/\max d_p\). Since
+
+\[
+d_p=\operatorname{ord}_p(2)\ge\log_2(p+1),
+\]
+
+the remaining prime sum is controlled by Mertens plus
+\(\pi(x)\ll x/\log x\).
+
+Therefore the analytic frontier has moved again.
+
+### OP-F20 — all-orders cluster convergence
+
+The unresolved series is now only the connected-order sum
+
+\[
+\sum_{n\ge2}\mathcal K_n(h).
+\]
+
+The current Bell/factorial cumulant majorant is not summable in \(n\), so fixed-order convergence cannot be promoted mechanically.
+
+The next valid routes are:
+
+1. derive a much sharper connected-graph/tree bound replacing Bell growth;
+2. exploit the exact local mode-selection zeros to reduce combinatorics;
+3. prove sufficient decay from increasing least common multiples inside connected clusters;
+4. or establish a no-go showing that the unrenormalized all-orders expansion diverges and identify the correct renormalized object.
+
+No all-orders convergence claim is made yet.
