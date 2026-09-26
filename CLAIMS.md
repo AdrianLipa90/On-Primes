@@ -151,6 +151,13 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`, `RES
 | OP-D108 | The limiting positive amplitude law obeys \(\mu_h([x,\infty))\le\inf_{s>0}\mathcal M_h(s)x^{-s}\) and the corresponding lower-tail bound using \(s<0\). | PROVED/STANDARD | OP-D107 under \(X=e^Y\). |
 | OP-D109 | The complete cumulant tower is dyadically invariant: \(\kappa_n(2^kh)=\kappa_n(h)\) for all \(n\ge1\). | PROVED | OP-D102 implies equality of the entire transforms, hence of their local logarithmic derivatives. |
 
+| OP-D110 | For active channel periods \(e_1,\dots,e_N\) and \(L_N=\operatorname{lcm}(e_1,\dots,e_N)\), the finite diagonal phase orbit \(K_{h,N}=\{(r\bmod e_j)_{j\le N}:r\in\mathbb Z\}\) is canonically isomorphic to \(\mathbb Z/L_N\mathbb Z\). | PROVED | Kernel of the diagonal clock map is \(L_N\mathbb Z\). |
+| OP-D111 | The refinement \(K_{h,N+1}\to K_{h,N}\) has exact uniform branching \(b_N=L_{N+1}/L_N=e_{N+1}/\gcd(e_{N+1},L_N)\). | PROVED | Reduction map between nested cyclic quotients. |
+| OP-D112 | The global ARPL phase hull is the procyclic inverse limit \(K_h\cong\varprojlim_N\mathbb Z/L_N\mathbb Z\), with dynamics given by translation by the topological generator \(g=(1\bmod e_p)_p\). | PROVED/STANDARD | Finite diagonal projections plus the inverse-limit universal property. |
+| OP-D113 | Haar measure on \(K_h\) projects to uniform counting measure on every \(\mathbb Z/L_N\mathbb Z\); generalized-CRT joint phase densities are exactly Haar cylinder measures. | PROVED/STANDARD | Haar compatibility on finite quotients and the CRT pulse condition. |
+| OP-D114 | The Pontryagin dual frequency module is \(\widehat K_h\cong\bigcup_N (1/L_N)\mathbb Z/\mathbb Z\subset\mathbb Q/\mathbb Z\); the previously derived local frequencies \(m/e_p\) lie in this module. | PROVED/STANDARD | Dual of an inverse limit of finite cyclic groups is the direct limit of their character groups. |
+| OP-D115 | The leveled graph with vertices \(V_N=\mathbb Z/L_N\mathbb Z\) and reduction edges \(V_{N+1}\to V_N\) has boundary canonically identified with \(K_h\); each level-\(N\) vertex has exactly \(b_N\) children. | PROVED | Direct graph realization of the inverse system. No metric-fractal dimension is claimed. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
