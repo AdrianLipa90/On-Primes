@@ -131,6 +131,11 @@ from .phase_law import (
     twin_centered_moment_resonance_bound,
     twin_connected_cumulant_fixed_order_bound,
     twin_channel_is_dynamically_active,
+    twin_background_factor,
+    twin_zero_correction_ratio,
+    twin_special_correction_ratio,
+    twin_finite_instantaneous_product,
+    twin_finite_instantaneous_factorization,
 )
 from .modular import (
     is_obstructed_by,
@@ -255,4 +260,9 @@ __all__ = [
     "twin_centered_moment_resonance_bound",
     "twin_connected_cumulant_fixed_order_bound",
     "twin_channel_is_dynamically_active",
+    "twin_background_factor",
+    "twin_zero_correction_ratio",
+    "twin_special_correction_ratio",
+    "twin_finite_instantaneous_product",
+    "twin_finite_instantaneous_factorization",
 ]
