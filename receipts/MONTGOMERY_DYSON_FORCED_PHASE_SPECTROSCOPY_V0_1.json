@@ -26,5 +26,10 @@
     "fitted sine kernel"
   ],
   "remaining_gate": "SOH-MD001 zeta spectral occupancy / quasi-free-CAR projector binding",
-  "canon_allowed": false
+  "canon_allowed": false,
+  "external_binding": {
+    "restricted_support": "STANDARD_PARTIAL_BINDING",
+    "full_zeta_local_process": "OPEN_SOH_MD001B",
+    "role": "validation_only_not_derivation_input"
+  }
 }
