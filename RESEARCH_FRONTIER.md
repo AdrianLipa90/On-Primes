@@ -210,3 +210,37 @@ A valid result must explicitly distinguish:
 Investigate whether there exists a rigorously defined operator mapping the arithmetic phase representation of primes to the oscillatory terms of an explicit formula involving zeta zeros.
 
 No equivalence is currently established between the prime-gap phase stream and the zero ordinates \(\gamma\). Any such bridge must pass through a valid explicit-formula or transform theorem and must not infer invertibility from pair-correlation data alone.
+
+
+### OP-F11 — Ordered information beyond singular-series observables
+
+The local Hardy--Littlewood bridge is now exact at the finite/operator level:
+
+\[
+h \mapsto (h\bmod p)_p
+\mapsto \{c_p(h),\nu_p(h)\}_p
+\mapsto \text{local singular factors}.
+\]
+
+This closes the question of whether the singular-series layer is representable inside ARPL: it is.
+
+What remains open is whether the **ordered sequence** of these phase states contains a new invariant or dynamical law not already captured by standard singular-series, Ramanujan--Fourier, sieve, or character machinery.
+
+The next test must therefore compare two objects with the same local singular-series statistics but different ordering. Any proposed ARPL invariant must distinguish them if it genuinely uses ordered phase dynamics.
+
+### OP-F12 — Dyadic local-factor transfer operator
+
+For a fixed prime channel \(p\), the two-twin-pair local factor is an observable \(B_p(u)\) on the finite state space \(u\in\mathbb Z/p\mathbb Z\), and the On-Primes dyadic dynamics acts by
+
+\[
+u\mapsto2u\pmod p.
+\]
+
+Construct the corresponding finite transfer/permutation operator and determine:
+
+1. orbit decomposition as a function of \(\operatorname{ord}_p(2)\);
+2. spectrum of the transfer operator;
+3. projection of \(B_p\) onto its eigenmodes;
+4. whether the product over prime channels yields a useful convergent or renormalized global observable.
+
+This is the next genuinely operator-theoretic ARPL gate.
