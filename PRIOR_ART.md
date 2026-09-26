@@ -87,3 +87,38 @@ References:
 - Encyclopedia of Mathematics, *Titchmarsh problem*: https://encyclopediaofmath.org/wiki/Titchmarsh_problem
 - Encyclopedia of Mathematics, *Brun-Titchmarsh theorem*: https://encyclopediaofmath.org/wiki/Brun-Titchmarsh_theorem
 - Encyclopedia of Mathematics, *Bombieri prime number theorem*: https://encyclopediaofmath.org/wiki/Bombieri_prime_number_theorem
+
+
+## Arithmetic phase coordinates, Ramanujan--Fourier series, and prime-pair correlations
+
+The ARPL v0.1 layer uses standard additive characters
+
+\[
+\chi_{q,a}(n)=e^{2\pi ian/q},
+\]
+
+exact residue coordinates, the Chinese remainder theorem, and finite Fourier/Wiener--Khintchine identities. These ingredients are classical and are not claimed as novel.
+
+Ramanujan sums
+
+\[
+c_q(n)=
+\sum_{\substack{1\le a\le q\\(a,q)=1}}
+e^{2\pi ian/q}
+\]
+
+are likewise classical arithmetic harmonic modes. There is direct prior art connecting Ramanujan--Fourier expansions and autocorrelation to prime-pair questions:
+
+- H. G. Gadiyar and R. Padma, *Ramanujan--Fourier series, the Wiener--Khintchine formula and the distribution of prime pairs*, Physica A 269 (1999), 503--510. DOI: 10.1016/S0378-4371(99)00171-5.
+- H. G. Gadiyar and R. Padma, *Ramanujan-Fourier series and the conjecture D of Hardy and Littlewood*, Czechoslovak Mathematical Journal 64(1) (2014), 251--267. DOI: 10.1007/s10587-014-0098-5.
+
+The 2014 paper explicitly describes its Hardy--Littlewood prime-pair argument as heuristic because an interchange of limits is not justified. On-Primes therefore does not promote that heuristic to a theorem.
+
+The project-specific ARPL contribution is the unified exact coordinate package that connects:
+
+1. ordered integer separations to complete prime-power residue/phase signatures;
+2. exact sequence reconstruction from an anchor plus ordered gaps;
+3. the existing dyadic map \(T(x)=2x+1\) to phase squaring;
+4. the existing fibre obstruction classes to finite phase-orbit hitting.
+
+Whether this packaging yields a genuinely new distribution theorem is an open research question and requires a broader literature audit.
