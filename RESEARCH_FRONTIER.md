@@ -147,3 +147,66 @@ H_n=N((n+1)-n\omega).
 
 The next open gate is to determine whether intersections between these two-root shell masks and the existing dyadic fibre masks produce any nontrivial correlation, cancellation, or sieve bound beyond a change of coordinates. No independence assumption is permitted.
 
+
+
+### OP-F08 — Arithmetic Relational Phase Law closure
+
+ARPL v0.1 now supplies exact phase coordinates for ordered separations:
+
+\[
+\Phi_\infty(\Delta)
+=
+(\Delta\bmod p^j)_{p,\ j\ge1},
+\]
+
+with injectivity on \(\mathbb Z\), and therefore the exact ordered-gap representation
+
+\[
+\{p_n\}
+\longleftrightarrow
+\left(p_1,\{g_n\}\right)
+\longleftrightarrow
+\left(p_1,\{\Phi_\infty(g_n)\}\right).
+\]
+
+The same theorem pack identifies the existing dyadic map with phase squaring,
+
+\[
+\chi_{q,a}(\Delta(T^rx,T^ry))
+=
+\chi_{q,a}(\Delta(x,y))^{2^r},
+\]
+
+and re-expresses existing modular divisor obstructions as finite phase-orbit hitting.
+
+The next nontrivial gate is **not** to reprove CRT/Fourier theory. It is to determine whether the ordered modular phase dynamics yields a new invariant, compression theorem, correlation law, or analytic operator that is stronger than the underlying standard harmonic/profinite representation.
+
+### OP-F09 — Ramanujan channel / ordered-gap bridge
+
+Prior literature already connects Ramanujan--Fourier expansions and Wiener--Khintchine ideas to prime-pair autocorrelation. The open task is to build a rigorous bridge between:
+
+\[
+\text{ordered prime-gap phase stream}
+\]
+
+and
+
+\[
+\text{Ramanujan / character correlation channels},
+\]
+
+while preserving exactly which information is lost when passing from the ordered stream to pair correlation or power spectrum.
+
+A valid result must explicitly distinguish:
+
+- exact ordered-gap reconstruction;
+- pair-correlation data;
+- power-spectrum data;
+- Hardy--Littlewood singular-series heuristics;
+- any analytic continuation used in zeta-related expressions.
+
+### OP-F10 — Zeta-spectrum operator
+
+Investigate whether there exists a rigorously defined operator mapping the arithmetic phase representation of primes to the oscillatory terms of an explicit formula involving zeta zeros.
+
+No equivalence is currently established between the prime-gap phase stream and the zero ordinates \(\gamma\). Any such bridge must pass through a valid explicit-formula or transform theorem and must not infer invertibility from pair-correlation data alone.
