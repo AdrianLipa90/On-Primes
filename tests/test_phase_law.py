@@ -68,6 +68,9 @@ from on_primes.phase_law import (
     twin_quadratic_hit_phase,
     twin_quadratic_hit_density,
     twin_quadratic_joint_hit_density,
+    twin_fractional_special_multiplier,
+    twin_finite_fractional_common_clock_mean,
+    twin_finite_fractional_subset_mean,
 )
 
 
@@ -499,6 +502,32 @@ class ArithmeticRelationalPhaseLawTests(unittest.TestCase):
                 twin_quadratic_joint_hit_density(p, q, 6),
                 twin_joint_special_hit_density(p, q, 6),
             )
+
+
+    def test_fractional_subset_expansion_matches_direct_clock(self):
+        supports = (
+            (5, 7, 11),
+            (5, 7, 11, 13),
+            (7, 13, 19),
+        )
+        for support in supports:
+            for s in (0.25, 0.5, 0.9):
+                self.assertAlmostEqual(
+                    twin_finite_fractional_common_clock_mean(support, 6, s),
+                    twin_finite_fractional_subset_mean(support, 6, s),
+                    places=12,
+                )
+
+    def test_fractional_mean_is_dyadic_invariant(self):
+        support = (5, 7, 11, 13)
+        for s in (0.25, 0.5, 0.9):
+            reference = twin_finite_fractional_subset_mean(support, 6, s)
+            for k in range(5):
+                self.assertAlmostEqual(
+                    twin_finite_fractional_subset_mean(support, (2**k) * 6, s),
+                    reference,
+                    places=12,
+                )
 
 
 if __name__ == "__main__":
