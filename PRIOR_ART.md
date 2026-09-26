@@ -223,3 +223,26 @@ R(4^rh^2-4)
 \]
 
 That absence of a direct match is not a novelty proof.
+
+
+## Besicovitch mean-square almost-periodic sequences
+
+The ARPL global logarithmic spectrum now uses the standard Besicovitch \(B^2\) framework: closure of trigonometric/periodic sequences in a mean-square seminorm, Fourier--Bohr coefficients, and Parseval/harmonic synthesis.
+
+This framework is established prior art and is not claimed as new.
+
+Useful references include:
+
+- A. S. Besicovitch, *Almost Periodic Functions*, Cambridge University Press (1932), for the classical \(B^2\) theory and Parseval/Riesz--Fischer framework.
+- Encyclopedia of Mathematics, *Almost-periodic function* and *Fourier series of an almost-periodic function*, for mean values, Fourier--Bohr coefficients, and \(B^2\) Parseval.
+- Modern discrete-sequence treatments define Besicovitch-\(p\) almost-periodic sequences as mean-\(p\) limits of trigonometric polynomials.
+
+The project-specific statement is not the existence of Besicovitch theory. It is the proved embedding of the ARPL logarithmic twin-singular-series orbit into the discrete \(B^2\) class with explicit rational frequencies
+
+\[
+\lambda=\frac{m}{\operatorname{ord}_p(2)}\pmod1
+\]
+
+and number-theoretically controlled prime-channel tails.
+
+No literature novelty claim is made for this specialization without a dedicated audit.
