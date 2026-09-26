@@ -1052,3 +1052,40 @@ exactly and
 with no finite-\(H\) edge correction. This is an exact bridge between the CRT common clock and the cumulative prime-power von Mangoldt bank. The PNT implies \(\log L_R\sim R\), so exact commensurability has exponential clock cost; approximate Fejér closure remains the scalable route.
 
 See \`proofs/LCM_VON_MANGOLDT_COMMENSURATE_CLOCK_V0_1.md\`.
+
+
+## Modern \(2/15\) averaged-tail closure
+
+Guth--Maynard's 2026 zero-density breakthrough improves the almost-all prime short-interval threshold from \(1/6\) to \(2/15\). Their proof of the almost-all corollary passes directly through the required von-Mangoldt \(L^2\) error.
+
+Combining that standard input with the exact Fejér/Möbius--CRT decomposition gives, for
+
+\[
+X^{2/15+\varepsilon}
+\le
+H+1
+\le
+X^{0.99},
+\qquad
+R=X^{1/4},
+\]
+
+the pair
+
+\[
+\frac{\mathcal C_{X,H}}{X}\to1,
+\qquad
+\frac{\mathcal C_{X,H,\le R}}{X}\to1.
+\]
+
+Therefore
+
+\[
+\boxed{
+\frac{\mathcal T_{X,H,R}}{X}\to0.
+}
+\]
+
+So the averaged high-divisor tail is unconditionally closed throughout the modern Guth--Maynard range. The unresolved arithmetic frontier is now below \(2/15+\varepsilon\), or in transferring from triangular Fejér windows to the exact smooth/logarithmic windows demanded by a chosen \(q(T)\)-scaled explicit-formula test.
+
+See \`proofs/GUTH_MAYNARD_2_15_FEJER_TAIL_CLOSURE_V0_1.md\`.
