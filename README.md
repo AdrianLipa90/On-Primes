@@ -614,3 +614,74 @@ Along the dyadic orbit,
 So the unresolved arithmetic-mean problem has a deterministic logarithmic pointwise envelope; faster spikes are excluded.
 
 See proofs/ARPL_DIVISOR_WEIGHT_GROWTH_BOUND_V0_1.md.
+
+
+### Global B2 phase spectrum
+
+For the centered logarithmic field
+
+\[
+Y_h(r)
+=
+\log\mathfrak S(H_{2^rh})-\mathcal L(h),
+\]
+
+finite prime truncations are periodic and converge to the actual field in the discrete Besicovitch mean-square seminorm:
+
+\[
+\boxed{
+\|Y_h-Y_{h,P}\|_{B^2}\to0.
+}
+\]
+
+The global variance therefore exists:
+
+\[
+\boxed{
+\mathcal V(h)
+=
+\lim_{T\to\infty}
+\frac1T\sum_{r<T}|Y_h(r)|^2
+<\infty.
+}
+\]
+
+It has an absolutely convergent local/joint hit-density representation.
+
+The Fourier--Bohr spectrum is pure point and rational:
+
+\[
+\Lambda_h
+\subset
+\bigcup_{p\ge5}
+\left\{
+\frac{m}{\operatorname{ord}_p(2)}
+\pmod1
+\right\}
+\subset\mathbb Q/\mathbb Z.
+\]
+
+With aggregated coefficients \(a_h(\lambda)\), Besicovitch Parseval gives
+
+\[
+\boxed{
+\mathcal V(h)
+=
+\sum_{\lambda\in\Lambda_h}|a_h(\lambda)|^2.
+}
+\]
+
+The autocorrelation is correspondingly
+
+\[
+\boxed{
+C_h(k)
+=
+\sum_{\lambda\in\Lambda_h}
+|a_h(\lambda)|^2e^{2\pi i\lambda k}.
+}
+\]
+
+This is the rigorous logarithmic phase-power spectrum of the dyadic two-twin-pair singular-series orbit.
+
+See proofs/ARPL_GLOBAL_B2_PHASE_SPECTRUM_V0_1.md.
