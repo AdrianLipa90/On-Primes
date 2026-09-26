@@ -582,3 +582,34 @@ Potential rigorous routes:
 5. prove divergence/no-go if rare large divisor-weight spikes prevent Cesaro convergence.
 
 No arithmetic-mean existence claim is made.
+
+
+### OP-F23 — Scaled prime-power form-factor closure
+
+The finite frequency bridge is closed:
+
+\[
+K_{\Gamma,T}(\tau_q)
+=
+N|R_q|^2,
+\qquad
+\tau_q=\frac{\log q}{\log(T/2\pi)}.
+\]
+
+The remaining asymptotic gate is to construct a continuation-safe and properly windowed arithmetic family \(q(T)\) with
+
+\[
+\log q(T)\sim\tau\log(T/2\pi)
+\]
+
+for fixed \(0<\tau<1\), and derive the connected pair-power limit from the prime/explicit-formula side without inserting the sine kernel or Montgomery target.
+
+A valid theorem must explicitly separate fixed-\(q\) Landau asymptotics, \(q(T)\)-scaled frequencies, local versus global zero windows, diagonal terms, smoothing, and every RH-dependent step.
+
+### OP-F24 — Noncircular zeta occupancy/operator binding
+
+Projector geometry, the sine kernel, the ramp/plateau, and the prime-power frequency coordinate are closed in their declared sectors. What remains for a zeta-specific derivation is an operator/state theorem that maps the prime/Weil spectral object to the local zero process strongly enough to transfer those forced projector statistics.
+
+If RH is itself the target, Montgomery's RH-conditional subcritical ramp may be used only as external validation, not as a premise. The conjectured plateau for \(|\alpha|>1\) likewise cannot be imported as a proof step.
+
+A successful closure must be zero-list-free at the derivation layer and must identify the normalization/window/projector or an equivalent pair-process object from arithmetic data.
