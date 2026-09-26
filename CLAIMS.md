@@ -143,6 +143,14 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`, `RES
 | OP-D101 | The limiting law has a canonical compact phase model: it is the Haar pushforward of the measurable field on the procyclic hull \(K_h=\overline{\{r(1\bmod e_p)_p:r\in\mathbb Z\}}\subset\prod_p\mathbb Z/e_p\mathbb Z\). | PROVED/STANDARD | Finite projected orbit size is \(\operatorname{lcm}(e_p)\); cylinder Haar masses reproduce the generalized-CRT densities. |
 | OP-D102 | The entire limiting law is dyadically invariant: \(\nu_{2^kh}=\nu_h\), equivalently \(\mathcal M_{2^kh}(z)=\mathcal M_h(z)\) for all \(z\in\mathbb C\). | PROVED | \(h\mapsto2^kh\) translates every phase target by \(-k\) on the procyclic hull; Haar measure is translation invariant. |
 
+| OP-D103 | If \(\mu_h=(\exp)_*\nu_h\) is the limiting law of the positive singular-series amplitudes, then the entire phase transform is its Mellin transform: \(\mathcal M_h(z)=\int_{(0,\infty)}x^z\,d\mu_h(x)\) for all \(z\in\mathbb C\). | PROVED | Pushforward of OP-D100 under \(x=e^y\). |
+| OP-D104 | Since \(\mathcal M_h(0)=1\), the normalized logarithm \(K_h(z)=\log\mathcal M_h(z)\) is analytic near \(0\) and defines finite cumulants \(\kappa_n(h)=K_h^{(n)}(0)\) of every order. | PROVED/STANDARD | Nonvanishing near \(0\) by continuity; standard cumulant-generating theory. |
+| OP-D105 | The first two cumulants recover the previously proved log mean and variance: \(\kappa_1(h)=\mathcal L(h)\), \(\kappa_2(h)=\mathcal V(h)\). | PROVED | Derivatives of the bilateral Laplace transform at the origin. |
+| OP-D106 | Every polynomial moment of \(Y=\log\mathfrak S\) exists and \(\mathcal M_h^{(n)}(0)=\int y^n\,d\nu_h(y)\); the limiting law is moment-determinate. | PROVED/STANDARD | Entire bilateral Laplace transform implies differentiation under the integral and an mgf neighborhood of \(0\). |
+| OP-D107 | The limiting log law obeys optimized Chernoff bounds \(\Pr(Y\ge y)\le\inf_{s>0}\exp(K_h(s)-sy)\) and the analogous lower-tail bound over \(s<0\). | PROVED/STANDARD | Exponential Markov inequality applied to OP-D100. |
+| OP-D108 | The limiting positive amplitude law obeys \(\mu_h([x,\infty))\le\inf_{s>0}\mathcal M_h(s)x^{-s}\) and the corresponding lower-tail bound using \(s<0\). | PROVED/STANDARD | OP-D107 under \(X=e^Y\). |
+| OP-D109 | The complete cumulant tower is dyadically invariant: \(\kappa_n(2^kh)=\kappa_n(h)\) for all \(n\ge1\). | PROVED | OP-D102 implies equality of the entire transforms, hence of their local logarithmic derivatives. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
