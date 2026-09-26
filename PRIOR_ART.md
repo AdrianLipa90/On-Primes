@@ -122,3 +122,40 @@ The project-specific ARPL contribution is the unified exact coordinate package t
 4. the existing fibre obstruction classes to finite phase-orbit hitting.
 
 Whether this packaging yields a genuinely new distribution theorem is an open research question and requires a broader literature audit.
+
+
+## Prime-pair and k-tuple singular series
+
+The prime-pair singular series has the standard Ramanujan-series and Euler-product forms
+
+\[
+\mathfrak S(h)
+=
+\sum_{q\ge1}
+\frac{\mu(q)^2}{\varphi(q)^2}c_q(h)
+=
+\prod_p
+\left(
+1+\frac{c_p(h)}{(p-1)^2}
+\right).
+\]
+
+Goldston, Ngotiaoco, and Ziegler Hunts discuss this representation and the tail of the singular series in:
+
+- D. A. Goldston, T. Ngotiaoco, J. Ziegler Hunts, *The Tail of the Singular Series for the Prime Pair and Goldbach Problems*, Functiones et Approximatio Commentarii Mathematici 56(1) (2017), 117--141; arXiv:1409.2151.
+
+For a finite \(k\)-tuple \(H\), the standard Hardy--Littlewood singular series is
+
+\[
+\mathfrak S(H)
+=
+\prod_p
+\left(1-\frac{\nu_p(H)}p\right)
+\left(1-\frac1p\right)^{-|H|},
+\]
+
+where \(\nu_p(H)\) counts distinct residues of \(H\) modulo \(p\). This standard formulation appears throughout the modern prime-tuples literature; see, for example:
+
+- J. Pintz, *On the singular series in the prime k-tuple conjecture*, arXiv:1004.1084.
+
+ARPL does not claim these formulas as new. Its project-specific use is to treat the local factors as observables of modular phase coordinates and to transport them under the already existing dyadic map \(T(x)=2x+1\).
