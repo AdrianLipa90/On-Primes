@@ -125,6 +125,13 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-O009 | The full forced ramp applies to actual zeta zeros at all arithmetic sampling frequencies \(\tau_q\) without further hypotheses. | OPEN | Conditional ramp is known only in its classical domain; plateau/full binding remain open. |
 | OP-O010 | A continuation-safe, smoothed \(q(T)\)-scaled prime-power observable may close the remaining bridge between arithmetic phase bank and full local form factor. | OPEN | Must be derived without target fitting or illegal critical-strip Euler-product use. |
 
+
+| OP-D082 | For finite weights \(b_n=\Lambda(n)n^{-1/2}W(\log n)\), the pair power decomposes exactly as \(|\sum_{n\le Q}b_n|^2=\sum_{n\le Q}|b_n|^2+2\Re\sum_{h=1}^{Q-1}\sum_{n\le Q-h}b_n\overline{b_{n+h}}\). | PROVED | Exact finite diagonal/off-diagonal regrouping; validator PASS. |
+| OP-D083 | The off-diagonal term in OP-D082 is a weighted shifted von Mangoldt correlation containing \(\Lambda(n)\Lambda(n+h)\); therefore squaring a prime-side explicit-formula amplitude requires arithmetic two-point control beyond the one-point prime-power spectrum. | PROVED / STRUCTURAL | Direct substitution into OP-D082 plus the standard linear explicit-formula prime-power weight. |
+| OP-D084 | ARPL's exact phase representation of the Hardy--Littlewood local singular factor \(\mathfrak S(h)\) does not by itself imply an occurrence asymptotic for \(\sum_{n\le x}\Lambda(n)\Lambda(n+h)\). | PROVED_LOGICAL_SEPARATION | Representation of a proposed/local density factor is logically distinct from proving the arithmetic correlation asymptotic. |
+| OP-S014 | Montgomery's original analysis identifies shifted von Mangoldt correlations of the form \(\sum_{n\le y}\Lambda(n)\Lambda(n+h)\) as the nondiagonal arithmetic obstruction when extending the form-factor analysis beyond the subcritical range. | STANDARD | External prior-art crosswalk; not an input to OP-D082. |
+| OP-O011 | A continuation-safe \(q(T)\)-scaled, smoothed shifted-von-Mangoldt correlation theorem closes the remaining zeta form-factor/plateau gate. | OPEN | Requires uniform moving-support asymptotics or an equivalent zero-list-free operator theorem. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
