@@ -71,6 +71,13 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-D047 | Under dual dyadic transport, odd exact-order denominator shells are permuted, while even shells lose one factor of 2 in their order; for squarefree \(2m\), the shell maps to the odd shell \(m\). | PROVED | Exact order calculation in \(\mathbb Q/\mathbb Z\). |
 | OP-S009 | \(\widehat{\mathbb Z}=\varprojlim_n\mathbb Z/n\mathbb Z\cong\prod_p\mathbb Z_p\), and its Pontryagin dual is \(\mathbb Q/\mathbb Z\). | STANDARD | Standard profinite/Pontryagin duality; see PRIOR_ART.md. |
 
+| OP-D048 | For finite odd-prime support \(P\), the product twin-factor observable \(\prod_{p\in P}B_p(2^rh)\) has common-clock period dividing \(L_P(h)=\operatorname{lcm}_p d_p(h)\), where \(d_p(h)=1\) if \(p\mid h\) and otherwise \(d_p(h)=\operatorname{ord}_p(2)\). | PROVED | Direct finite-period product argument. |
+| OP-D049 | The common-clock mean of the finite product equals the sum of products of local Fourier coefficients over exactly those mode tuples satisfying \(\sum_p m_p/d_p(h)\in\mathbb Z\). | PROVED | Finite Fourier orthogonality on the common period. |
+| OP-D050 | The resonance correction \(\mathcal C_P(h)=\langle\prod_pB_p\rangle-\prod_p\langle B_p\rangle\) is exactly the contribution of nonzero resonant mode tuples. | PROVED | OP-D049 with the zero tuple separated. |
+| OP-D051 | If all effective local dyadic periods \(d_p(h)\) are pairwise coprime, then \(\mathcal C_P(h)=0\) and the global common-clock mean factorizes exactly into local means. | PROVED | CRT-style reduction of the resonance equation modulo each period. |
+| OP-D052 | For fixed \(h\) and finite prime support, the subsets with nonzero \(\mathcal C_J(h)\) define a deterministic dyadic resonance hypergraph on the prime channels. | PROVED | Definition plus exact rational observables; this is not a probabilistic dependence claim. |
+| OP-O005 | The ARPL dyadic resonance hypergraph may carry ordered/global arithmetic information not reducible to standard singular-series marginals. | OPEN | Requires comparison theorems or a new invariant beyond finite Fourier repackaging. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
