@@ -42,6 +42,9 @@ from on_primes.phase_law import (
     twin_finite_dyadic_orbit_invariant,
     twin_local_mean_class,
     twin_local_mean_closed_form,
+    twin_period_overlap_components,
+    twin_component_factorized_mean,
+    twin_connected_resonance_cumulant,
 )
 
 
@@ -261,6 +264,35 @@ class ArithmeticRelationalPhaseLawTests(unittest.TestCase):
                     twin_finite_dyadic_orbit_invariant(support, (2**k) * h),
                     reference,
                 )
+
+
+    def test_period_overlap_components_factorize_exactly(self):
+        support = (7, 13, 31)
+        self.assertEqual(
+            twin_period_overlap_components(support, 6),
+            ((7, 13), (31,)),
+        )
+        self.assertEqual(
+            twin_global_orbit_mean(support, 6),
+            twin_component_factorized_mean(support, 6),
+        )
+
+    def test_connected_pair_cumulant_is_resonance_correction(self):
+        for support in ((5, 7), (7, 13), (13, 19)):
+            self.assertEqual(
+                twin_connected_resonance_cumulant(support, 6),
+                twin_dyadic_resonance_correction(support, 6),
+            )
+
+    def test_genuine_three_channel_connected_term(self):
+        self.assertEqual(
+            twin_connected_resonance_cumulant((7, 13, 19), 6),
+            __import__("fractions").Fraction(-5168743489, 457019805007872),
+        )
+        self.assertEqual(
+            twin_connected_resonance_cumulant((5, 7, 11), 6),
+            0,
+        )
 
 
 if __name__ == "__main__":
