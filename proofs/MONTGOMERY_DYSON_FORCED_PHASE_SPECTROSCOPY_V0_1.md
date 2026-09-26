@@ -263,3 +263,10 @@ It must derive the zeta spectral occupancy/operator map independently.
 ## 9. Compact result
 
 The current On-Primes framework now contains an exact phase representation of prime gaps and imports a no-target-leakage derivation of the sine-kernel two-point law from the shared operator cage. This promotes the **phase-correlation core** from candidate to forced prediction while leaving the zeta-process and domain bindings explicit and open.
+
+
+## 10. External restricted-support checkpoint
+
+Classical analytic number theory already supplies a restricted test-function checkpoint for the same functional form: Montgomery's pair-correlation theorem matches the GUE/sine-kernel two-point statistic on its admissible Fourier-support class under the theorem's stated hypotheses, and Rudnick--Sarnak establish restricted-support higher correlation results for principal L-functions.
+
+This is tagged **EXTERNAL_STANDARD / PARTIAL_BINDING**. It is not an input to the forced-prediction derivation and must not be used circularly in any RH argument. The full zeta local occupancy/DPP identification remains SOH-MD001B.
