@@ -132,6 +132,14 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-S014 | Montgomery's original analysis identifies shifted von Mangoldt correlations of the form \(\sum_{n\le y}\Lambda(n)\Lambda(n+h)\) as the nondiagonal arithmetic obstruction when extending the form-factor analysis beyond the subcritical range. | STANDARD | External prior-art crosswalk; not an input to OP-D082. |
 | OP-O011 | A continuation-safe \(q(T)\)-scaled, smoothed shifted-von-Mangoldt correlation theorem closes the remaining zeta form-factor/plateau gate. | OPEN | Requires uniform moving-support asymptotics or an equivalent zero-list-free operator theorem. |
 
+
+| OP-D085 | For every \(n\ge1\), \(\Lambda(n)=-\sum_{d\mid n}\mu(d)\log d\). | PROVED_FROM_STANDARD | Möbius inversion of \(\log n=\sum_{d\mid n}\Lambda(d)\). |
+| OP-D086 | For finite \(X,h\), the actual shifted correlation \(C_h(X)=\sum_{n\le X}\Lambda(n)\Lambda(n+h)\) equals exactly \(\sum_{d\le X,e\le X+h}\mu(d)\mu(e)\log d\log e\,N_{d,e}(X;h)\), where \(N_{d,e}\) counts simultaneous divisor congruences. | PROVED | Finite substitution and exchange of sums; validator PASS. |
+| OP-D087 | The divisor-pair channel in OP-D086 is CRT-compatible iff \(\gcd(d,e)\mid h\), equivalently iff the canonical ARPL character \(\exp(2\pi i h/\gcd(d,e))\) equals \(1\). | PROVED | Generalized CRT plus exact additive-character phase lock. |
+| OP-D088 | Each fixed divisor-pair contribution to \(C_h(X)\) is a finite modular channel: compatibility is periodic modulo \(\gcd(d,e)\), and the compatible CRT residue is periodic in \(h\) modulo \(\operatorname{lcm}(d,e)\). | PROVED | CRT residue-class dependence. |
+| OP-S015 | Möbius inversion for \(\Lambda\) and the generalized Chinese remainder theorem are standard arithmetic ingredients used in OP-D085--OP-D088. | STANDARD | No novelty claim for the component theorems. |
+| OP-O012 | The growing signed Möbius--CRT double sum in OP-D086 admits the uniform cancellation needed to derive the Hardy--Littlewood shifted-correlation asymptotic in the \(q(T)\)-scaled form-factor regime. | OPEN | Exact finite phase representation does not prove the asymptotic cancellation. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
