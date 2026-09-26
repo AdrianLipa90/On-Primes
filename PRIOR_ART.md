@@ -223,3 +223,14 @@ R(4^rh^2-4)
 \]
 
 That absence of a direct match is not a novelty proof.
+
+
+## Shift-averaged correlations and primes in short intervals
+
+The current Fejér-averaged phase-spectroscopy lane uses standard prior art on mean-square prime distribution in short intervals.
+
+- B. Saffari and R. C. Vaughan, *On the fractional parts of \(x/n\) and related sequences. II*, Ann. Inst. Fourier (Grenoble) 27(2) (1977), 1–30. Their short-interval mean-square machinery supplies the external unconditional long-window input used in \`FEJER_AVERAGED_HIGH_TAIL_LONG_WINDOW_V0_1.md\`.
+- P. X. Gallagher, *On the distribution of primes in short intervals*, Mathematika 23 (1976), 4–9. This is part of the classical mean/normal-density context and of the literature on averages of singular series.
+- D. A. Goldston and H. L. Montgomery, *On pair correlations of zeros and primes in short intervals*, in *Analytic Number Theory and Diophantine Problems* (1987), 183–203. This is the standard pair-correlation/short-interval bridge.
+
+No novelty claim is made here for Fejér kernels, Wiener--Khintchine, Selberg integrals, large-sieve/dispersion methods, or the external short-interval theorems. The repository-specific result is their exact alignment with the existing Möbius--CRT phase decomposition and its low/high divisor split.
