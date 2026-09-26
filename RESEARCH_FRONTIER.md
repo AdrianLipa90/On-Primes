@@ -703,3 +703,57 @@ containing divisor pairs with \(d>R\) or \(e>R\).
 The next theorem should either prove a uniform estimate for this tail in the \(q(T)\)-scaled window/shift regime, derive an explicit additional main term carried by the tail, or establish a no-go for the proposed decomposition.
 
 A full-range absolute residue-count majorant is insufficient: at \(R\asymp X\) the elementary bound is \(O(X^2\log^2X)\), far above the \(O(X)\) correlation scale. The high sector therefore requires cancellation, sieve/dispersion input, large-sieve structure, or an equivalent operator identity.
+
+
+### OP-F28 — Fejér-averaged high-divisor tail closure
+
+The low-divisor part of the shift-averaged form-factor observable is now closed:
+
+\[
+\frac{\overline C_{H,R}(X)}{X}\to1
+\]
+
+under
+
+\[
+(R\log R)^2=o(X),
+\qquad
+R\log^2R=o(H^2).
+\]
+
+Therefore fixed-shift control
+
+\[
+T_{h,R}(X)=o(X)
+\]
+
+for every \(h\) is no longer the minimal requirement for the Montgomery--Dyson phase-spectroscopy programme.
+
+The sufficient target is the weaker Fejér-averaged tail
+
+\[
+\boxed{
+\overline T_{H,R}(X)
+=
+\frac1{H+1}
+\left[
+T_{0,R}(X)
++
+2\sum_{h=1}^{H}
+\left(1-\frac h{H+1}\right)
+T_{h,R}(X)
+\right]
+=o(X)
+}
+\]
+
+in the moving \(q(T)\)-scaled window.
+
+Preferred routes:
+1. dispersion / large-sieve control after shift averaging;
+2. Vaughan or Heath--Brown decomposition of the high divisor sector;
+3. mean-square primes-in-short-interval estimates;
+4. a zero-list-free operator identity that controls the same averaged tail;
+5. a no-go theorem for any route that still implicitly requires fixed-\(h\) Hardy--Littlewood.
+
+Any result must state the joint scale of \(X,H,R\), the spectral window, diagonal subtraction, and every RH/zero-density input.
