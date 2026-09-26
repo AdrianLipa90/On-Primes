@@ -3,10 +3,10 @@
   "date": "2026-09-26",
   "repository": "AdrianLipa90/On-Primes",
   "branch": "integrate/fejer-averaged-mobius-crt-low-block-v0.1-20260926",
-  "status": "PROVED_FROM_STANDARD_SAFFARI_VAUGHAN__UNCONDITIONAL_LONG_WINDOW_AVERAGED_TAIL_CLOSED",
+  "status": "PROVED_FROM_STANDARD_SAFFARI_VAUGHAN_HUXLEY_PLUS_THETA_TO_PSI_TRANSFER__UNCONDITIONAL_LONG_WINDOW_AVERAGED_TAIL_CLOSED",
   "standard_external_input": {
-    "theorem": "Saffari-Vaughan short-interval mean-square / Selberg integral",
-    "consequence": "J(X,L)=o(X L^2) in the unconditional range L >= X^(1/6+epsilon)",
+    "theorem": "Saffari-Vaughan/Huxley prime short-interval Selberg-integral estimate for theta",
+    "consequence": "theta mean-square o(X L^2) in the standard range L >= X^(1/6+epsilon)",
     "novelty_claim": false
   },
   "exact_repository_inputs": [
@@ -29,5 +29,11 @@
     "scope": "finite correlation/sliding-window boundary crosswalk only; external asymptotic not numerically reproved",
     "max_boundary_to_bound_ratio": 0.018216716598738407
   },
-  "canon_allowed": false
+  "canon_allowed": false,
+  "theta_to_psi_transfer": {
+    "status": "PROVED_IN_REPOSITORY",
+    "file": "proofs/THETA_TO_PSI_SHORT_INTERVAL_TRANSFER_V0_1.md",
+    "bound": "Delta(psi-theta)=O(L X^-1/2 log^2 X + log^2 X)",
+    "conclusion": "same o(X L^2) mean-square for psi in the declared range"
+  }
 }
