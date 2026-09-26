@@ -30,6 +30,15 @@ from on_primes.phase_law import (
     twin_special_residue_cycles,
     twin_special_mode_support,
     twin_special_cycles_coincide,
+    twin_local_dyadic_period,
+    twin_local_orbit_values,
+    twin_local_orbit_mean,
+    twin_local_orbit_variance,
+    twin_global_dyadic_period,
+    twin_global_orbit_mean,
+    twin_product_of_local_means,
+    twin_dyadic_resonance_correction,
+    local_periods_pairwise_coprime,
 )
 
 
@@ -184,6 +193,48 @@ class ArithmeticRelationalPhaseLawTests(unittest.TestCase):
             else:
                 self.assertEqual(set(twin_special_mode_support(p)), set(range(d)))
                 self.assertNotEqual(plus, minus)
+
+
+    def test_local_orbit_statistics_are_exact(self):
+        for p in (5, 7, 11, 13, 17, 19):
+            values = twin_local_orbit_values(p, 6)
+            self.assertEqual(len(values), twin_local_dyadic_period(p, 6))
+            mean = sum(values) / len(values)
+            variance = sum((v - mean) ** 2 for v in values) / len(values)
+            self.assertEqual(mean, twin_local_orbit_mean(p, 6))
+            self.assertEqual(variance, twin_local_orbit_variance(p, 6))
+
+    def test_pairwise_coprime_periods_factorize_global_mean(self):
+        examples = (
+            ((5, 7), 6),       # periods 4 and 3
+            ((5, 7, 11), 6),   # effective common-clock resonance still vanishes
+        )
+        self.assertTrue(local_periods_pairwise_coprime((5, 7), 6))
+        self.assertEqual(
+            twin_global_orbit_mean((5, 7), 6),
+            twin_product_of_local_means((5, 7), 6),
+        )
+        self.assertEqual(twin_dyadic_resonance_correction((5, 7), 6), 0)
+
+        for support, h in examples:
+            self.assertEqual(
+                twin_global_dyadic_period(support, h),
+                __import__("math").lcm(*(twin_local_dyadic_period(p, h) for p in support)),
+            )
+
+    def test_shared_periods_can_generate_nonzero_resonance(self):
+        self.assertFalse(local_periods_pairwise_coprime((7, 13), 6))
+        self.assertNotEqual(twin_dyadic_resonance_correction((7, 13), 6), 0)
+        self.assertEqual(
+            twin_global_orbit_mean((7, 13), 6) / twin_product_of_local_means((7, 13), 6),
+            __import__("fractions").Fraction(549, 550),
+        )
+
+        self.assertNotEqual(twin_dyadic_resonance_correction((7, 13, 19), 6), 0)
+        self.assertEqual(
+            twin_global_orbit_mean((7, 13, 19), 6) / twin_product_of_local_means((7, 13, 19), 6),
+            __import__("fractions").Fraction(18657, 18700),
+        )
 
 
 if __name__ == "__main__":
