@@ -613,3 +613,36 @@ Projector geometry, the sine kernel, the ramp/plateau, and the prime-power frequ
 If RH is itself the target, Montgomery's RH-conditional subcritical ramp may be used only as external validation, not as a premise. The conjectured plateau for \(|\alpha|>1\) likewise cannot be imported as a proof step.
 
 A successful closure must be zero-list-free at the derivation layer and must identify the normalization/window/projector or an equivalent pair-process object from arithmetic data.
+
+
+### OP-F25 — smoothed shifted-von-Mangoldt correlation closure
+
+The finite pair-power algebra is now closed:
+
+\[
+\left|\sum b_n\right|^2
+=
+\sum|b_n|^2
++
+2\Re\sum_{h\ge1}\sum_n b_n\overline{b_{n+h}},
+\]
+
+and for explicit-formula weights the off-diagonal kernel is
+
+\[
+\frac{\Lambda(n)\Lambda(n+h)}
+{\sqrt{n(n+h)}}
+W_T(\log n)\overline{W_T(\log(n+h))}.
+\]
+
+The next hard gate is therefore an arithmetic two-point theorem in the moving scale
+
+\[
+n\asymp(T/2\pi)^\tau.
+\]
+
+A valid closure must provide explicit smoothing, support growth, uniform tail control, prime-power bookkeeping, and exact hypothesis provenance. It may not replace the shifted correlation by the Hardy--Littlewood singular series merely because ARPL already represents that singular factor.
+
+For \(h=2\), silently assuming a positive Hardy--Littlewood main term would import essentially the twin-prime occurrence problem into the proof. That shortcut is prohibited.
+
+An alternative closure is a zero-list-free operator/trace identity that controls the same off-diagonal pair power without proving each fixed-\(h\) correlation separately.
