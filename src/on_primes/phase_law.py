@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import cmath
 import math
+from fractions import Fraction
 from collections.abc import Iterable, Mapping, Sequence
 
 
@@ -160,3 +161,180 @@ def fibre_obstruction_hits(a: int, divisor: int, length: int, start_k: int = 0) 
     """Indices k for which divisor | (a*2**k - 1), detected as phase hits u_k=1."""
     orbit = fibre_phase_orbit(a, divisor, length, start_k)
     return tuple(start_k + i for i, residue in enumerate(orbit) if residue == 1 % divisor)
+
+
+def _is_prime_small(n: int) -> bool:
+    n = int(n)
+    if n < 2:
+        return False
+    if n % 2 == 0:
+        return n == 2
+    d = 3
+    while d * d <= n:
+        if n % d == 0:
+            return False
+        d += 2
+    return True
+
+
+def _mobius(n: int) -> int:
+    n = int(n)
+    if n <= 0:
+        raise ValueError("n must be positive")
+    x = n
+    count = 0
+    p = 2
+    while p * p <= x:
+        if x % p == 0:
+            x //= p
+            count += 1
+            if x % p == 0:
+                return 0
+            while x % p == 0:
+                x //= p
+        p = 3 if p == 2 else p + 2
+    if x > 1:
+        count += 1
+    return -1 if count % 2 else 1
+
+
+def _euler_phi(n: int) -> int:
+    n = int(n)
+    if n <= 0:
+        raise ValueError("n must be positive")
+    result = n
+    x = n
+    p = 2
+    while p * p <= x:
+        if x % p == 0:
+            while x % p == 0:
+                x //= p
+            result -= result // p
+        p = 3 if p == 2 else p + 2
+    if x > 1:
+        result -= result // x
+    return result
+
+
+def _divisors(n: int) -> tuple[int, ...]:
+    n = int(n)
+    if n <= 0:
+        raise ValueError("n must be positive")
+    low: list[int] = []
+    high: list[int] = []
+    d = 1
+    while d * d <= n:
+        if n % d == 0:
+            low.append(d)
+            if d * d != n:
+                high.append(n // d)
+        d += 1
+    return tuple(low + high[::-1])
+
+
+def ramanujan_sum(q: int, n: int) -> int:
+    """Exact Ramanujan sum c_q(n)."""
+    q = int(q)
+    if q <= 0:
+        raise ValueError("q must be positive")
+    g = math.gcd(q, int(n))
+    return sum(d * _mobius(q // d) for d in _divisors(g))
+
+
+def prime_pair_local_factor(p: int, h: int) -> Fraction:
+    """Local Hardy--Littlewood prime-pair factor at a prime p."""
+    p = int(p)
+    if not _is_prime_small(p):
+        raise ValueError("p must be prime")
+    return Fraction(1, 1) + Fraction(ramanujan_sum(p, int(h)), (p - 1) ** 2)
+
+
+def finite_prime_pair_singular_product(h: int, primes: Iterable[int]) -> Fraction:
+    """Finite Euler product of prime-pair local factors."""
+    result = Fraction(1, 1)
+    seen: set[int] = set()
+    for p in primes:
+        p = int(p)
+        if p in seen:
+            raise ValueError("primes must be distinct")
+        seen.add(p)
+        result *= prime_pair_local_factor(p, int(h))
+    return result
+
+
+def finite_prime_pair_ramanujan_expansion(h: int, primes: Sequence[int]) -> Fraction:
+    """Exact squarefree Ramanujan expansion over a supplied finite prime support.
+
+    This equals finite_prime_pair_singular_product(h, primes) exactly.
+    """
+    support = tuple(int(p) for p in primes)
+    if len(set(support)) != len(support) or any(not _is_prime_small(p) for p in support):
+        raise ValueError("primes must be distinct primes")
+    total = Fraction(0, 1)
+    for mask in range(1 << len(support)):
+        q = 1
+        for i, p in enumerate(support):
+            if (mask >> i) & 1:
+                q *= p
+        total += Fraction(ramanujan_sum(q, int(h)), _euler_phi(q) ** 2)
+    return total
+
+
+def twin_quadruplet_residue_count(p: int, h: int) -> int:
+    """nu_p for H_h={0,2,h,h+2}, the two-twin-pair offset pattern."""
+    p = int(p)
+    if not _is_prime_small(p):
+        raise ValueError("p must be prime")
+    h = int(h)
+    return len({0 % p, 2 % p, h % p, (h + 2) % p})
+
+
+def twin_quadruplet_local_factor(p: int, h: int) -> Fraction:
+    """Local k-tuple singular-series factor for H_h={0,2,h,h+2}."""
+    p = int(p)
+    nu = twin_quadruplet_residue_count(p, int(h))
+    return Fraction(p - nu, p) / (Fraction(p - 1, p) ** 4)
+
+
+def finite_twin_quadruplet_singular_product(h: int, primes: Iterable[int]) -> Fraction:
+    """Finite local product for the two-twin-pair pattern H_h."""
+    result = Fraction(1, 1)
+    seen: set[int] = set()
+    for p in primes:
+        p = int(p)
+        if p in seen:
+            raise ValueError("primes must be distinct")
+        seen.add(p)
+        result *= twin_quadruplet_local_factor(p, int(h))
+    return result
+
+
+def twin_gap_mod6_admissible(h: int) -> bool:
+    """Admissibility against the p=2 and p=3 local channels."""
+    h = int(h)
+    return twin_quadruplet_residue_count(2, h) < 2 and twin_quadruplet_residue_count(3, h) < 3
+
+
+def twin_quadruplet_dyadic_local_orbit(p: int, h: int, steps: int) -> tuple[tuple[int, Fraction], ...]:
+    """Local singular-factor observable along h -> 2h mod p."""
+    p = int(p)
+    steps = int(steps)
+    if not _is_prime_small(p):
+        raise ValueError("p must be prime")
+    if steps < 0:
+        raise ValueError("steps must be nonnegative")
+    residue = int(h) % p
+    out: list[tuple[int, Fraction]] = []
+    for _ in range(steps):
+        out.append((residue, twin_quadruplet_local_factor(p, residue)))
+        residue = (2 * residue) % p
+    return tuple(out)
+
+
+def even_sector_pair_singular_dyadic_invariant(h: int, primes: Iterable[int]) -> bool:
+    """Finite-product invariance S_P(2h)=S_P(h) for even h."""
+    h = int(h)
+    if h % 2:
+        raise ValueError("h must be even")
+    support = tuple(int(p) for p in primes)
+    return finite_prime_pair_singular_product(h, support) == finite_prime_pair_singular_product(2 * h, support)
