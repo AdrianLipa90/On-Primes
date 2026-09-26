@@ -71,6 +71,9 @@ from on_primes.phase_law import (
     twin_fractional_special_multiplier,
     twin_finite_fractional_common_clock_mean,
     twin_finite_fractional_subset_mean,
+    twin_real_moment_multiplier,
+    twin_finite_real_moment_common_clock,
+    twin_finite_real_moment_subset_mean,
 )
 
 
@@ -528,6 +531,27 @@ class ArithmeticRelationalPhaseLawTests(unittest.TestCase):
                     reference,
                     places=12,
                 )
+
+
+    def test_real_moment_subset_expansion_matches_direct_clock(self):
+        supports = ((5, 7, 11), (5, 7, 11, 13), (7, 13, 19))
+        for support in supports:
+            for s in (-2.0, -0.5, 0.0, 1.0, 2.0, 4.0):
+                self.assertAlmostEqual(
+                    twin_finite_real_moment_common_clock(support, 6, s),
+                    twin_finite_real_moment_subset_mean(support, 6, s),
+                    places=11,
+                )
+
+    def test_raw_arithmetic_mean_finite_support_is_dyadic_invariant(self):
+        support = (5, 7, 11, 13, 19)
+        reference = twin_finite_real_moment_subset_mean(support, 6, 1.0)
+        for k in range(6):
+            self.assertAlmostEqual(
+                twin_finite_real_moment_subset_mean(support, (2**k)*6, 1.0),
+                reference,
+                places=12,
+            )
 
 
 if __name__ == "__main__":
