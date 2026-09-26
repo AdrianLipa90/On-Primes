@@ -676,3 +676,51 @@ Hence the off-diagonal content is a weighted shifted von Mangoldt correlation \(
 ARPL already represents the Hardy--Littlewood local factor \(\mathfrak S(h)\) exactly in modular phase coordinates. That does **not** prove the occurrence asymptotic for \(\Lambda(n)\Lambda(n+h)\). The distinction is explicit and enforced as a no-go.
 
 See \`proofs/VON_MANGOLDT_PAIR_POWER_DECOMPOSITION_V0_1.md\`.
+
+
+## Exact \(\Lambda\Lambda\) → CRT → phase bridge
+
+The actual finite shifted von Mangoldt correlation now has a zero-list-free modular decomposition. From
+
+\[
+\Lambda(n)
+=
+-\sum_{d\mid n}\mu(d)\log d
+\]
+
+one obtains exactly
+
+\[
+\boxed{
+\sum_{n\le X}\Lambda(n)\Lambda(n+h)
+=
+\sum_{d\le X}
+\sum_{e\le X+h}
+\mu(d)\mu(e)\log d\log e\,
+N_{d,e}(X;h),
+}
+\]
+
+where \(N_{d,e}\) counts
+
+\[
+n\equiv0\pmod d,
+\qquad
+n\equiv-h\pmod e.
+\]
+
+The channel is active iff
+
+\[
+\gcd(d,e)\mid h,
+\]
+
+which is exactly the ARPL phase-lock condition
+
+\[
+e^{2\pi i h/\gcd(d,e)}=1.
+\]
+
+This closes the **representation** bridge from the real finite \(\Lambda\Lambda\) correlation to modular phase channels. It does not close the asymptotic occurrence problem: the remaining difficulty is cancellation in the signed Möbius-weighted double sum as the divisor ranges grow.
+
+See \`proofs/SHIFTED_VON_MANGOLDT_CRT_PHASE_V0_1.md\`.
