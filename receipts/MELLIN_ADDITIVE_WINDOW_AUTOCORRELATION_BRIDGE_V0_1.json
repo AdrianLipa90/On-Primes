@@ -17,7 +17,10 @@
     "short-scale mean-square / averaged high-tail estimate for exact smooth kernel"
   ],
   "local_validator": {
-    "status": "PASS_PENDING_EXACT_NUMERIC_VALUES"
+    "status": "PASS",
+    "max_pullback_error": 4.440892098500626e-16,
+    "max_gaussian_kernel_error": 2.220446049250313e-16,
+    "max_translation_identity_error": 8.881784197001252e-16
   },
   "canon_allowed": false
 }
