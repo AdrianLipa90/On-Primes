@@ -1143,3 +1143,111 @@ for every prescribed fixed \(N\).
 These are tail-probability statements; no density or atomlessness claim is made.
 
 See proofs/ARPL_PROCYCLIC_PHASE_REFINEMENT_TOWER_V0_1.md and proofs/ARPL_LIMIT_LAW_SUPPORT_TAILS_V0_1.md.
+
+
+### Source hull is non-atomic; lower-edge atom has an exact criterion
+
+For admissible \(h\), write
+
+\[
+U_r=(h/2)^2 4^r-1.
+\]
+
+This is a non-degenerate integer linear recurrence with characteristic roots \(4\) and \(1\). By Pólya's classical prime-divisor theorem, \(U_r\) has infinitely many distinct prime divisors. Because \(6\mid h\),
+
+\[
+U_r\equiv1\pmod2,
+\qquad
+U_r\equiv-1\pmod3,
+\]
+
+so all such divisors are active ARPL primes \(p\ge5\).
+
+Hence the active observable periods
+
+\[
+e_p=\operatorname{ord}_p(4)
+\]
+
+are unbounded, and therefore
+
+\[
+L_N=\operatorname{lcm}(e_{p_1},\dots,e_{p_N})\to\infty.
+\]
+
+It follows that Haar measure on the procyclic source hull
+
+\[
+K_h\cong\varprojlim_N\mathbb Z/L_N\mathbb Z
+\]
+
+is non-atomic.
+
+This does **not** automatically imply that the pushforward amplitude/log law is non-atomic.
+
+For the hard lower edge
+
+\[
+A(h)=\frac{27}{2}C_*Z(h),
+\]
+
+define the phase-avoidance set
+
+\[
+C_\infty(h)
+=
+\bigcap_{p\in\mathcal A_h}
+\{x:x_p\ne\rho_p(h)\}.
+\]
+
+Then the exact lower-edge atom mass is
+
+\[
+\boxed{
+\mu_h(\{A(h)\})
+=
+\nu_h(\{\log A(h)\})
+=
+m_{K_h}(C_\infty(h)).
+}
+\]
+
+For the first \(N\) active channels,
+
+\[
+a_N(h)
+=
+\sum_{J\subseteq[N]}
+(-1)^{|J|}\delta_J(h)
+\]
+
+is an exact finite rational avoidance mass, and
+
+\[
+\boxed{
+a_N(h)\downarrow a_*(h)
+}
+\]
+
+where \(a_*(h)\) is the lower-edge atom mass.
+
+The same atom is encoded analytically by
+
+\[
+\boxed{
+a_*(h)
+=
+\lim_{t\to\infty}
+A(h)^t\mathcal M_h(-t).
+}
+\]
+
+For \(h=6\), the first 15 active channels give
+
+\[
+a_{15}(6)=\frac{252}{3335}\approx0.07556221889.
+\]
+
+This is an upper bound on the limiting atom mass, not evidence by itself that the atom is positive.
+
+See proofs/ARPL_SOURCE_HULL_NONATOMIC_EDGE_ATOM_V0_1.md.
