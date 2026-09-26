@@ -1246,3 +1246,50 @@ def twin_phase_refinement_branching(primes: Sequence[int], h: int) -> tuple[int,
         out.append(L // previous)
         previous = L
     return tuple(out)
+
+
+def twin_quadratic_subset_hit_density(primes: Sequence[int], h: int) -> Fraction:
+    """Exact Haar/natural density of simultaneous active base-4 phase hits.
+
+    Returns 0 for inactive or CRT-incompatible channel sets.
+    """
+    support = tuple(int(p) for p in primes)
+    if len(set(support)) != len(support):
+        raise ValueError("primes must be distinct")
+    if not support:
+        return Fraction(1, 1)
+    phases = {}
+    periods = {}
+    for p in support:
+        if not _is_prime_small(p) or p < 5:
+            raise ValueError("support must contain distinct primes >= 5")
+        phases[p] = twin_quadratic_hit_phase(p, int(h))
+        if phases[p] is None:
+            return Fraction(0, 1)
+        periods[p] = quadruplet_observable_period(p, int(h))
+    for i, p in enumerate(support):
+        for q in support[i + 1:]:
+            if (phases[p] - phases[q]) % math.gcd(periods[p], periods[q]) != 0:
+                return Fraction(0, 1)
+    return Fraction(1, math.lcm(*(periods[p] for p in support)))
+
+
+def twin_finite_lower_edge_mass(primes: Sequence[int], h: int) -> Fraction:
+    """Exact finite-channel mass with no special phase hit.
+
+    Inclusion-exclusion on the base-4 phase cylinders. For n channels this is
+    exponential in n and is intended for proof receipts / small diagnostics.
+    """
+    support = tuple(int(p) for p in primes)
+    if len(set(support)) != len(support):
+        raise ValueError("primes must be distinct")
+    total = Fraction(1, 1)
+    n = len(support)
+    for mask in range(1, 1 << n):
+        subset = tuple(support[i] for i in range(n) if (mask >> i) & 1)
+        density = twin_quadratic_subset_hit_density(subset, int(h))
+        if len(subset) % 2:
+            total -= density
+        else:
+            total += density
+    return total
