@@ -1022,3 +1022,151 @@ After OP-F31, determine:
 - whether any absolute-continuity criterion from odometer/cylinder-series theory applies.
 
 No pushforward non-atomicity or density claim is promoted yet.
+
+
+### OP-F31 status update — atom problem reduced to two quantitative phase criteria
+
+The lower-edge atom problem now has two rigorous finite-to-infinite routes.
+
+#### L2 projection route
+
+For finite active support \(P_N\),
+
+\[
+B_N
+=
+d_N^\top G_N^+d_N
+\le
+m\!\left(\bigcup_{p\in P_N}C_p\right).
+\]
+
+Thus
+
+\[
+B_N\to1
+\]
+
+is sufficient for lower-edge atom removal.
+
+A weaker pairwise-only sufficient condition is
+
+\[
+\frac{S_N^2}{Q_N}\to1,
+\]
+
+where
+
+\[
+S_N=\sum_{p\in P_N}\frac1{e_p},
+\qquad
+Q_N=\sum_{p,q\in P_N}m(C_p\cap C_q).
+\]
+
+#### Survival-hazard route
+
+The exact avoidance mass satisfies
+
+\[
+a_N
+=
+\prod_{j<N}
+\left(
+1-\frac{c_j}{b_j}
+\right),
+\]
+
+where
+
+\[
+b_j=L_{j+1}/L_j
+\]
+
+and \(c_j\) is the conditional compatibility fraction among surviving parent cells.
+
+Hence
+
+\[
+a_*(h)=0
+\iff
+\sum_j
+-\log\left(
+1-\frac{c_j}{b_j}
+\right)
+=\infty.
+\]
+
+Under eventual small hazards this reduces to
+
+\[
+\sum_j\frac{c_j}{b_j}
+=\infty.
+\]
+
+The atom problem is therefore no longer qualitative. The hard number-theoretic target is the asymptotic distribution of the conditional compatibility sequence \(c_j(h)\) against clock novelty \(b_j(h)\).
+
+### OP-F33 — canonical phase-fractal geometry CLOSED
+
+With the canonical arithmetic ultrametric based on strict clock scales \(M_k\),
+
+\[
+d_h(x,y)=M_{n(x,y)}^{-1},
+\]
+
+the full phase hull is \(1\)-Ahlfors regular and has
+
+\[
+\dim_H
+=
+\dim_{\rm box}
+=
+D_{\rm info}
+=
+1.
+\]
+
+The odometer is an isometry in this metric.
+
+Therefore the term “fractal phase hierarchy” now has a rigorous metric realization, subject to the explicit metric choice.
+
+### OP-F34 — avoidance-set codimension
+
+Let
+
+\[
+A_\infty
+=
+\bigcap_p C_p^c
+\]
+
+and
+
+\[
+\Delta_*
+=
+\liminf_N
+\frac{-\log a_N}{\log L_N}.
+\]
+
+Then
+
+\[
+\dim_H(A_\infty)
+\le
+\max\{0,1-\Delta_*\}.
+\]
+
+Open tasks:
+
+1. determine whether \(a_N\to0\);
+2. determine whether \(\Delta_*>0\);
+3. obtain lower dimension bounds in the zero-mass case;
+4. characterize whether the finite survival exponents
+   \[
+   D_N^{\rm surv}
+   =
+   1+\frac{\log a_N}{\log L_N}
+   \]
+   converge;
+5. relate the phase codimension to the external fractal-orbital algebra only through an explicit typed map.
+
+A zero lower-edge atom does not by itself imply dimension loss; a zero-measure avoidance set may still have full phase dimension.
