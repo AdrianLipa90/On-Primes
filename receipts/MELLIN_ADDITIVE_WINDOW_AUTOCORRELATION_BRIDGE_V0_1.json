@@ -1,0 +1,23 @@
+{
+  "schema": "ON_PRIMES_MELLIN_ADDITIVE_WINDOW_AUTOCORRELATION_BRIDGE_V0_1",
+  "date": "2026-09-26",
+  "repository": "AdrianLipa90/On-Primes",
+  "branch": "integrate/fejer-averaged-mobius-crt-low-block-v0.1-20260926",
+  "status": "EXACT_WINDOW_COORDINATE_BRIDGE__SHORT_SCALE_ANALYTIC_BOUND_OPEN",
+  "pullback": "G_v(t)=exp(t/2)v(exp t) => Lambda(n)n^-1/2 G_v(log n)=Lambda(n)v(n)",
+  "translation_kernel": "int v_{Q,L}(n) conjugate(v_{Q,L}(m)) dQ = L K_V((m-n)/L)",
+  "autocorrelation": "K_V(s)=int V(u) conjugate(V(u+s)) du",
+  "positivity": "Fourier(K_V)=|Fourier(V)|^2 >= 0",
+  "fejer_limit": "V=1_[0,1] gives K_V(s)=(1-|s|)_+",
+  "smooth_approximation": "||K_V-K_W||_infinity <= (||V||_2+||W||_2)||V-W||_2",
+  "closes": [
+    "log-window versus additive-window representational mismatch"
+  ],
+  "remains_open": [
+    "short-scale mean-square / averaged high-tail estimate for exact smooth kernel"
+  ],
+  "local_validator": {
+    "status": "PASS_PENDING_EXACT_NUMERIC_VALUES"
+  },
+  "canon_allowed": false
+}
