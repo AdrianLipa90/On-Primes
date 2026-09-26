@@ -109,6 +109,12 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-D073 | Consequently \(R(N)\ll\log\log N\). | STANDARD/PROVED | OP-D072 plus the classical maximal-order bound for \(N/\varphi(N)\). |
 | OP-D074 | Along \(N_r=4^rh^2-4\), \(R(N_r)\ll_h\log(r+2)\), hence \(\mathfrak S(H_{2^rh})\ll_h\log(r+2)\). | PROVED | Exact instantaneous factorization plus OP-D073. |
 
+| OP-D075 | The actual logarithmic dynamic tail converges to zero in the discrete Besicovitch \(B^2\) mean-square seminorm; hence the centered field \(Y_h(r)=\log\mathfrak S(H_{2^rh})-\mathcal L(h)\) is a \(B^2\) limit of periodic sequences. | PROVED | Single-hit and pair-hit counts plus absolutely summable \(1/(p\,\operatorname{ord}_p(2))\)-type tails and vanishing finite-horizon endpoint term. |
+| OP-D076 | The global logarithmic variance \(\mathcal V(h)\) exists and has an absolutely convergent diagonal-plus-pair-covariance representation in terms of exact local and joint phase-hit densities. | PROVED | Mean-square convergence plus absolute convergence of the covariance series. |
+| OP-D077 | The centered logarithmic field is a discrete Besicovitch-\(B^2\) almost-periodic sequence with pure-point Fourier--Bohr spectrum contained in rational frequencies \(m/\operatorname{ord}_p(2)\pmod1\), and \(\mathcal V(h)=\sum_\lambda|a_h(\lambda)|^2\). | PROVED/STANDARD | Number-theoretic tail/spectrum inclusion is proved here; Parseval/harmonic synthesis is standard Besicovitch theory. |
+| OP-D078 | The lag autocorrelation exists for every integer \(k\) and satisfies \(C_h(k)=\sum_\lambda|a_h(\lambda)|^2e^{2\pi i\lambda k}\), with absolute convergence of the power series. | PROVED/STANDARD | Consequence of the \(B^2\) theorem and standard Fourier--Bohr autocorrelation/Parseval machinery. |
+| OP-D079 | Logarithmic phase excursions obey the density bound \(\limsup_T T^{-1}\#\{r<T:|Y_h(r)|\ge A\}\le\mathcal V(h)/A^2\). | PROVED | Cesaro Chebyshev inequality. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
