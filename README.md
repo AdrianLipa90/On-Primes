@@ -120,3 +120,9 @@ which makes the hexagonal lattice connection exact rather than metaphorical. Thi
 
 See `proofs/CENTERED_HEXAGONAL_PRIME_CHANNEL_V0_1.md`.
 
+
+## Skewes–Euler–Hilbert–Collatz bridge
+
+The additive research note [SKEWES_EULER_HILBERT_COLLATZ_BRIDGE_V0_1.md](SKEWES_EULER_HILBERT_COLLATZ_BRIDGE_V0_1.md) derives an exact common dyadic log-phase clock across the existing (2x+1) fibres, Hilbert-Hotel shift operators, zeta-zero phase factors, and accelerated odd-Collatz reverse fibres. Its finite algebraic validator is `experiments/validate_skewes_euler_hilbert_collatz_bridge_v0_1.py`.
+
+The bridge is explicitly typed as exact representation plus open spectral programme; it does not promote RH, Collatz, or the first Skewes crossing to solved status.
