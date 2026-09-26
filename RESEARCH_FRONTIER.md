@@ -277,3 +277,55 @@ The dual dyadic operator has the exact kernel
 On-Primes independently has a half-integer boundary lemma in the original affine variable. These are mathematically distinct occurrences of \(1/2\).
 
 Open task: determine whether there is a rigorous conjugacy, functorial relation, or no-go theorem between these two appearances. Numerical coincidence alone is not evidence of identity.
+
+
+### OP-F15 — Resonance hypergraph compression
+
+The finite common-clock law now distinguishes two layers:
+
+\[
+\text{local singular-series marginals}
+\]
+
+versus
+
+\[
+\text{cross-channel dyadic resonances}.
+\]
+
+For finite prime support \(P\), the exact correction
+
+\[
+\mathcal C_P(h)
+=
+\left\langle\prod_{p\in P}B_p(2^rh)\right\rangle_r
+-
+\prod_{p\in P}\left\langle B_p(2^rh)\right\rangle_r
+\]
+
+vanishes whenever the effective local periods are pairwise coprime, while shared period factors can create nonzero corrections when local Fourier supports satisfy the resonance equation
+
+\[
+\sum_p \frac{m_p}{d_p(h)}\in\mathbb Z.
+\]
+
+The next hard gate is to determine whether the resulting resonance hypergraph admits a compression or invariant that survives increasing prime support and separates actual ordered prime/twin-gap data from suitable null models.
+
+A valid global claim must specify:
+
+1. the support-growth rule \(P\to\infty\);
+2. normalization/renormalization of local factors;
+3. convergence or projective consistency;
+4. a null model preserving trivial modular carriers;
+5. an invariant not already forced by the multiplicative-order table alone.
+
+### OP-F16 — Zeta bridge only after resonance closure
+
+Do not map the resonance hypergraph directly to zeta zeros.
+
+A zeta bridge becomes admissible only after a global ARPL observable is shown to have a controlled limit or transform. The preferred route remains an explicit formula or a rigorously smoothed prime-power measure. Any proposed correspondence with zero ordinates must preserve the distinction between:
+
+- exact finite modular resonance;
+- conjectural prime-tuple occurrence asymptotics;
+- analytic continuation;
+- zero-spectrum statistics.
