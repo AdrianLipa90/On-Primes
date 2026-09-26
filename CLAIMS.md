@@ -99,6 +99,26 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-D065 | For every \(x\ge6\) with \(6\mid x\), the full two-twin-pair singular series factorizes exactly as \(\mathfrak S(H_x)=\frac{27}{2}C_*Z(x)R(x^2-4)\), with finite correction products over prime divisors of \(x\) and \(x^2-4\). | PROVED | Exact three-level local factor classification; only finitely many channels differ from the universal background. |
 | OP-D066 | Along the dyadic orbit \(x_r=2^rh\) with \(6\mid h\), \(\mathfrak S(H_{2^rh})=\frac{27}{2}C_*Z(h)R(4^rh^2-4)\). All time dependence is carried by the finite \(\pm2\) phase-hit divisors of \(4^rh^2-4\). | PROVED | Odd divisors of \(2^rh\) equal those of \(h\); dynamic special channels satisfy \(2^rh\equiv\pm2\pmod p\). |
 
+
+| OP-D067 | For a consecutive finite Fourier/projector carrier with \(M\) occupied modes, unit-density unfolding gives the normalized projector kernel \(\sin(\pi s)/(M\sin(\pi s/M))\), converging to \(\sin(\pi s)/(\pi s)\). | PROVED_FROM_DEPENDENCY | Shared Hardy/Fourier projector theorem; no GUE/zeta input. |
+| OP-D068 | With the standard filled CAR/Slater lift, the two-point law is \(g_{2,M}(s)=1-[\sin(\pi s)/(M\sin(\pi s/M))]^2\), hence \(g_2(s)=1-[\sin(\pi s)/(\pi s)]^2\). | PROVED_FROM_DEPENDENCY / FORCED_PREDICTION | Infinities Hardy--CAR theorem plus SOH Fourier compatibility. |
+| OP-D069 | In phase coordinates \(\Delta\Phi=2\pi s\), the forced pair law is \(1-[\sin(\Delta\Phi/2)/(\Delta\Phi/2)]^2\) with local expansion \((\Delta\Phi)^2/12+O(\Delta\Phi^4)\). | PROVED_FROM_DEPENDENCY | Exact reparametrization/Taylor expansion. |
+| OP-D070 | The same projector/CAR sector forces the normalized form factor \(S(\tau)=\min(|\tau|,1)\). | PROVED_FROM_DEPENDENCY / FORCED_PREDICTION | Exact triangular Fourier coefficients of the finite projector kernel. |
+| OP-D071 | For any finite real spectral sample and \(q>0\), \(N|N^{-1}\sum_jq^{i\gamma_j}|^2=N^{-1}\sum_{j,k}e^{i(\gamma_j-\gamma_k)\log q}\). | PROVED | Exact finite Wiener--Khintchine identity. |
+| OP-D072 | With frozen density \(\nu_T=(2\pi)^{-1}\log(T/2\pi)\), \(u_{T,j}=\nu_T(\gamma_j-T)\), and \(\tau_q=\log q/\log(T/2\pi)\), one has \(K_{\Gamma,T}(\tau_q)=N|R_q|^2\). | PROVED | Exact coordinate identity; global phase cancels. |
+| OP-D073 | Prime powers \(q=p^m\) sample the frozen form factor at \(\tau_{p^m}=m\log p/\log(T/2\pi)\); dyadic harmonics sample \(\tau_{2^m}=m\log2/\log(T/2\pi)\). | PROVED | OP-D072 plus logarithm law. |
+| OP-D074 | Combining Landau's fixed-\(x\) formula with \(\log n=\sum_{d\mid n}\Lambda(d)\) gives a finite-divisor spectral reconstruction of \(\log n\). | PROVED_FROM_STANDARD | Finite divisor set; no infinite interchange. |
+| OP-D075 | The shifted prime-power divisor tower of \(\log(p+1)\) therefore has a matching Landau spectral channel at every divisor scale \(r^j\mid p+1\). | PROVED_FROM_STANDARD | Reindexed finite-divisor identity. |
+| OP-D076 | For \(p+1=a_p2^{k_p}\), the dyadic term \(k_p\log2\) equals the sum of the first \(k_p\) dyadic Landau channels. | PROVED_FROM_STANDARD | Since \(\Lambda(2^j)=\log2\). |
+| OP-S010 | The limiting sinc-square law is the standard bulk sine-kernel/GUE two-point law and the functional form in Montgomery's pair-correlation programme. | STANDARD | External identification occurs after the internal forced derivation. |
+| OP-S011 | Under RH, Montgomery's weighted form factor gives the ramp for fixed \(0<|\alpha|<1\); the plateau for \(|\alpha|>1\) is conjectural. | STANDARD / RH-CONDITIONAL | Validation only if RH itself is the proof target. |
+| OP-S012 | Fixed-\(q\) Landau frequencies satisfy \(\tau_q(T)\to0\); fixed nonzero form-factor frequency requires \(q(T)\asymp(T/2\pi)^\tau\), asymptotically equivalent to Montgomery's \(T^\alpha\) scaling. | STANDARD / SCALING CROSSWALK | Prevents conflating the fixed-\(q\) and fixed-\(\tau\) limits. |
+| OP-S013 | Landau's fixed-\(x\) formula reconstructs von Mangoldt support from zeta-zero spectral sums. | STANDARD | Classical analytic number theory. |
+| OP-N004 | The inherited 256-zero phase-bank computation is a finite witness to the classical Landau mechanism and a diagnostic Montgomery/GUE sanity check only. | NUMERICAL | Not used as proof input for OP-D067--OP-D076. |
+| OP-O008 | Actual zeta zeros instantiate the specific quasi-free/CAR projector occupancy required to inherit OP-D068 and OP-D070 in full. | OPEN | Full local zeta process/operator binding is not proved. |
+| OP-O009 | The full forced ramp applies to actual zeta zeros at all arithmetic sampling frequencies \(\tau_q\) without further hypotheses. | OPEN | Conditional ramp is known only in its classical domain; plateau/full binding remain open. |
+| OP-O010 | A continuation-safe, smoothed \(q(T)\)-scaled prime-power observable may close the remaining bridge between arithmetic phase bank and full local form factor. | OPEN | Must be derived without target fitting or illegal critical-strip Euler-product use. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
