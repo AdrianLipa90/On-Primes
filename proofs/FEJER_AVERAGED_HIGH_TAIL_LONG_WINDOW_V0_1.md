@@ -468,7 +468,7 @@ Set
 R=X^{1/3}.
 \]
 
-Using the standard unconditional Saffari–Vaughan short-interval mean-square theorem and the exact Fejér/Möbius–CRT low-block theorem,
+Using the standard unconditional Saffari--Vaughan/Huxley prime short-interval mean-square theorem, the explicit theta-to-psi transfer lemma, and the exact Fejér/Möbius--CRT low-block theorem,
 
 \[
 \boxed{
