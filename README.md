@@ -205,3 +205,36 @@ u\mapsto2u\pmod p.
 \]
 
 See proofs/ARPL_SINGULAR_SERIES_PHASE_BRIDGE_V0_1.md and receipts/ARPL_SINGULAR_SERIES_REVERSE_TEST_V0_1.md.
+
+
+### Canonical global phase space
+
+The complete ARPL modular state lives naturally in the profinite completion
+
+\[
+\widehat{\mathbb Z}
+\cong
+\prod_p\mathbb Z_p,
+\]
+
+whose Pontryagin dual is
+
+\[
+\mathbb Q/\mathbb Z.
+\]
+
+The dyadic gap operator is multiplication by two on \(\widehat{\mathbb Z}\). It is invertible on every odd \(p\)-adic component and injective/non-surjective on the \(2\)-adic component. On the dual frequency side it acts by
+
+\[
+r\mapsto2r\pmod1
+\]
+
+with kernel exactly
+
+\[
+\{0,1/2\}.
+\]
+
+Ramanujan sums are exact-order denominator-shell character sums in this dual phase space. See proofs/ARPL_PROFINITE_PHASE_SPACE_V0_1.md.
+
+The finite odd-prime channel dynamics \(u\mapsto2u\bmod p\) has cycle length \(d_p=\operatorname{ord}_p(2)\). The corresponding transfer operator has \(d_p\)-th roots of unity as eigenmodes. For the two-twin-pair local factor, the equal defects at \(u=\pm2\) produce an exact odd-mode cancellation whenever \(d_p\) is even. See proofs/ARPL_DYADIC_TRANSFER_SPECTRUM_V0_1.md.
