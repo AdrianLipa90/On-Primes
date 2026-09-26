@@ -65,6 +65,12 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-D042 | For \(p\ge5\), the two-twin-pair local factor \(B_p(u)\) has the exact three-level form \(\beta_p+\alpha_p(2\mathbf1_{u=0}+\mathbf1_{u=2}+\mathbf1_{u=-2})\), with \(\alpha_p=p^3/(p-1)^4\), \(\beta_p=p^3(p-4)/(p-1)^4\). | PROVED | Exact classification of collisions in \(\{0,2,u,u+2\}\bmod p\). |
 | OP-D043 | The \(+2\) and \(-2\) defects lie on the same doubling orbit iff \(d_p=\operatorname{ord}_p(2)\) is even. In that case their equal half-orbit-separated amplitudes cancel every odd transfer Fourier mode; if \(d_p\) is odd they lie on distinct cycles and each special cycle has full mode support. | PROVED | Finite-cycle Fourier decomposition. |
 
+| OP-D044 | The Ramanujan sum \(c_q(n)\) is the sum of the canonical additive characters \(\chi_r(n)\) over the exact-order-\(q\) shell \(r\in\mathbb Q/\mathbb Z\). | PROVED | Direct identification of primitive residues \(a\bmod q\) with order-\(q\) elements \(a/q\pmod1\). |
+| OP-D045 | The ARPL global dyadic state operator \(D:x\mapsto2x\) on \(\widehat{\mathbb Z}\cong\prod_p\mathbb Z_p\) is an automorphism on every odd \(p\)-adic component and injective index-2, non-surjective on the \(2\)-adic component. | PROVED | Standard \(p\)-adic unit/non-unit decomposition. |
+| OP-D046 | The Pontryagin-dual dyadic operator on \(\mathbb Q/\mathbb Z\) is \(r\mapsto2r\), is surjective, and has kernel exactly \(\{0,1/2\}\). | PROVED | Direct kernel calculation plus duality. |
+| OP-D047 | Under dual dyadic transport, odd exact-order denominator shells are permuted, while even shells lose one factor of 2 in their order; for squarefree \(2m\), the shell maps to the odd shell \(m\). | PROVED | Exact order calculation in \(\mathbb Q/\mathbb Z\). |
+| OP-S009 | \(\widehat{\mathbb Z}=\varprojlim_n\mathbb Z/n\mathbb Z\cong\prod_p\mathbb Z_p\), and its Pontryagin dual is \(\mathbb Q/\mathbb Z\). | STANDARD | Standard profinite/Pontryagin duality; see PRIOR_ART.md. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
