@@ -20,7 +20,27 @@
     "full zeta plateau / local process binding"
   ],
   "validator": {
-    "status": "PENDING_LOCAL_EXECUTION"
+    "status": "PASS",
+    "max_error_to_bound_ratio": 0.046538113080740004,
+    "max_abs_error_in_test_grid": 27.56864594637534,
+    "tested_X": [
+      100,
+      300,
+      1000
+    ],
+    "tested_h": [
+      1,
+      2,
+      3,
+      6,
+      10
+    ],
+    "tested_R": [
+      5,
+      10,
+      20
+    ],
+    "character_indicator_checks": "PASS"
   },
   "canon_allowed": false
 }
