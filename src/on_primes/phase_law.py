@@ -516,3 +516,52 @@ def local_periods_pairwise_coprime(primes: Sequence[int], h: int) -> bool:
             if math.gcd(a, b) != 1:
                 return False
     return True
+
+
+def twin_finite_dyadic_orbit_invariant(primes: Sequence[int], h: int) -> Fraction:
+    """Finite-support product of local dyadic orbit means.
+
+    This is exactly invariant under h -> 2**k * h for k>=0 on odd-prime support.
+    """
+    support = tuple(int(p) for p in primes)
+    if len(set(support)) != len(support):
+        raise ValueError("primes must be distinct")
+    result = Fraction(1, 1)
+    for p in support:
+        if not _is_prime_small(p) or p < 5:
+            raise ValueError("support must contain distinct primes >= 5")
+        result *= twin_local_orbit_mean(p, int(h))
+    return result
+
+
+def twin_local_mean_class(p: int, h: int) -> str:
+    """Classify the local orbit mean for the twin-factor observable."""
+    p = int(p)
+    h = int(h)
+    if not _is_prime_small(p) or p < 5:
+        raise ValueError("p must be a prime >= 5")
+    u = h % p
+    if u == 0:
+        return "zero-fixed"
+    plus, minus = twin_special_residue_cycles(p)
+    orbit = next(o for o in doubling_orbits_mod_prime(p) if u in o)
+    if orbit == plus == minus:
+        return "special-even"
+    if orbit == plus or orbit == minus:
+        return "special-odd"
+    return "ordinary"
+
+
+def twin_local_mean_closed_form(p: int, h: int) -> Fraction:
+    """Closed-form local dyadic orbit mean of the twin-factor observable."""
+    p = int(p)
+    base, spike = twin_quadruplet_factor_decomposition(p)
+    kind = twin_local_mean_class(p, int(h))
+    if kind == "zero-fixed":
+        return base + 2 * spike
+    d = doubling_order_mod_prime(p)
+    if kind == "special-even":
+        return base + Fraction(2, d) * spike
+    if kind == "special-odd":
+        return base + Fraction(1, d) * spike
+    return base
