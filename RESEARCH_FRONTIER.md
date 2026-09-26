@@ -646,3 +646,35 @@ A valid closure must provide explicit smoothing, support growth, uniform tail co
 For \(h=2\), silently assuming a positive Hardy--Littlewood main term would import essentially the twin-prime occurrence problem into the proof. That shortcut is prohibited.
 
 An alternative closure is a zero-list-free operator/trace identity that controls the same off-diagonal pair power without proving each fixed-\(h\) correlation separately.
+
+
+### OP-F26 — Möbius–CRT cancellation theorem
+
+The representation problem for shifted von Mangoldt correlations is now closed at finite cutoff:
+
+\[
+C_h(X)
+=
+\sum_{d,e}
+\mu(d)\mu(e)\log d\log e\,
+N_{d,e}(X;h),
+\]
+
+and each divisor pair is admitted exactly by the ARPL phase gate
+
+\[
+\gcd(d,e)\mid h
+\iff
+e^{2\pi i h/\gcd(d,e)}=1.
+\]
+
+The remaining hard step is cancellation/uniformity in the **growing signed double sum**. A proof must control:
+- divisor truncation scales;
+- the \(O(1)\) residue-count error after replacing \(N_{d,e}\) by \(X/\operatorname{lcm}(d,e)\);
+- the Möbius signs;
+- uniformity in the moving shift/window regime required by \(q(T)\)-scaled form-factor analysis;
+- all dependence on RH, sieve hypotheses, zero-free regions, or distribution results.
+
+A purely absolute-majorant proof is not assumed to work; if it provably cannot close the sum, that no-go should be recorded.
+
+The exact phase representation must not be promoted into a Hardy--Littlewood occurrence theorem without this analytic step.
