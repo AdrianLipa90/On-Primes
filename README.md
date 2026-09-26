@@ -238,3 +238,48 @@ with kernel exactly
 Ramanujan sums are exact-order denominator-shell character sums in this dual phase space. See proofs/ARPL_PROFINITE_PHASE_SPACE_V0_1.md.
 
 The finite odd-prime channel dynamics \(u\mapsto2u\bmod p\) has cycle length \(d_p=\operatorname{ord}_p(2)\). The corresponding transfer operator has \(d_p\)-th roots of unity as eigenmodes. For the two-twin-pair local factor, the equal defects at \(u=\pm2\) produce an exact odd-mode cancellation whenever \(d_p\) is even. See proofs/ARPL_DYADIC_TRANSFER_SPECTRUM_V0_1.md.
+
+
+### Dyadic cross-channel resonance
+
+For finite odd-prime support \(P\), define the common-clock twin-factor observable
+
+\[
+B_P(r;h)=\prod_{p\in P}B_p(2^rh).
+\]
+
+Its exact period divides
+
+\[
+L_P(h)=\operatorname{lcm}_{p\in P}d_p(h),
+\]
+
+with \(d_p(h)=1\) when \(p\mid h\), otherwise \(d_p(h)=\operatorname{ord}_p(2)\).
+
+After local Fourier decomposition, the global mean keeps exactly those mode tuples obeying
+
+\[
+\sum_{p\in P}\frac{m_p}{d_p(h)}\in\mathbb Z.
+\]
+
+This yields the exact resonance correction
+
+\[
+\mathcal C_P(h)
+=
+\left\langle\prod_{p\in P}B_p\right\rangle
+-
+\prod_{p\in P}\langle B_p\rangle.
+\]
+
+If the effective local periods are pairwise coprime, then
+
+\[
+\mathcal C_P(h)=0
+\]
+
+exactly. Shared period factors can support nonzero coupling, subject to the local mode-selection rules.
+
+For fixed \(h\), subsets of prime channels with nonzero \(\mathcal C_J(h)\) define the ARPL dyadic resonance hypergraph.
+
+See proofs/ARPL_DYADIC_CROSS_CHANNEL_RESONANCE_V0_1.md and receipts/ARPL_DYADIC_RESONANCE_REVERSE_TEST_V0_1.md.
