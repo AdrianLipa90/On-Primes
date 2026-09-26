@@ -161,6 +161,10 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`, `RES
 | OP-D116 | The refinement factor \(b_N=L_{N+1}/L_N\) is an exact clock/frequency novelty index: \(b_N=1\) iff \(e_{N+1}\mid L_N\), equivalently the new channel's character group is already contained in the existing finite dual module; for \(b_N>1\), the finite phase and dual-frequency groups grow by index \(b_N\). | PROVED/STANDARD | Elementary lcm arithmetic plus finite cyclic duality. |
 | OP-D117 | Haar-uniform phase information at level \(N\) is \(H_N=\log L_N\), with exact refinement increment \(H_{N+1}-H_N=\log b_N\) nats \(=\log_2 b_N\) bits. | PROVED/STANDARD | Shannon entropy of a uniform finite quotient; no physical entropy interpretation is claimed. |
 
+| OP-D118 | The limiting positive singular-series law has the hard lower support bound \(\mu_h([A(h),\infty))=1\), equivalently \(\nu_h([\log A(h),\infty))=1\), where \(A(h)=(27/2)C_*Z(h)\). | PROVED | Every instantaneous dynamic divisor factor \(R_r(h)\ge1\); closed-support preservation under weak convergence. |
+| OP-D119 | The limiting amplitude upper tail is faster than every fixed inverse power: for every \(N>0\), \(\mu_h([x,\infty))=O_{h,N}(x^{-N})\). | PROVED/STANDARD | Markov inequality plus finiteness of every positive real moment. |
+| OP-D120 | The limiting logarithmic upper tail is faster than every prescribed fixed exponential: for every \(N>0\), \(\nu_h([y,\infty))=O_{h,N}(e^{-Ny})\). | PROVED | OP-D119 under \(x=e^y\). No density or large-deviation asymptotic is claimed. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
