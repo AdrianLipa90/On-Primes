@@ -105,6 +105,10 @@ Status vocabulary: `PROVED`, `STANDARD`, `NUMERICAL`, `CONJECTURE`, `OPEN`.
 | OP-D070 | The resulting global geometric mean \(\mathcal G(h)=\exp(\mathcal L(h))\) is finite, positive, and dyadically invariant: \(\mathcal G(2^kh)=\mathcal G(h)\). | PROVED | OP-D069 plus orbit invariance. |
 | OP-D071 | The unresolved arithmetic Cesaro mean has the rigorous lower bound \(\liminf_T T^{-1}\sum_{r<T}\mathfrak S(H_{2^rh})\ge\mathcal G(h)>0\). | PROVED | Jensen's inequality plus OP-D069. |
 
+| OP-D072 | The dynamic divisor weight satisfies \(R(N)\le C_R\,N/\varphi(N)\), where \(C_R=\prod_{p\ge5}(1+3/[p(p-4)])\) converges. | PROVED | Exact local comparison \((p-3)/(p-4)=(p/(p-1))(1+3/[p(p-4)])\). |
+| OP-D073 | Consequently \(R(N)\ll\log\log N\). | STANDARD/PROVED | OP-D072 plus the classical maximal-order bound for \(N/\varphi(N)\). |
+| OP-D074 | Along \(N_r=4^rh^2-4\), \(R(N_r)\ll_h\log(r+2)\), hence \(\mathfrak S(H_{2^rh})\ll_h\log(r+2)\). | PROVED | Exact instantaneous factorization plus OP-D073. |
+
 ## Firewall
 
 The identities OP-D001--OP-D036 do **not** by themselves characterize prime distribution. They reorganize candidate integers into dyadic fibres. Any theorem about the distribution of `1` values in the masks requires additional proof.
