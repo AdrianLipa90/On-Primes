@@ -24,7 +24,16 @@
     "zeta zero list as derivation source"
   ],
   "validator": {
-    "status": "PENDING_LOCAL_EXECUTION"
+    "status": "PASS",
+    "max_abs_error": 2.8421709430404007e-13,
+    "tested_cutoffs": [
+      20,
+      50,
+      100,
+      180
+    ],
+    "zero_list_used": false,
+    "hardy_littlewood_used_as_input": false
   },
   "canon_allowed": false
 }
