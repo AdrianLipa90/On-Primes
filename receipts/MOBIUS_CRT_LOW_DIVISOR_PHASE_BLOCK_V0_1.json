@@ -1,0 +1,26 @@
+{
+  "schema": "ON_PRIMES_MOBIUS_CRT_LOW_DIVISOR_PHASE_BLOCK_V0_1",
+  "date": "2026-09-26",
+  "repository": "AdrianLipa90/On-Primes",
+  "branch": "integrate/phase-bank-form-factor-duality-v0.1-20260926-r3",
+  "status": "EXACT_TRUNCATED_DECOMPOSITION__LOW_BLOCK_CONTROLLED__HIGH_DIVISOR_TAIL_OPEN",
+  "theorem": {
+    "low_block": "C_{h,<=R}(X)=X M_{h,R}+E_{h,R}(X)",
+    "error_bound": "|E_{h,R}(X)| <= (R log R)^2",
+    "phase_indicator": "1_{g|h}=g^-1 sum_{a=0}^{g-1} exp(2pi i a h/g)",
+    "sub_square_root_condition": "R log R=o(sqrt X) implies E=o(X)"
+  },
+  "closes": [
+    "uniform low-divisor residue-count error",
+    "finite low-block ARPL Fourier representation"
+  ],
+  "remains_open": [
+    "high-divisor tail T_{h,R}(X)",
+    "uniform q(T)-scaled shifted correlation",
+    "full zeta plateau / local process binding"
+  ],
+  "validator": {
+    "status": "PENDING_LOCAL_EXECUTION"
+  },
+  "canon_allowed": false
+}
