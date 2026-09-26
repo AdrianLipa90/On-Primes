@@ -446,3 +446,56 @@ for every fixed nonzero \(h\) and every fixed \(n\ge2\).
 Thus every fixed \(n\)-body connected ARPL layer exists globally. The remaining open problem is convergence after summing over \(n\to\infty\).
 
 See proofs/ARPL_FIXED_ORDER_CONNECTED_SUMMABILITY_V0_1.md.
+
+
+### Instantaneous singular-series compression
+
+For the two-twin-pair pattern
+
+\[
+H_x=\{0,2,x,x+2\},
+\qquad x\ge6,\quad 6\mid x,
+\]
+
+define
+
+\[
+C_*=
+\prod_{p\ge5}\frac{p^3(p-4)}{(p-1)^4},
+\]
+
+\[
+Z(x)=
+\prod_{\substack{p\mid x\\p\ge5}}
+\frac{p-2}{p-4},
+\qquad
+R(N)=
+\prod_{\substack{p\mid N\\p\ge5}}
+\frac{p-3}{p-4}.
+\]
+
+Then the full standard Hardy--Littlewood singular series factorizes exactly as
+
+\[
+\boxed{
+\mathfrak S(H_x)
+=
+\frac{27}{2}\,
+C_*\,Z(x)\,R(x^2-4).
+}
+\]
+
+Along the dyadic orbit \(x=2^rh\), \(6\mid h\),
+
+\[
+\boxed{
+\mathfrak S(H_{2^rh})
+=
+\frac{27}{2}\,
+C_*\,Z(h)\,R(4^rh^2-4).
+}
+\]
+
+Thus every instantaneous infinite Euler product is compressed into a universal background constant, static odd-prime locks from \(h\), and a finite dynamic correction from the prime divisors of \(4^rh^2-4\).
+
+See proofs/ARPL_INSTANTANEOUS_SINGULAR_SERIES_FACTORIZATION_V0_1.md.
