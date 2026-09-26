@@ -1001,3 +1001,70 @@ def twin_quadratic_joint_hit_density(p: int, q: int, h: int) -> Fraction:
     if (rp - rq) % math.gcd(ep, eq) != 0:
         return Fraction(0, 1)
     return Fraction(1, math.lcm(ep, eq))
+
+
+def twin_fractional_special_multiplier(p: int, s: float) -> float:
+    """b_{p,s} = ((p-3)/(p-4))**s - 1 for 0<s<1."""
+    p = int(p)
+    s = float(s)
+    if not 0.0 < s < 1.0:
+        raise ValueError("s must satisfy 0 < s < 1")
+    return float(twin_special_correction_ratio(p)) ** s - 1.0
+
+
+def twin_finite_fractional_common_clock_mean(primes: Sequence[int], h: int, s: float) -> float:
+    """Direct finite-support common-clock mean of the dynamic factor^s."""
+    support = tuple(int(p) for p in primes)
+    if len(set(support)) != len(support):
+        raise ValueError("primes must be distinct")
+    s = float(s)
+    if not 0.0 < s < 1.0:
+        raise ValueError("s must satisfy 0 < s < 1")
+    periods = [quadruplet_observable_period(p, int(h)) for p in support]
+    L = math.lcm(*periods) if periods else 1
+    phases = {p: twin_quadratic_hit_phase(p, int(h)) for p in support}
+    multipliers = {p: twin_fractional_special_multiplier(p, s) for p in support}
+    total = 0.0
+    for r in range(L):
+        value = 1.0
+        for p, e in zip(support, periods):
+            phase = phases[p]
+            if phase is not None and r % e == phase:
+                value *= 1.0 + multipliers[p]
+        total += value
+    return total / L
+
+
+def twin_finite_fractional_subset_mean(primes: Sequence[int], h: int, s: float) -> float:
+    """Finite subset/CRT expansion of the same fractional common-clock mean."""
+    support = tuple(int(p) for p in primes)
+    if len(set(support)) != len(support):
+        raise ValueError("primes must be distinct")
+    s = float(s)
+    if not 0.0 < s < 1.0:
+        raise ValueError("s must satisfy 0 < s < 1")
+    phases = {p: twin_quadratic_hit_phase(p, int(h)) for p in support}
+    periods = {p: quadruplet_observable_period(p, int(h)) for p in support}
+    b = {p: twin_fractional_special_multiplier(p, s) for p in support}
+    total = 1.0
+    n = len(support)
+    for mask in range(1, 1 << n):
+        chosen = [support[i] for i in range(n) if (mask >> i) & 1]
+        if any(phases[p] is None for p in chosen):
+            continue
+        compatible = True
+        for i, p in enumerate(chosen):
+            for q in chosen[i + 1 :]:
+                if (phases[p] - phases[q]) % math.gcd(periods[p], periods[q]) != 0:
+                    compatible = False
+                    break
+            if not compatible:
+                break
+        if not compatible:
+            continue
+        L = math.lcm(*(periods[p] for p in chosen))
+        weight = 1.0
+        for p in chosen:
+            weight *= b[p]
+        total += weight / L
+    return total
