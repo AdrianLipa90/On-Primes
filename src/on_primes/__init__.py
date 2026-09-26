@@ -105,6 +105,13 @@ from .phase_law import (
     twin_gap_mod6_admissible,
     twin_quadruplet_dyadic_local_orbit,
     even_sector_pair_singular_dyadic_invariant,
+    doubling_order_mod_prime,
+    doubling_orbits_mod_prime,
+    dyadic_transfer_spectrum_multiplicities,
+    twin_quadruplet_factor_decomposition,
+    twin_special_residue_cycles,
+    twin_special_mode_support,
+    twin_special_cycles_coincide,
 )
 from .modular import (
     is_obstructed_by,
@@ -203,4 +210,11 @@ __all__ = [
     "twin_gap_mod6_admissible",
     "twin_quadruplet_dyadic_local_orbit",
     "even_sector_pair_singular_dyadic_invariant",
+    "doubling_order_mod_prime",
+    "doubling_orbits_mod_prime",
+    "dyadic_transfer_spectrum_multiplicities",
+    "twin_quadruplet_factor_decomposition",
+    "twin_special_residue_cycles",
+    "twin_special_mode_support",
+    "twin_special_cycles_coincide",
 ]
