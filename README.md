@@ -845,3 +845,79 @@ This moves the actual spectral frontier from a fixed-\(h\) twin-prime-strength s
 \]
 
 See \`proofs/FEJER_AVERAGED_MOBIUS_CRT_LOW_BLOCK_V0_1.md\`.
+
+
+## Unconditional long-window averaged high-tail closure
+
+The Fejér-averaged high-divisor gate is now closed in a classical unconditional range.
+
+For the localized forward correlation on \((X,2X]\),
+
+\[
+\mathcal C_{X,H}
+=
+\frac1{H+1}
+\left[
+C_0+
+2\sum_{h=1}^{H}
+\left(1-\frac h{H+1}\right)C_h
+\right],
+\]
+
+the sliding-window expansion differs from the corresponding length-\(H+1\) short-interval square energy only by
+
+\[
+O\!\left((H+1)^3\log^2(3X)\right).
+\]
+
+Using the standard Saffari--Vaughan unconditional mean-square theorem for primes in short intervals,
+
+\[
+H+1\ge X^{1/6+\varepsilon}
+\]
+
+gives
+
+\[
+\frac{\mathcal C_{X,H}}{X}\to1
+\]
+
+throughout any clean sublinear range \(H+1\le X^{1-\delta}\).
+
+Taking
+
+\[
+R=X^{1/3},
+\]
+
+the exact Fejér/Möbius--CRT low-block theorem gives simultaneously
+
+\[
+\frac{\mathcal C_{X,H,\le R}}{X}\to1.
+\]
+
+Therefore
+
+\[
+\boxed{
+\frac{\mathcal T_{X,H,R}}{X}\to0
+}
+\]
+
+unconditionally for
+
+\[
+\boxed{
+X^{1/6+\varepsilon}
+\le
+H+1
+\le
+X^{1-\delta}.
+}
+\]
+
+This is an averaged theorem. It does not prove any fixed-\(h\) Hardy--Littlewood correlation or twin-prime asymptotic.
+
+The remaining spectral frontier is the shorter-window / exact smooth \(q(T)\)-window regime.
+
+See \`proofs/FEJER_AVERAGED_HIGH_TAIL_LONG_WINDOW_V0_1.md\`.
